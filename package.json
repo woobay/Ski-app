@@ -1,0 +1,20 @@
+{
+  "name": "equipe-4---projet-de-production-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Developpement-Web@dev.azure.com/Developpement-Web/Equipe%204%20-%20Projet%20de%20Production%201/_git/Equipe%204%20-%20Projet%20de%20Production%201"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
