@@ -11,9 +11,9 @@ exports.renderSignup = (req, res) => {
 }
 
 exports.renderNewUser = (req, res) => {
+    let username = req.body.userName
     let email = req.body.mail
     let password = req.body.password
-    let username = req.body.userName
 
     axios.post(`https://ski-api.herokuapp.com/signup`, 
     {

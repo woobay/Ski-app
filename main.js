@@ -1,18 +1,23 @@
 const express = require ("express");
-const homecontroller = require ("./controller/homeControllers");
+const dotenv = require("dotenv");
+const routes = require("./routes/users")
+
 
 const app = express();
 
+
+dotenv.config({path: "./config.env"})
+
+
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"))
 
-app.get('/', homecontroller.renderLogin); 
 
-app.get('/signup', homecontroller.renderSignup);
-app.post('/signup', homecontroller.renderNewUser)
-
-app.get('/profil', homecontroller.renderProfil);
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 
-app.listen(3000, ()=>{console.log("Server runnning on port 3000")})
+app.use(routes)
+
+const port = process.env.PORT || 5000
+app.listen(port, ()=>{console.log(`Server runnning on port ${port}`)}) 
