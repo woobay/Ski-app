@@ -1,23 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../public/js/script.js"></script>
-    <title>Sign up</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Login</title>
 </head>
 <body>
-    <form action="/signup" method="post">
-        <label for="userName">Username</label>
-        <input type="text" name="userName" id="userName">
-        <br>
-        <label for="mail">Email</label>
-        <input type="text" name="mail" id="mail">
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <button type="submit">S'inscrire</button>
-    </form>
+    <div class="bg">
+        <main class="container">
+            <!-- Section gauche -->
+            <section class="box-transparent">
+                <h1>LOGO</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, tenetur dolor
+                    voluptates
+                    iste maxime praesentium, ratione dicta, exercitationem odio placeat rem.</p>
+                <div class="oval-box-container">
+                    <div>
+                        <p><span>2,000</span> abonnés</p>
+                    </div>
+                    <div>
+                        <p><span>3,000</span> publications</p>
+                    </div>
+                    <div>
+                        <p><span>400</span> parcours</p>
+                    </div>
+                </div>
+                <button class="btn-secondary body2">
+                    En savoir plus
+                </button>
+            </section>
+            <!-- Section droite -->
+            <section class="box-form">
+                <h3>S'inscrire</h3>
+                <hr>
+                <p>Déjà membre ? <a href="/">Se connecter</a>
+                <p>Lorem ipsum dolor sit amet, consectadiscing elit.</p>
+                <form action="/signup" method="post" class="form">
+                    <div class="input-control">
+                        <label for="userName">Prénom et nom</label>
+                        <div class="input-field" id="userNameDiv">
+                            <input id="userName" type="text" name="userName" placeholder="Entrez votre prénom et nom">
+                            <i class="fa-regular fa-user" id="userNameIcon">
+                            </i>
+                        </div>
+                        <div class="error" id="errorUserName">Nom d'utilisateur invalide</div>
+                    </div>
+                    <div class="input-control">
+                        <label for="email">Courriel</label>
+                        <div class="input-field" id="emailDiv">
+                            <input id="email" type="email" name="email" placeholder="exemple@nomdedomaine.com">
+                            <i class="fa-regular fa-envelope" id="emailIcon">
+                            </i>
+                        </div>
+                        <div class="caption error" id="errorEmail">Adresse courriel invalide</div>
+                    </div>
+
+                    <div class="input-control">
+                        <label for="password">Mot de passe</label>
+                        <div class="input-field" id="passwordDiv">
+                            <input id="password" type="password" name="password"
+                                placeholder="Entrez votre mot de passe">
+                            <i class="fa-regular fa-eye-slash" id="passwordIcon"></i>
+                        </div>
+                        <div class="caption error" id="errorPassword">Mot de passe invalide</div>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" value="">
+                        <label for="">
+                            J'accepte les conditions d'utilisation
+                        </label>
+                    </div>
+                    <button id="validateNewUser" type="submit" class="btn-primary">Créer un compte</button>
+                </form>
+            </section>
+        </main>
+    </div>
 </body>
+         
+        
 </html>
