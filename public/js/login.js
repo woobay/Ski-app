@@ -1,16 +1,4 @@
 const log = document.querySelector("#log");
-
-
-const getAccesToken = () => {
-    return window.localStorage.getItem('ACCESS_TOKEN');
-}
-const token = getAccesToken();
-
-if (!!token) {
-    window.location.replace("/profil")
-}
-
-
 const login = async () => {
     const emailValue = document.querySelector("#email").value;
     const passwordValue = document.querySelector("#password").value;
@@ -28,8 +16,9 @@ const login = async () => {
         if (!!data.token) {
             window.localStorage.setItem('ACCESS_TOKEN', data.token);
             window.localStorage.setItem('NAME', data.name);
-            window.location.replace("/profil")
+            window.location.replace("/profil"); 
         }
     }
 }
 log.addEventListener("click", login)
+
