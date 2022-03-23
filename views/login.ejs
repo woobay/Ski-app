@@ -42,13 +42,13 @@
                 <p>Pas encore membre ? <a href="/signup">S'inscrire</a></p>
                 <p>Lorem ipsum dolor sit amet, consectadiscing elit.</p>
                 
-                <div class="form">
+                <form class="form" id="loginForm">
                     
                     <div class="input-control">
                         <label for="email">Courriel</label>
-                        <div class="input-field" id="emailDiv">
+                        <div class="input-field">
                             <input id="email" type="email" name="email" placeholder="exemple@nomdedomaine.com" value
-                                required>
+                            >
                             <i class="fa-regular fa-envelope" id="emailIcon"></i>
                         </div>
                         <div class="caption error" id="errorEmail">Adresse courriel invalide</div>
@@ -60,7 +60,7 @@
                         <label for="email">Mot de passe</label>
                         <div class="input-field" id="passwordDiv">
                             <input id="password" type="password" name="password" placeholder="Entrez votre mot de passe"
-                            required>
+                        >
                             <i class="fa-regular fa-eye-slash" id="passwordIcon"></i>
                         </div>
         
@@ -70,9 +70,9 @@
                         </div>
                     </div>
 
-                    <button id="log" class="btn-primary">Se connecter</button>
+                    <button type="submit" id="log" class="btn-primary">Se connecter</button>
                         
-                </div>
+                </form>
                     
 
                 
