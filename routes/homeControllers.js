@@ -20,6 +20,6 @@ exports.renderNewUser = (req, res) => {
         name: username,
         email: email,
         password: password
-    }).then(result => {res.render("login", result.data)})
+    }).then(result => {res.render("login.ejs", result.data)})
     .catch()
 }
