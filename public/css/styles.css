@@ -186,6 +186,11 @@ p {
     display: inline-block;
     padding-right: 28px;
 }
+.nav-links a:hover {
+    color: #04477C;
+    font-weight: 600;
+    border: none;
+}
 .nav-links-vertical{
     display: flex;
     text-align: left;
