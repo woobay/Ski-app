@@ -13,6 +13,7 @@ a {
     color: #000;
 }
 
+
 html {
     background-color: #F4F6F8;
     color: #000;
@@ -672,9 +673,7 @@ p {
 .error {
     display: none;
     font-weight: 400;
-    padding: 2px;
     font-size: 12px;
-    color: red;
 }
 
 /* ========= page login  ========= */
