@@ -678,7 +678,9 @@ p {
 .error {
     display: none;
     font-weight: 400;
+    padding: 2px;
     font-size: 12px;
+    color: red;
 }
 
 /* ========= page login  ========= */
