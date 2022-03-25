@@ -1,6 +1,6 @@
 // Query selectors
 
-let loginForm = document.querySelector('#loginForm');
+let loginForm = document.querySelector('#log');
 
 let emailDiv = document.querySelector('#emailDiv');
 let email = document.querySelector('#email');
@@ -62,7 +62,7 @@ function validatePassword() {
 
 // Form validation
 
-loginForm.addEventListener('submit', validate)
+loginForm.addEventListener('click', validate)
 
 function validate(e) {
     error = false;
