@@ -1,17 +1,41 @@
 // Query selectors
 
-let loginForm = document.querySelector('#log');
+let signupForm = document.querySelector('#signupForm');
 
-let emailDiv = document.querySelector('#emailDiv');
+let userName = document.querySelector('#userName');
+let userNameIcon = document.querySelector('#userNameIcon');
+let errorUserName = document.querySelector('#errorUserName');
+
 let email = document.querySelector('#email');
 let emailIcon = document.querySelector('#emailIcon')
 let errorEmail = document.querySelector('#errorEmail');
 
-let passwordDiv = document.querySelector('#passwordDiv');
 let password = document.querySelector('#password');
 let passwordIcon = document.querySelector('#passwordIcon');
 let errorPassword = document.querySelector('#errorPassword');
 
+
+// Username functions
+
+userName.addEventListener('focus', function () {
+    userNameIcon.style.color = 'black'
+    userName.style.outline = "2px solid black";
+})
+
+userName.addEventListener('blur', validateUserName)
+
+function validateUserName() {
+    if (userName.value.trim() === "") {
+        error = true;
+        errorUserName.style.display = "block";
+        userName.style.outline = "2px solid red";
+        userNameIcon.style.color = 'red';
+    } else {
+        errorUserName.style.display = "none";
+        userName.style.outline = "2px solid #0060AD";
+        userNameIcon.style.color = '#0060AD';
+    }
+};
 
 // Email functions
 
@@ -62,10 +86,11 @@ function validatePassword() {
 
 // Form validation
 
-loginForm.addEventListener('click', validate)
+signupForm.addEventListener('submit', validate)
 
 function validate(e) {
     error = false;
+    validateUserName()
     validateEmail()
     validatePassword()
     if (error) {
@@ -85,28 +110,3 @@ passwordIcon.addEventListener('click', function () {
         password.type = "password";
     }
 })
-const log = document.querySelector("#log");
-const login = async () => {
-
-    const emailValue = document.querySelector("#email").value;
-    const passwordValue = document.querySelector("#password").value;
-    console.log(emailValue, passwordValue)
-    if (!!emailValue && !!passwordValue) {
-        const body = JSON.stringify({ email: emailValue, password: passwordValue });
-        const response = await fetch(`https://ski-api.herokuapp.com/login`, {
-            method: 'POST',
-            body, 
-            headers: { 'Content-Type': 'application/json',
-            'Accept': 'application/json'}
-        });
-        const data = await response.json();
-        
-        if (!!data.token) {
-            window.localStorage.setItem('ACCESS_TOKEN', data.token);
-            window.localStorage.setItem('NAME', data.name);
-            window.location.replace("/profil"); 
-        }
-    }
-}
-log.addEventListener("click", login)
-

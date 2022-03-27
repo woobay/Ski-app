@@ -186,6 +186,11 @@ p {
     display: inline-block;
     padding-right: 28px;
 }
+.nav-links a:hover {
+    color: #04477C;
+    font-weight: 600;
+    border: none;
+}
 .nav-links-vertical{
     display: flex;
     text-align: left;
@@ -673,7 +678,9 @@ p {
 .error {
     display: none;
     font-weight: 400;
+    padding: 2px;
     font-size: 12px;
+    color: red;
 }
 
 /* ========= page login  ========= */
