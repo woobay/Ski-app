@@ -13,9 +13,9 @@ exports.renderProfil = (req, res) => {
         }
     })
     .then(result => {
-        res.render("spots", {spots: result.data.skiSpots})})
+        res.render("profil", {spots: result.data.skiSpots})})
     .catch(err => {console.log(err)})
-    res.render("profil.ejs")
+
 }
 exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
