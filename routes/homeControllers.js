@@ -4,6 +4,18 @@ exports.renderLogin = (req, res) => {
     res.render("login.ejs")
 }
 exports.renderProfil = (req, res) => {
+    const TOKEN = req.app.locals.token
+    
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
+        headers: {
+            "Content-Type": "application/json", 
+            "Authorization": TOKEN
+        }
+    })
+    .then(result => {
+        res.render("spots", {spots: result.data.skiSpots})})
+    .catch(err => {console.log(err)})
+
     res.render("profil.ejs")
 }
 exports.renderSignup = (req, res) => {
@@ -43,7 +55,7 @@ exports.newSpots = (req, res) => {
 exports.renderSpots = (req, res) => {
     const TOKEN = req.app.locals.token
     
-    axios.get(`https://ski-api.herokuapp.com/ski-spot`, {
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
         headers: {
             "Content-Type": "application/json", 
             "Authorization": TOKEN
