@@ -1,5 +1,4 @@
 <%- include ('partials/head'); %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
 <title>Explore</title>
 </head>
 
@@ -29,7 +28,7 @@
             <section class="container-spot">
 
 
-                <% spots.forEach(spot => { %>
+             <% spots.forEach(spot => { %>
 
                 <article class="container-resume-spot">
                     <div class="container-image-small" >
@@ -76,53 +75,13 @@
                     </div>
                 </article>
 
-        <% }) %> 
-                
-            </section> <!-- section 1 class="container-spot margin-bottom-medium" -->
+            <% }) %> 
 
+         </section>
 
-
-      
-
-            <!--section 2 class="container-spot margin-bottom-medium -->
-          
-                
- </section> <!-- section 4 class="container-spot margin-bottom-medium" -->
-            
-
-
-            <section class="col-4 margin-top-medium">
-                <div class="pagination body1">
-
-                    <li class="page-item previous-page disable">
-                        <a class="page-link pagePrev" href="#"><i class="bi bi-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-                    <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
-                    <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-                    <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
-
-                    <li class="page-item next-page">
-                        <a class="page-link pageNext" href="#"><i class="bi bi-chevron-right"></i></a>
-                    </li>
-                </div>
-
-
-            </section>
-
-
-        </div> <!-- class="col-10 margin-bottom-large"-->
-
-
-    </section> <!--fin class="container-main grid" -->
-
-</main>
-
-
-
+        </div>
+        
+    </section>
 
 <%- include ('partials/footer'); %>
 <script src="js/explore.js"></script>

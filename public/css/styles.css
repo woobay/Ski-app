@@ -922,62 +922,6 @@ p {
     padding-bottom: 8px;
 }
 
-.pagination {
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
-    user-select: none;
-}
-
-.pagination li {
-    display: inline-block;
-    margin: 5px;
-}
-
-.pagination li a {
-    line-height: 45px;    
-}
-
-.previous-page, .next-page {
-    cursor : pointer;
-    width: 80px;
-    transition: 0.3s ease;
-}
-
-.previous-page i, .next-page i {
-    font-size: 18px;
-}
-
-.previous-page:hover {
-    transform: translateX(-5px);
-}
-
-.next-page:hover {
-    transform: translateX(5px);
-}
-
-.current-page, .dots {
-    width: 45px;
-    cursor: pointer;  
-}
-
-.active a {
-    color: #0060AD;
-    font-weight: 600;
-}
-
-.disable a {
-    color:#AEB2B8 ;
-}
-
-
-
-
-
-
-
-
-
 /* =============== Page Signup ================ */
 .bg {
     background-image: url("../img/background-onboarding@2x.jpg");
