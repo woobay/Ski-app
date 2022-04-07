@@ -15,7 +15,6 @@ exports.renderProfil = (req, res) => {
     .then(result => {
         res.render("spots", {spots: result.data.skiSpots})})
     .catch(err => {console.log(err)})
-
     res.render("profil.ejs")
 }
 exports.renderSignup = (req, res) => {
@@ -41,12 +40,25 @@ exports.postAuthentication = (req, res) => {
     const passwordValue = req.body.password
     axios.post(`https://ski-api.herokuapp.com/login`, {email: emailValue, password: passwordValue})
     .then(result => {
+        
         res.app.locals.token = result.data.token
         res.app.locals.name = result.data.name
         res.app.locals.surname = result.data.name.split(' ')[0]
-        res.render("profil")
+
+        const TOKEN = req.app.locals.token
+    
+        axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=3&page=1`, {
+            headers: {
+                "Content-Type": "application/json", 
+                "Authorization": TOKEN
+            }
+        })
+        .then(spot => {
+            res.render("profil", {spots: spot.data.skiSpots},)})
+        .catch(err => {console.log(err)})
     })
-    .catch(err => {console.log(err)})}
+    .catch(err => {console.log(err)})
+}
 
 
 exports.newSpots = (req, res) => {
