@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,76 +8,245 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Profil</title>
+    <title>Créer un parcours</title>
 </head>
+
 <body>
     <header class="main-header">
         <div class="main-header-content">
             <a class="title-logo" href="/">Logo</a>
             <nav class="nav-links">
-                    <ul>
-                        <li><a href="/profil">Accueil</a></li>
-                        <li><a href="/spots">Explore</a></li>
-                        <li><a href="/spots/new">Créer</a></li>
-                        <li><a href="">Guide</a></li>
-                        <li><a href="">Évènements</a></li>
-                        <li><a href="">Discussions</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="/profil">Accueil</a></li>
+                    <li><a href="/spots">Explore</a></li>
+                    <li><a href="/spots/new">Créer</a></li>
+                    <li><a href="">Guide</a></li>
+                    <li><a href="">Évènements</a></li>
+                    <li><a href="">Discussions</a></li>
+                </ul>
             </nav>
             <div class="nav-right">
                 <i class="bi bi-bell"></i>
                 <div class="nav-separator"></div>
-                
+
                 <div class="popover__wrapper">
-                    <a href="#">  
-                        <img class="image-profil-user" src="img/image-user@2x.png" alt="">                               
+                    <a href="#">
+                        <img class="image-profil-user" src="img/image-user@2x.png" alt="">
                     </a>
-                <div class="popover__content">
-                    <nav class="nav-links-vertical">
-                        <ul>
-                            <i class="bi bi-person"></i><li><a href=""> Profil</a></li>
-                            <div class="nav-separator-horizontal"></div>
-                            <li><a id="clearData" href="/">Déconnexion</a></li>
-                        </ul>
-                    </nav>                    
+                    <div class="popover__content">
+                        <nav class="nav-links-vertical">
+                            <ul>
+                                <i class="bi bi-person"></i>
+                                <li><a href=""> Profil</a></li>
+                                <div class="nav-separator-horizontal"></div>
+                                <li><a id="clearData" href="/">Déconnexion</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-                </div>                
                 <span id="userName"></span>
-             </div>                    
-            </div>   
-    </header> 
+            </div>
+        </div>
+    </header>
     <main>
         <div class="container-hero grid">
+            <!-- Nom du parcours -->
             <div class="col-10">
                 <h1>Créer un nouveau parcours</h1>
                 <h3>Nom et coordonnées géographiques</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <label for="nom-parcours">Nom du parcours</label>
-                <div class="input-field">
-                    <input id="" type="" name="" placeholder="Écrire le nom du parcours">
+                <div class="input-control">
+                    <label for="nom-parcours">Nom du parcours</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="Écrire le nom du parcours">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container-main grid">
+            <!-- Localisation du parcours -->
             <div class="col-5">
                 <h3>Localisation du parcours</h3>
                 <p>Indiquer la localisation de l'itinéraire en entrant les informations ci-dessous.</p>
-                <label for="localisation">Localisation</label>
-                <div class="input-field">
-                    <input id="" type="" name="" placeholder="Écrire la localisation">
-                    <i class="fa-regular fa-envelope" id="">
-                    </i>
+                <div class="input-control">
+                    <label for="localisation">Localisation</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="Écrire la localisation">
+                        <i class="fa-regular fa-envelope" id="">
+                        </i>
+                    </div>
                 </div>
+                <!-- Localisation section gauche: mini-grille -->
                 <h4>Montée</h4>
-                <div class="grid">
-                    <div class="col-12">
-                        <label for="latitude">Latitude</label>
-                        <div class="input-field">
-                            <input id="" type="" name="" placeholder="Écrire la localisation">
+                <div class="mini-grid">
+                    <div class="mini-col-5a">
+                        <div class="input-control">
+                            <label for="latitude">Latitude</label>
+                            <div class="input-field">
+                                <input id="" type="" name="" placeholder="Écrire la latitude">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-col-5b">
+                        <div class="input-control">
+                            <label for="latitude">Longitude</label>
+                            <div class="input-field">
+                                <input id="" type="" name="" placeholder="Écrire la longitude">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Descente</h4>
+                <div class="mini-grid">
+                    <div class="mini-col-5a">
+                        <div class="input-control">
+                            <label for="latitude">Latitude</label>
+                            <div class="input-field">
+                                <input id="" type="" name="" placeholder="Écrire la localisation">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-col-5b">
+                        <div class="input-control">
+                            <label for="latitude">Longitude</label>
+                            <div class="input-field">
+                                <input id="" type="" name="" placeholder="Écrire la longitude">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Localisation section droite: itinéraire -->
+            <div class="col-5b">
+                <div class="itineraire"></div>
+                <p>Dessinez votre itinéraire sur la carte</p>
+            </div>
+        <!-- infos générales -->
+            <div class="col-10">
+                <h3>Informations générales</h3>
+            </div>
+            <div class="col-5">
+                <div class="input-control">
+                    <label for="difficulte">Difficulté technique</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="Entrez le niveau de difficulté">
+                    </div>
+                </div>
+                <div class="input-control">
+                    <label for="duree">Estimation de la durée</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="ex: 1h45">
+                    </div>
+                </div>
+                <div class="input-control">
+                    <label for="distance">Distance</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="Entrez la distance en km">
+                    </div>
+                </div>
+            </div>
+            <div class="col-5b">
+                <div class="input-control">
+                    <label for="denivele">Dénivelé</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="ex: 1000m">
+                    </div>
+                </div>
+                <div class="input-control">
+                    <label for="duree">Altitude maximale</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="ex: 1000m">
+                    </div>
+                </div>
+                <div class="input-control">
+                    <label for="distance">Altitude minimale</label>
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="ex: 1000m">
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="input-control">
+                    <label for="description">Description et accès de parcours</label>
+                    <div class="input-field">
+                        <textarea id="" type="" name="" placeholder="Écrire la description du parcours et son accès"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Caractéristiques du parcours -->
+            <div class="col-10">
+                <h3>Caractéristiques du parcours</h3>
+            </div>
+            <div class="col-10">
+                <h4>Spécificités</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia, fuga iure distinctio quod quaerat corrupti quis.</p>
+                <div class="btn-container">
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Fermée</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Végétation dense</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Vue panoramique</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Yéti</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Cascade</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Nature</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Rocheux</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Propriété privée</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Sécurisé</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Lac</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Boueux</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Grottes</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Marmottes</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Montée</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Dénivelé</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Stalactique</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Arbres tombés</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Chalet</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Vent</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Pont inutilisable</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Rivière</label>
+                    <input type="checkbox" id="btnControl">
+                    <label for="btnControl" class="tag">Risque d'avalanche</label>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit ?</p>
+            </div>
+            <div class="col-7">
+                <div class="input-control">
+                    <div class="input-field">
+                        <input id="" type="" name="" placeholder="ex: neige abondante, ours, etc">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <button id="" type="" class="btn-tertiary">Ajouter un nouveau tag</button>
+            </div>
+            <div class="col-10">
+                <h4>Conditions obligatoires : matériel, équipement et sécurité</h4>
+                <div class="input-control">
+                    <label for="description">Description et accès de parcours</label>
+                    <div class="input-field">
+                        <textarea id="" type="" name="" placeholder="Écrire les conditions nécessaires à l'expédition"></textarea>
+                    </div>
+                </div>
+                <h3>Ajouter des photos ou des vidéos</h3>
+            </div>
+
         </div>
 
 
@@ -85,57 +255,57 @@
 
 
 
-<form action="/spots/new" method="post" class="form">
-    
-    <div class="input-control">
-        <label for="name">Nom</label>
-        <div class="input-field" id=""">
-            <input id="" type="text" name="name" placeholder="Entrez votre prénom et nom">
-            <i class="fa-regular fa-user" id="userNameIcon">
-            </i>
-        </div>
-    </div>
-<br>
-    <div class="input-control">
-        <label for="description">Description</label>
-        <div class="input-field" id="">
-            <input id="" type="text" name="description" placeholder="Entrez votre prénom et nom">
-            <i class="fa-regular fa-user" id="">
-            </i>
-        </div>
-    </div>
-<br>
-    <div class="input-control">
-        <label for="address">Adresse</label>
-        <div class="input-field" id="">
-            <input id="" type="text" name="address" placeholder="Entrez votre prénom et nom">
-            <i class="fa-regular fa-user" id="">
-            </i>
-        </div>
-        
-    </div>
-<br>
-    <div class="input-control">
-        <label for="difficulty">Difficulte</label>
-        <div class="input-field" id="">
-            <input id="" type="text" name="difficulty" placeholder="Entrez votre prénom et nom">
-            <i class="fa-regular fa-user" id="">
-            </i>
-        </div>
-        
-    </div>
-<br>
-    <div class="input-control">
-        <label for="coordinates">Coordinate</label>
-        <div class="input-field" id="">
-            <input id="" type="text" name="coordinates" placeholder="Entrez votre prénom et nom">
-            <i class="fa-regular fa-user" id="">
-            </i>
-        </div>
+        <form action="/spots/new" method="post" class="form">
 
-    </div>
-    
-    
-    
-    <button id="validateNewUser" type="submit" class="btn-primary">Créer un compte</button>
-</form>
+            <div class="input-control">
+                <label for="name">Nom</label>
+                <div class="input-field" id=""">
+            <input id="" type=" text" name="name" placeholder="Entrez votre prénom et nom">
+                    <i class="fa-regular fa-user" id="userNameIcon">
+                    </i>
+                </div>
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="description">Description</label>
+                <div class="input-field" id="">
+                    <input id="" type="text" name="description" placeholder="Entrez votre prénom et nom">
+                    <i class="fa-regular fa-user" id="">
+                    </i>
+                </div>
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="address">Adresse</label>
+                <div class="input-field" id="">
+                    <input id="" type="text" name="address" placeholder="Entrez votre prénom et nom">
+                    <i class="fa-regular fa-user" id="">
+                    </i>
+                </div>
+
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="difficulty">Difficulte</label>
+                <div class="input-field" id="">
+                    <input id="" type="text" name="difficulty" placeholder="Entrez votre prénom et nom">
+                    <i class="fa-regular fa-user" id="">
+                    </i>
+                </div>
+
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="coordinates">Coordinate</label>
+                <div class="input-field" id="">
+                    <input id="" type="text" name="coordinates" placeholder="Entrez votre prénom et nom">
+                    <i class="fa-regular fa-user" id="">
+                    </i>
+                </div>
+
+            </div>
+
+
+
+            <button id="validateNewUser" type="submit" class="btn-primary">Créer un compte</button>
+        </form>
