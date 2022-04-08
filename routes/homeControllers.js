@@ -4,7 +4,18 @@ exports.renderLogin = (req, res) => {
     res.render("login.ejs")
 }
 exports.renderProfil = (req, res) => {
-    res.render("profil.ejs")
+    const TOKEN = req.app.locals.token
+    
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
+        headers: {
+            "Content-Type": "application/json", 
+            "Authorization": TOKEN
+        }
+    })
+    .then(result => {
+        res.render("profil", {spots: result.data.skiSpots})})
+    .catch(err => {console.log(err)})
+
 }
 exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
@@ -29,16 +40,30 @@ exports.postAuthentication = (req, res) => {
     const passwordValue = req.body.password
     axios.post(`https://ski-api.herokuapp.com/login`, {email: emailValue, password: passwordValue})
     .then(result => {
+        
         res.app.locals.token = result.data.token
         res.app.locals.name = result.data.name
         res.app.locals.surname = result.data.name.split(' ')[0]
-        res.render("profil")
+
+        const TOKEN = req.app.locals.token
+    
+        axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=3&page=1`, {
+            headers: {
+                "Content-Type": "application/json", 
+                "Authorization": TOKEN
+            }
+        })
+        .then(spot => {
+            res.render("profil", {spots: spot.data.skiSpots},)})
+        .catch(err => {console.log(err)})
     })
-    .catch(err => {console.log(err)})}
+    .catch(err => {console.log(err)})
+}
 
 exports.renderSpotDescription = (req, res) => {
     res.render("spot-description")
 }
+
 
 exports.newSpots = (req, res) => {
     res.render("newSpot")
@@ -46,7 +71,7 @@ exports.newSpots = (req, res) => {
 exports.renderSpots = (req, res) => {
     const TOKEN = req.app.locals.token
     
-    axios.get(`https://ski-api.herokuapp.com/ski-spot`, {
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
         headers: {
             "Content-Type": "application/json", 
             "Authorization": TOKEN

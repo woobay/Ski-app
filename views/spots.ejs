@@ -1,0 +1,119 @@
+<%- include ('partials/head'); %>
+<title>Explore</title>
+</head>
+
+<%- include ('partials/header'); %>
+
+<main class="margin-bottom-extra-large">
+    <section class="grid container-hero">
+        <div class="col-6 margin-bottom-large">
+  
+            <h1 class="margin-bottom-medium">Tous les parcours (4707)</h1>
+            <form action="" method="" class="margin-bottom-48">
+                <input class="search-bar margin-bottom-medium" id="search-bar" type="text" placeholder="Rechercher un parcours ...">
+                <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Rechercher un parcours">
+            </form>
+            <div class="parcours">
+                <a class="link-click-on">Tous les parcours</a>
+                <div class="nav-separator"></div>
+                <a class="link-click-off">Mes parcours créés</a>                                     
+            </div>   
+        </div>
+    </section>
+
+    <section class="container-main grid">
+
+        <div class="col-10 margin-bottom-large">
+
+            <section class="container-spot">
+
+
+             <% spots.forEach(spot => { %>
+
+                <article class="container-resume-spot">
+                    <div class="container-image-small" >
+                        <img src="img/image-parcours2.jpg" alt="">
+                        <div class="popover__wrapper">
+                            <i class="bi bi-three-dots icon"></i>
+                            <div class="popover__content popopver-resume-spot">
+                            <nav class="nav-links-vertical">
+                                <ul>
+                                    <li><form action="/spots/edit/<%= spot._id %>" method="get">
+                                        <button type="submit"><i class="bi bi-pencil-square"></i>Editer</button>
+                                        </form>
+                                        </li>
+                                    
+                                    <li> <form action="/spots/delete/<%= spot._id %>" method="get">
+                                        <button type="submit"><i class="bi bi-trash"></i>Delete</button>
+                                        </form>
+                            </li>
+                                </ul>
+                            </nav>         
+                            </div>
+                        </div>
+                     </div>
+                     <div class="title-article full-width margin-bottom-xsmall">
+                         <div class="title-resume-spot">
+                             <p class="body1">Parcours 122</p>
+                             <p><%= spot.name %></p>
+                         </div>
+                         <span class="oval-box-level level-middle"><%= spot.difficulty %> </span>
+                    </div>
+                    <div class="quick-features-spot full-width ">
+                        <div class="quick-features-spot">
+                            <i class="bi bi-clock"></i>
+                            <p>1h32</p>
+                        </div>
+                        <div class="quick-features-spot">
+                            <i class="bi bi-flag"></i>
+                            <p>33 km</p>
+                         </div>
+                        <div class="quick-features-spot">
+                            <i class="bi bi-heart"></i>
+                            <p>9,2K J'aime</p>
+                        </div>
+                    </div>
+                </article>
+
+            <% }) %> 
+
+         </section>
+
+        </div>
+        
+    </section>
+
+<%- include ('partials/footer'); %>
+<script src="js/explore.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<% spots.forEach(spot => { %>
+    <h3><%= spot.name%> </h3>
+    <p><%= spot._id %> </p>
+
+    <p><%= spot.description%> </p>
+    <p><%= spot.difficulty%> </p>
+    <p><%= spot.coordinates %> </p>
+    <form action="/spots/delete/<%= spot._id  %>" method="get">
+        <button type="submit">Delete</button>
+        </form>
+    <form action="/spots/edit/<%= spot._id  %>" method="get">
+        <button type="submit">Edit</button>
+        </form>
+    
+     <% }) %> 
+           
+
+ -->
+
+
+
+

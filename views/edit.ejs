@@ -1,0 +1,14 @@
+<form action="/spots/edit/<%= spot._id%>"_method="put" method="post">
+    <br>
+    <input type="text" value="<%= spot.name %>" name="name" class="form-control">
+    <br>
+    <input type="text" value="<%= spot.description %>" name="description" class="form-control">
+    <br>
+    <input type="text" value="<%= spot.address %>" name="address" class="form-control">phone" class="form-control">
+   <br>
+   <input type="text" value="<%= spot.difficulty %>" name="difficulty" class="form-control">
+   <br>
+   <input type="text" value="<%= spot.coordinates %>" name="coordinates" class="form-control">
+   <br>
+    <button type="submit" class="btn btn-info btn-block mt-3">Update User</button>
+</form>
