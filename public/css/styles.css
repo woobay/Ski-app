@@ -80,10 +80,6 @@ p {
 .primary {
     color: #0060AD;
 }
-.success{
-    background-color: #339933;
-    color: #FFF;
-}
 
 /* ================ Buttons ==================== */
 
@@ -112,10 +108,6 @@ p {
     border: 1px solid #0060AD;
     border-radius: 6px;
     font-weight: 500;
-}
-.badge{
-  border-radius: 10%;
-  padding: 10px;
 }
 
 .btn-secondary-light {
@@ -187,6 +179,9 @@ p {
 
 .margin-bottom-extra-large{
     margin-bottom: 120px;
+}
+.margin-bottom-extra-extra-large{
+    margin-bottom: 145px;
 }
 
 .margin-botton-large {
@@ -1147,4 +1142,34 @@ p {
 
 .container-meteo-row i:last-child {
     font-size: 2em;
+}
+.container-icon-header-parcours{
+    display: flex;
+    width: 44px;
+    position: absolute;
+    top: 410px;
+    right: 500px;
+}
+.icon-header-parcours {
+    display: flex;
+    background-color: #FFFFFF;
+    color: #0060AD;
+    box-shadow: 0px -3px 2px rgb(40 41 61 / 4%), 0px 4px 8px rgb(96 97 112 / 16%);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+}.icon-header-parcours i {
+    font-size: 24px;
+}
+.oval-box-tags {   
+    border-radius: 22px;
+    padding: 8px 12px;
+}
+.oval-box-tags span{   
+    margin-bottom: 50px;
+}
+
+.tags-color {
+    color: #0060AD; 
+    background-color: rgb(0, 96, 173,0.2); 
 }

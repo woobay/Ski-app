@@ -1,78 +1,56 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Profil</title>
+<%- include ('partials/head'); %>
+<title>Parcours</title>
 </head>
-<header class="main-header">
-    <div class="main-header-content">
-        <a class="title-logo" id="clearData" href="/">Logo</a>
-        <nav class="nav-links">
-                <ul>
-                    <li><a href="/profil">Accueil</a></li>
-                    <li><a href="/spots">Explore</a></li>
-                    <li><a href="/spots/new">Créer</a></li>
-                    <li><a href="">Guide</a></li>
-                    <li><a href="">Évènements</a></li>
-                    <li><a href="">Discussions</a></li>
-                </ul>
-        </nav>
-        <div class="nav-right">
-            <i class="bi bi-bell"></i>
-            <div class="nav-separator"></div>
-            
-            <div class="popover__wrapper">
-                <a href="#">  
-                    <img class="image-profil-user" src="img/image-user@2x.png" alt="">                               
-                </a> 
-            <div class="popover__content">
-                <nav class="nav-links-vertical">
-                    <ul>
-                        <i class="bi bi-person"></i><li><a href=""> Profil</a></li>
-                        <div class="nav-separator-horizontal"></div>
-                        <li><a id="clearData" href="/">Déconnexion</a></li>
-                    </ul>
-                </nav>                    
-            </div>
-            </div>                
-         </div>                    
-        </div>   
-</header> 
+
+<%- include ('partials/header'); %>
 <!-- map -->      
 <div class="hero parcours"></div>
 <!-- Welcome & Search bar -->
 <div class="grid container-hero">
-    <div class="col-6 margin-bottom-large">
+    <div class="col-6 margin-bottom-extra-extra-large">
         <h1>Parcours 22</h1>
         <h1 class="primary">Mont-Nicol Albert</h1>
-        <h3 class="margin-bottom-medium ">Crée par <span class="primary">Simon Hebert</span></h3>
-        <span class="badge success">Facile</span>
+        <h3 class="margin-bottom-medium">Crée par <span class="primary">Simon Hebert</span></h3>
+        <span class="oval-box-level level-easy">Facile</span>
+    </div>
+    <div class="container-icon-header-parcours col-4">
+        <div class="icon-header-parcours">
+            <i class="bi bi-check"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-bookmark"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-download"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-share"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </div>
     </div>
       <!-- Résumé du profil -->
       <div class="container-features col-10">
         <div class="profil-features">
-            <i class="bi bi-people"></i>
-            <p><span>14</span><br>Followers</p>
+            <i class="bi bi-clock"></i>
+            <p>Durée<br><span>1h32</span></p>
         </div><div class="features-separator"></div>
         <div class="profil-features">
-            <i class="bi bi-speedometer"></i>
-            <p><span>20km</span><br>Parcourus</p>
+            <i class="bi bi-flag"></i>
+            <p>Distance<br><span>33km</span></p>
         </div><div class="features-separator"></div>
         <div class="profil-features">
-            <i class="bi bi-calendar"></i>
-            <p><span>17</span><br>Sorties</p>
+            <i class="bi bi-calendar4-event"></i>
+            <p>Altitude<br><span>1000m</span></p>
         </div><div class="features-separator"></div>
         <div class="profil-features">
-            <i class="bi bi-send"></i>
-            <p><span>44</span><br>Posts</p>
+            <i class="bi bi-trophy"></i>
+            <p>Terminé<br><span>14</span></p>
         </div><div class="features-separator"></div>
         <div class="profil-features">
-            <i class="bi bi-award"></i>
-            <p><span>7</span><br>Badges<br></p>
+            <i class="bi bi-image"></i>
+            <p>Photos<br><span>48</span></p>
         </div>
     </div>
 </div>
@@ -98,20 +76,20 @@
                     <p>Nisl lectus tristique arcu pellentesque ultrices. Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse. Felis non tellus elit cursus erat dictumst turpis lacus. Lorem urna, adipiscing convallis mi, cursus faucibus ipsum magna. Massa eu nunc turpis cras. Blandit sagittis tellus in amet nunc, amet, posuere id. </p>
                 </div>
                 
-                <div class="container-social margin-bottom-small">
-                    <div>              
-                        <p>Snowboard</p>
-                        <p>Neige</p>
-                        <p>Ski</p>
-                        <p>Accessibilité</p>
-                        <p>Montée</p>
-                        <p>Belle vue</p>
-                        <p>Nature sauvage</p>
-                        <p>Sécurisé</p>
-                        <p>Endurant</p>
-                        <p>Québec</p>
-                        <p>Canada</p>
-                    </div> 
+                <div class="margin-bottom-small">
+                    <div> 
+                        <span class="oval-box-tags tags-color">Snowboard</span>
+                        <span class="oval-box-tags tags-color">Neige</span>
+                        <span class="oval-box-tags tags-color">Ski</span>
+                        <span class="oval-box-tags tags-color">Accessibilité</span>
+                        <span class="oval-box-tags tags-color">Montée</span>
+                        <span class="oval-box-tags tags-color">Belle vue</span>
+                        <span class="oval-box-tags tags-color">Nature sauvage</span>
+                        <span class="oval-box-tags tags-color">Sécurisé</span>
+                        <span class="oval-box-tags tags-color">Endurant</span>
+                        <span class="oval-box-tags tags-color">Québec</span>
+                        <span class="oval-box-tags tags-color">Canada</span>
+                        </div> 
                 </div>
                 <!-- Localisation du parcours -->
                 
@@ -276,7 +254,8 @@
          
     </div>
 </main>
-<footer></footer>
+<%- include ('partials/footer'); %>
+<script src="js/explore.js"></script>
 </body>
 </html>
 
