@@ -6,7 +6,7 @@ exports.renderLogin = (req, res) => {
 exports.renderProfil = (req, res) => {
     const TOKEN = req.app.locals.token
     
-    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=5&page=1`, {
         headers: {
             "Content-Type": "application/json", 
             "Authorization": TOKEN
@@ -47,7 +47,7 @@ exports.postAuthentication = (req, res) => {
 
         const TOKEN = req.app.locals.token
     
-        axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=3&page=1`, {
+        axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=5&page=1`, {
             headers: {
                 "Content-Type": "application/json", 
                 "Authorization": TOKEN
@@ -71,7 +71,7 @@ exports.newSpots = (req, res) => {
 exports.renderSpots = (req, res) => {
     const TOKEN = req.app.locals.token
     
-    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=4&page=2`, {
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=12&page=1`, {
         headers: {
             "Content-Type": "application/json", 
             "Authorization": TOKEN

@@ -139,6 +139,7 @@ p {
     border: 1px solid #CFD4DA;
     border-radius: 6px;
     font-weight: 500;
+    text-align: center;
 }
 
 .btn-secondary-light:hover {
@@ -225,27 +226,28 @@ p {
 
 /* --- margin-bottom --- */
 
-.margin-bottom-120{
-    margin-bottom: 120px;
-}
 .margin-bottom-extra-extra-large{
     margin-bottom: 145px;
 }
 
-.margin-bottom-60 {
-    margin-bottom: 60px;
-}
-
-.margin-bottom-32 {
-    margin-bottom: 32px;
+.margin-bottom-120{
+    margin-bottom: 120px;
 }
 
 .margin-bottom-64 {
     margin-bottom: 64px;
 }
 
+.margin-bottom-60 {
+    margin-bottom: 60px;
+}
+
 .margin-bottom-48 {
     margin-bottom: 48px;
+}
+
+.margin-bottom-32 {
+    margin-bottom: 32px;
 }
 
 .margin-bottom-28 {
@@ -256,12 +258,12 @@ p {
     margin-bottom: 24px;
 }
 
-.margin-bottom-1em {
-    margin-bottom: 1em;
-}
-
 .margin-bottom-8 {
     margin-bottom: 8px;
+}
+
+.margin-bottom-1em {
+    margin-bottom: 1em;
 }
 
 /* ================ Header & Navigation ==================== */ 
@@ -272,7 +274,7 @@ p {
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .main-header-content {
@@ -306,7 +308,8 @@ p {
 
 .nav-links-vertical {
     display: flex;
-    text-align: left;
+    align-items: center;
+    flex-direction: column;
 }
 
 .nav-links-vertical ul {
@@ -329,9 +332,32 @@ p {
     border: none;
 }
 
-.nav-links-vertical {
+.nav-links-vertical form {
+    margin-top: 10px;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+.nav-links-vertical form:first-child {
+    margin-bottom: 2px;
+}
+
+.btn-settings {
     display: flex;
-    align-items: center;
+    background-color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+.btn-settings:hover {
+    color: #04477C;
+    font-weight: 600;
+}
+
+.btn-settings i {
+    font-size: 17px;
+    padding-right: 8px;
 }
 
 .title-logo {
@@ -518,7 +544,7 @@ p {
 }
 
 #icon-expand-map {
-    width: 44px;
+    width: 48px;
     position: absolute;
     top: 413px;
     right: 205px;
@@ -555,9 +581,7 @@ p {
 }
 
 .container-content-request {
-    /* width: 100%; */
     display: flex;
-    /* justify-content: space-between; */
 }
 
 .container-content-request img{
@@ -567,8 +591,7 @@ p {
 .aide  {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;  
 }
  
 /*=================== Page Profil/Feed =====================*/
@@ -622,9 +645,11 @@ p {
 }
 
 /* Encart Parcours & Créer Un Nouveau Parcours */
+
 .container-spot {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .btn-center {
@@ -634,6 +659,8 @@ p {
 }
 
 .btn-create {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -667,14 +694,17 @@ p {
 }
 
 .level-easy {
+    text-transform: capitalize;
     background-color: #339933;
 }
 
 .level-middle {
+    text-transform: capitalize;
     background-color: #00008B;
 }
 
 .level-difficult {
+    text-transform: capitalize;
     background-color: #000;
 }
 
@@ -692,7 +722,11 @@ p {
 }
 
 .title-resume-spot {
-    width: 110px;
+    width: 130px;
+}
+
+.resume-spot-content-ellipsis{
+    width: calc(92%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -708,6 +742,7 @@ p {
     background-color: #fff;
     border-radius: 0.5em;
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+    margin-bottom: 32px;
 }
 
 .icon{
@@ -744,9 +779,9 @@ p {
     height: 160px;
 }
 
-.popopver-resume-spot {
+.popover-resume-spot {
     top: -140px;
-    left: 156px;
+    left: 167px;
 }
 
 /* Posts & Alerts */
@@ -781,6 +816,9 @@ p {
     width: 100%;
 }
 
+.alert-news div p:last-child {
+    padding-right: 28px;
+}
 .alert-news i {
     font-size: 24px;
     color: #AEB2B8;
@@ -934,7 +972,6 @@ p {
     display: flex;
     align-items: flex-end;
     margin-left: 8px;
-
 }
 
 .contact-friend-offline{
@@ -951,27 +988,30 @@ p {
     width: 100%;
 }
 
-
 .request-btn { 
     display: flex;
     justify-content: space-between;
     margin-top: 18px;
 }
 
-.request-btn button:first-child {
+.request-btn a {
+    padding: 12px 24px;
+}
+
+.request-btn a:first-child {
      margin-right: 1em;
 }
 
+
 /* ================ Page Explore ============== */
 
-
-.parcours{
+.allParcours{
     display: flex;
     align-items: center;
     font-size: 1.1em;
 }
 
-.parcours a:hover {
+.allParcours a:hover {
     font-weight: 600;
     color: #0060AD;
     text-decoration-line: underline;
@@ -1122,6 +1162,7 @@ p {
     padding: 10px;
     min-width: 50px;
     text-align: center;
+    font-size: 16px;
 }
 
 .form-check {
@@ -1170,7 +1211,7 @@ p {
     border-radius: 4px;
 } */
 
-img {
+.img-map-form {
     width: 100%;
     height: 80%;
 }

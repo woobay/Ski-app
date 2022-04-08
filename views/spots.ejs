@@ -6,14 +6,14 @@
 
 <main class="margin-bottom-120">
     <section class="grid container-hero">
-        <div class="col-6 margin-bottom-60">
+        <div class="col-6">
   
             <h1 class="margin-bottom-32">Tous les parcours (4707)</h1>
             <form action="" method="" class="margin-bottom-48">
                 <input class="search-bar margin-bottom-32" id="search-bar" type="text" placeholder="Rechercher un parcours ...">
                 <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Rechercher un parcours">
             </form>
-            <div class="parcours">
+            <div class="allParcours">
                 <a class="link-click-on">Tous les parcours</a>
                 <div class="nav-separator"></div>
                 <a class="link-click-off">Mes parcours créés</a>                                     
@@ -23,7 +23,7 @@
 
     <section class="container-main grid">
 
-        <div class="col-10 margin-bottom-60">
+        <div class="col-10">
 
             <section class="container-spot">
 
@@ -35,27 +35,23 @@
                         <img src="img/image-parcours2.jpg" alt="">
                         <div class="popover__wrapper">
                             <i class="bi bi-three-dots icon"></i>
-                            <div class="popover__content popopver-resume-spot">
-                            <nav class="nav-links-vertical">
-                                <ul>
-                                    <li><form action="/spots/edit/<%= spot._id %>" method="get">
-                                        <button type="submit"><i class="bi bi-pencil-square"></i>Editer</button>
-                                        </form>
-                                        </li>
-                                    
-                                    <li> <form action="/spots/delete/<%= spot._id %>" method="get">
-                                        <button type="submit"><i class="bi bi-trash"></i>Delete</button>
-                                        </form>
-                            </li>
-                                </ul>
-                            </nav>         
+                            <div class="popover__content popover-resume-spot">
+                                <div class="nav-links-vertical">
+                                            <form action="/spots/edit/<%= spot._id %>" method="get">
+                                                <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                            </form>
+
+                                            <form action="/spots/delete/<%= spot._id %>" method="get">
+                                                <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Delete</button>
+                                            </form>
+                                </div>         
                             </div>
                         </div>
                      </div>
-                     <div class="title-article full-width margin-bottom-xsmall">
+                     <div class="title-article full-width">
                          <div class="title-resume-spot">
                              <p class="body1">Parcours 122</p>
-                             <p><%= spot.name %></p>
+                             <p class="resume-spot-content-ellipsis"><%= spot.name %></p>
                          </div>
                          <span class="oval-box-level level-middle"><%= spot.difficulty %> </span>
                     </div>
@@ -76,8 +72,7 @@
                 </article>
 
             <% }) %> 
-
-         </section>
+            </section>
 
         </div>
         
@@ -87,33 +82,3 @@
 <script src="js/explore.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-<!-- 
-<% spots.forEach(spot => { %>
-    <h3><%= spot.name%> </h3>
-    <p><%= spot._id %> </p>
-
-    <p><%= spot.description%> </p>
-    <p><%= spot.difficulty%> </p>
-    <p><%= spot.coordinates %> </p>
-    <form action="/spots/delete/<%= spot._id  %>" method="get">
-        <button type="submit">Delete</button>
-        </form>
-    <form action="/spots/edit/<%= spot._id  %>" method="get">
-        <button type="submit">Edit</button>
-        </form>
-    
-     <% }) %> 
-           
-
- -->
-
-
-
-
