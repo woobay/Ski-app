@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<%- include ('partials/head'); %>
     <title>Créer un parcours</title>
 </head>
 
@@ -53,9 +44,9 @@
             <div class="container-hero grid">
                 <!-- Nom du parcours -->
                 <div class="col-10 margin-bottom-28">
-                    <h1 class="margin-bottom-large">Créer un nouveau parcours</h1>
-                    <h3 class="margin-bottom-medium">Nom et coordonnées géographiques</h3>
-                    <p class="margin-bottom-xxsmall">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h1 class="margin-bottom-48">Créer un nouveau parcours</h1>
+                    <h3 class="margin-bottom-32">Nom et coordonnées géographiques</h3>
+                    <p class="margin-bottom-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <label for="nom-parcours">Nom du parcours (obligatoire)</label>
                     <div class="input-field">
                         <input class="input-newspot" id="" type="" name="name" placeholder="Écrire le nom du parcours">
@@ -63,21 +54,21 @@
                 </div>
                 <!-- Localisation du parcours -->
                 <div class="col-5">
-                    <h3 class="margin-bottom-xsmall">Localisation du parcours</h3>
-                    <p class="margin-bottom-xsmall">Indiquer la localisation de l'itinéraire en entrant les informations
+                    <h3 class="margin-bottom-1em">Localisation du parcours</h3>
+                    <p class="margin-bottom-1em">Indiquer la localisation de l'itinéraire en entrant les informations
                         ci-dessous.</p>
                     <label for="localisation">Localisation (obligatoire)</label>
-                    <div class="input-field margin-bottom-medium">
+                    <div class="input-field margin-bottom-32">
                         <input class="input-newspot" id="" type="" name="address" placeholder="Écrire la localisation">
                         <i class="fa-regular fa-envelope" id="">
                         </i>
                     </div>
                     <!-- Localisation section gauche: mini-grille -->
-                    <div class="mini-grid margin-bottom-xlarge">
-                        <h4 class="margin-bottom-xxsmall col-12">Montée</h4>
+                    <div class="mini-grid margin-bottom-64">
+                        <h4 class="margin-bottom-8 col-12">Montée</h4>
                         <div class="mini-col-5a">
                             <label for="latitude">Latitude (obligatoire)</label>
-                            <div class="input-field margin-bottom-medium">
+                            <div class="input-field margin-bottom-32">
                                 <input class="input-newspot" id="" type="" name="coordinates"
                                     placeholder="Écrire la latitude">
                             </div>
@@ -89,7 +80,7 @@
                                     placeholder="Écrire la longitude">
                             </div>
                         </div>
-                        <h4 class="margin-bottom-xxsmall col-12">Descente</h4>
+                        <h4 class="margin-bottom-8 col-12">Descente</h4>
                         <div class="mini-col-5a">
                             <label for="latitude">Latitude</label>
                             <div class="input-field">
@@ -111,7 +102,7 @@
                     <p>Dessinez votre itinéraire sur la carte</p>
                 </div>
                 <!-- infos générales -->
-                <div class="col-10 margin-bottom-medium">
+                <div class="col-10 margin-bottom-32">
                     <h3>Informations générales</h3>
                 </div>
                 <div class="col-5">
@@ -155,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 margin-bottom-xlarge">
+                <div class="col-10 margin-bottom-64">
                     <div class="input-control">
                         <label for="description">Description et accès de parcours (obligatoire)</label>
                         <div class="input-field">
@@ -166,7 +157,7 @@
                 </div>
                 <!-- Caractéristiques du parcours -->
                 <div class="col-10">
-                    <h3 class="margin-bottom-medium">Caractéristiques du parcours</h3>
+                    <h3 class="margin-bottom-32">Caractéristiques du parcours</h3>
                 </div>
                 <div class="col-10">
                     <h4>Spécificités</h4>
@@ -228,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3b">
                     <button id="" type="" class="btn-tertiary">Ajouter un nouveau tag</button>
                 </div>
                 <!-- Conditions obligatoires -->
@@ -253,3 +244,7 @@
                 </div>
             </div>
         </form>
+    </main>
+<%- include ('partials/footer'); %>
+</body>
+</html>

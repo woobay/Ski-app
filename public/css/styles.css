@@ -1,4 +1,5 @@
-/* =========== Base  ===========*/
+/* ============= Base  ==============*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 * {
@@ -8,9 +9,11 @@
 }
 
 a {
+    font-weight: initial;
     text-decoration: none;
     display: inline-block;
     color: #000;
+
 }
 
 
@@ -20,7 +23,8 @@ html {
     height: 100%;
 }
 
-/* =========== police =========== */
+/* ================ Police ================== */
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.875em;
@@ -79,19 +83,23 @@ p {
 .btn-tertiary:hover {
     background-color: #04477C;
 }
+/* ================ Buttons ==================== */
 
 .btn-primary {
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     color: white;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: 1.1em;
     letter-spacing: 1px;
-    padding: 15px 25px;
+    padding: 14px 24px;
     background-color: #0060AD;
     border-radius: 0.375em;
     border: none;
     text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #04477C;
 }
 
 .btn-secondary {
@@ -119,8 +127,24 @@ p {
     text-align: center;
 }
 
+.btn-secondary-light {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 1.1em;
+    background: none;
+    color: #CFD4DA;
+    border: 1px solid #CFD4DA;
+    border-radius: 6px;
+    font-weight: 500;
+}
 
-/* =========== template grid =========== */
+.btn-secondary-light:hover {
+    color: #AEB2B8;
+    border: 1px solid #AEB2B8;
+}
+
+/* ================== Template Grid =================== */
+
 .center {
     margin: 0 auto;
 }
@@ -133,6 +157,10 @@ p {
 }
 
 .col-3 {
+    grid-column: 2/5;
+}
+
+.col-3b {
     grid-column: 9/12;
 }
 
@@ -178,37 +206,60 @@ p {
     grid-column: 7/13;
 }
 
-/* margin */
+/* margin-top */
 
-.margin-bottom-xlarge {
+.margin-top-small {
+    margin-top: 24px;
+}
+
+.margin-top-28 {
+    margin-top: 28px;
+}
+
+.margin-top-medium {
+    margin-top: 32px;
+}
+
+/* --- margin-bottom --- */
+
+.margin-bottom-120{
+    margin-bottom: 120px;
+}
+
+.margin-bottom-60 {
+    margin-bottom: 60px;
+}
+
+.margin-bottom-32 {
+    margin-bottom: 32px;
+}
+
+.margin-bottom-64 {
     margin-bottom: 64px;
 }
 
-.margin-bottom-large {
+.margin-bottom-48 {
     margin-bottom: 48px;
-}
-
-.margin-bottom-medium {
-    margin-bottom: 32px;
 }
 
 .margin-bottom-28 {
     margin-bottom: 28px;
 }
 
-.margin-bottom-small {
+.margin-bottom-24 {
     margin-bottom: 24px;
 }
 
-.margin-bottom-xsmall {
+.margin-bottom-1em {
     margin-bottom: 1em;
 }
 
-.margin-bottom-xxsmall {
+.margin-bottom-8 {
     margin-bottom: 8px;
 }
 
-/* =========== header & navigation =========== */
+/* ================ Header & Navigation ==================== */ 
+
 .main-header {
     width: 100%;
     background-color: #FFF;
@@ -360,10 +411,111 @@ p {
     margin-top: 10px;
 }
 
+/* ================== Footer =================== */
 
-/* =========== map & input =========== */
-.container-hero {
-    margin-top: 11.25em;
+.main-footer {
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+}
+
+.main-footer-content {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-top-content {
+    display: flex;
+    margin-bottom: 48px;
+}
+
+.footer-top-content div:first-child {
+    margin-right: 125px
+}
+
+.footer-top-content h3 {
+    text-transform: uppercase;
+}
+
+.footer-top-content p {
+    margin-top: 8px;
+}
+
+.footer-top-content div:last-child {
+    margin-top: 24px;
+}
+
+.footer-top-content i {
+    font-size: 1.75em;
+    color: #0060AD;
+    margin-right: 24px;
+}
+
+.footer-top-content nav{
+    display: flex;
+}
+
+.footer-top-content ul{
+    list-style-type: none;
+}
+
+.footer-top-content ul:first-child{
+    margin-right: 128px;
+}
+
+.footer-top-content li:first-child{
+    color: #0060AD;
+}
+
+.footer-top-content nav ul li {
+    margin-bottom: 24px;
+}
+
+.footer-top-content a {
+    font-weight: normal;
+}
+
+.footer-bottom-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom-content p {
+    margin-top: 16px ;
+}
+
+/* ================== Map & Input ==================== */
+
+ .container-hero {
+    margin-top: 10.25em;    
+}
+
+.icon-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#FFFFFF;
+    color: #0060AD;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+    width: 9%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.icon-header i {
+    font-size: 24px;
+}
+
+.icon-header p {
+    font-size: 16px;
+}
+
+#icon-expand-map {
+    width: 44px;
+    position: absolute;
+    top: 413px;
+    right: 205px;
 }
 
 .hero {
@@ -376,6 +528,10 @@ p {
     z-index: -1;
 }
 
+.welcome {
+    font-weight: 500;
+}
+
 .search-bar {
     width: 100%;
     height: 42px;
@@ -385,16 +541,33 @@ p {
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
 }
 
-#btn-search {
+.width-unset {
     width: unset;
 }
 
-/* résumé du profil */
+.container-content-request {
+    /* width: 100%; */
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.container-content-request img{
+   margin-right: 16px;
+}
+
+.aide  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+ 
+/*=================== Page Profil/Feed =====================*/
+
 .container-features {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    padding: 1.875em 1.125em;
+    padding: 0.875em 1.125em;
     margin-top: 3em;
     background-color: #FFF;
     border-radius: 0.5em;
@@ -403,14 +576,11 @@ p {
 
 .profil-features {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 }
 
 .profil-features p {
-    margin-top: 16px;
-    text-align: center;
+    margin-left: 16px;
 }
 
 .profil-features p span {
@@ -418,7 +588,7 @@ p {
 }
 
 .profil-features i {
-    font-size: 2.063 em;
+    font-size: 2.063em;
     color: #0060AD;
 }
 
@@ -436,10 +606,141 @@ p {
     background-color: #F2F2F2;
 }
 
-/* =========== main =========== */
-.container-main {
+/* Main  */
+
+.container-main{
     margin-top: 3.75em;
 }
+
+/* Encart Parcours & Créer Un Nouveau Parcours */
+.container-spot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 298px;
+    height: 298px;
+    cursor: pointer;
+    color: #fff;
+    border: solid 1.5px #fff;
+    border-radius: 8px;
+    background-image: url('../img/fond-btn-create.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.btn-create:hover {
+    border: solid 2px #0060AD;
+}
+
+.oval-box-level {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 22px;
+    padding: 8px 12px;
+}
+
+.oval-box-container i {
+    font-size: 18px;
+}
+
+.level-easy {
+    background-color: #339933;
+}
+
+.level-middle {
+    background-color: #00008B;
+}
+
+.level-difficult {
+    background-color: #000;
+}
+
+.quick-features-spot {
+    display: flex;
+}
+
+.quick-features-spot div {
+    display: flex;
+    align-items: center;
+} 
+.quick-features-spot div > i{
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.title-resume-spot {
+    width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container-resume-spot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 298px;
+    height: 298px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.icon{
+    cursor: pointer;
+   font-size: 28px;
+   color: #CFD4DA;
+   position: absolute;
+   z-index: 2;
+   right: 10px;
+   top: -160px;
+}
+
+.icon:hover {
+    color: #fff;
+}
+
+.nav-links-vertical ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links-vertical ul li:hover {
+  color: #0060AD;
+}
+
+.nav-links-vertical ul li i {
+    font-size: 17px;
+    margin-right: 8px;
+}
+
+.container-image-small img {
+    border-radius: 0.25em;
+    width: 100%;
+    height: 160px;
+}
+
+.popopver-resume-spot {
+    top: -140px;
+    left: 156px;
+}
+
+/* Posts & Alerts */
 
 .container-post {
     height: auto;
@@ -458,16 +759,52 @@ p {
     width: 50px;
 }
 
-.container-post header div p {
+.alert-news {
     display: flex;
+    align-items: center; 
+}
+
+.alert-news div {
     padding-left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.alert-news i {
+    font-size: 24px;
+    color: #AEB2B8;
+}
+
+.title-article-header {
+    padding-left: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .title-article div p:first-child {
     font-weight: 600;
 }
 
-.container-image-medium img {
+.title-article div span {
+    font-weight: initial;
+    font-size: 1em;
+}
+
+.title-article i {
+    font-size: 24px;
+    margin-left: 10px;
+    color: #AEB2B8;
+}
+
+.tag-name {
+    font-weight: 600;
+}
+
+.container-image-medium img{
     border-radius: 0.25em;
     width: 100%;
 }
@@ -576,8 +913,22 @@ p {
     align-items: flex-end;
 }
 
-.col-4 div span {
+.one-link {
     font-size: 0.875em;
+    color: #AEB2B8;
+    display: flex;
+}
+
+.one-link i {
+    color: #CFD4DA;
+    font-size: 16px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 8px;
+
+}
+
+.contact-friend-offline{
     color: #AEB2B8;
 }
 
@@ -591,7 +942,47 @@ p {
     width: 100%;
 }
 
-/* =========== Page signup =========== */
+
+.request-btn { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.request-btn button:first-child {
+     margin-right: 1em;
+}
+
+/* ================ Page Explore ============== */
+
+
+.parcours{
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.parcours a:hover {
+    font-weight: 600;
+    color: #0060AD;
+    text-decoration-line: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+}
+
+.link-click-on{
+    font-weight: 600;
+    color: #0060AD;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #0060AD;
+}
+
+.link-click-off {
+    padding-bottom: 8px;
+}
+
+/* =============== Page Signup ================ */
 .bg {
     background-image: url("../img/background-onboarding@2x.jpg");
     height: 100%;
@@ -746,8 +1137,8 @@ p {
     color: red;
 }
 
-/* ========= page login  ========= */
-.row a {
+/* ============== Page Login  =============== */
+.row a{
     float: right;
     font-size: 12px;
     font-weight: 400;
