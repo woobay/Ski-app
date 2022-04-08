@@ -72,6 +72,9 @@ p {
 .medium, label {
     font-weight: 500;
 }
+.bold{
+    font-weight:600;
+}
 
 /* color */
 .primary {
@@ -224,6 +227,9 @@ p {
 
 .margin-bottom-120{
     margin-bottom: 120px;
+}
+.margin-bottom-extra-extra-large{
+    margin-bottom: 145px;
 }
 
 .margin-bottom-60 {
@@ -526,6 +532,9 @@ p {
     position: absolute;
     top: 0;
     z-index: -1;
+}
+.parcours{
+    background-image: url('../img/map-fiche-parcours@2.jpg');
 }
 
 .welcome {
@@ -1230,4 +1239,84 @@ textarea {
 .btn-container .btn-tertiary {
 
     width: 240px;
+}
+/* =========== Page spot description =========== */
+.container-meteo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+}
+.separator-meteo {
+    width: 1px;
+    height: 3em;
+    background-color: #0060AD;
+}
+.article-separator-meteo {
+    width: 100%;
+    height: 1.5px;
+    background-color: #0060AD;
+    opacity: 0.3;
+    margin-bottom: 16px; 
+}
+.container-meteo-small {
+    display: flex;
+    justify-content: flex-start;
+}
+.container-meteo-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-right: 2em;
+}
+
+.container-meteo-row p {
+    text-align: left;
+}
+
+.container-meteo-row p span {
+    font-weight: 600;
+}
+
+.container-meteo-row i {
+    font-size: 2.063 em;
+    color: #0060AD;
+    padding-right: 0.5em;
+}
+.container-meteo-row i:first-child {
+    font-size: 2em;
+}
+
+.container-meteo-row i:last-child {
+    font-size: 2em;
+}
+.container-icon-header-parcours{
+    display: flex;
+    width: 44px;
+    position: absolute;
+    top: 410px;
+    right: 500px;
+}
+.icon-header-parcours {
+    display: flex;
+    background-color: #FFFFFF;
+    color: #0060AD;
+    box-shadow: 0px -3px 2px rgb(40 41 61 / 4%), 0px 4px 8px rgb(96 97 112 / 16%);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+}.icon-header-parcours i {
+    font-size: 24px;
+}
+.oval-box-tags {   
+    border-radius: 22px;
+    padding: 8px 12px;
+}
+.oval-box-tags span{   
+    margin-bottom: 50px;
+}
+
+.tags-color {
+    color: #0060AD; 
+    background-color: rgb(0, 96, 173,0.2); 
 }

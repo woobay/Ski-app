@@ -60,6 +60,10 @@ exports.postAuthentication = (req, res) => {
     .catch(err => {console.log(err)})
 }
 
+exports.renderSpotDescription = (req, res) => {
+    res.render("spot-description")
+}
+
 
 exports.newSpots = (req, res) => {
     res.render("newSpot")
