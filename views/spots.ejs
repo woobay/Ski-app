@@ -27,89 +27,86 @@
 
             <section class="container-spot">
 
-
              <% spots.forEach(spot => { %>
 
-                <article class="container-resume-spot">
-                    <div class="container-image-small" >
-                        <img src="<% 
-                        const array_images = [
-                            "image-parcours1.jpg",
-                            "image-parcours2.jpg",
-                            "image-parcours3.jpg",
-                            "image-parcours4.jpg",
-                            "image-parcours5.jpg",
-                            "image-parcours6.jpg",
-                            "image-parcours7.jpg",
-                            "image-parcours8.jpg",
-                            "image-parcours9.jpg",
-                            "image-parcours10.jpg",
-                            "image-parcours12.jpg",
-                                ]
-
-                            const random_images = () => {
-                                
-                                let random_index = Math.floor(Math.random() * array_images.length)
-                                
-                                
-                                let image_selected = array_images[random_index];
-                                
-                                return image_selected;
-                            }
-
-                            const img = random_images()     
-
-                            const display = `img/${img}` 
-                              
-                        %>
-                        
-                        <%= display %>" id="random_img" alt="">
-                        <div class="popover__wrapper">
-                            <i class="bi bi-three-dots icon"></i>
-                            <div class="popover__content popover-resume-spot">
-                                <div class="nav-links-vertical">
-                                            <form action="/spots/edit/<%= spot._id %>" method="get">
-                                                <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
-                                            </form>
-
-                                            <form action="/spots/delete/<%= spot._id %>" method="get">
-                                                <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Delete</button>
-                                            </form>
-                                </div>         
+                <a href="/spot-description">
+                    <article class="container-resume-spot">
+                        <div class="container-image-small" >
+                            <img src="<% 
+                            const array_images = [
+                                "image-parcours1.jpg",
+                                "image-parcours2.jpg",
+                                "image-parcours3.jpg",
+                                "image-parcours4.jpg",
+                                "image-parcours5.jpg",
+                                "image-parcours6.jpg",
+                                "image-parcours7.jpg",
+                                "image-parcours8.jpg",
+                                "image-parcours9.jpg",
+                                "image-parcours10.jpg",
+                                "image-parcours12.jpg",
+                                    ]
+    
+                                const random_images = () => {
+                                    
+                                    let random_index = Math.floor(Math.random() * array_images.length)
+                                    
+                                    let image_selected = array_images[random_index];
+                                    
+                                    return image_selected;
+                                }
+    
+                                const img = random_images()     
+    
+                                const display = `img/${img}` 
+                                  
+                            %>
+                            
+                            <%= display %>" id="random_img" alt="">
+                            <div class="popover__wrapper">
+                                <i class="bi bi-three-dots icon"></i>
+                                <div class="popover__content popover-resume-spot">
+                                    <div class="nav-links-vertical">
+                                         <form action="/spots/edit/<%= spot._id %>" method="get">
+                                             <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                        </form>
+    
+                                        <form action="/spots/delete/<%= spot._id %>" method="get">
+                                             <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Delete</button>
+                                        </form>
+                                    </div>         
+                                </div>
+                            </div>
+                         </div>
+                         <div class="title-article full-width">
+                             <div class="title-resume-spot">
+                                 <p class="body1">Parcours 122</p>
+                                 <p class="resume-spot-content-ellipsis"><%= spot.name %></p>
+                             </div>
+                             <span class="oval-box-level level-middle"><%= spot.difficulty %> </span>
+                        </div>
+                        <div class="quick-features-spot full-width ">
+                            <div class="quick-features-spot">
+                                <i class="bi bi-clock"></i>
+                                <p>1h32</p>
+                            </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-flag"></i>
+                                <p>33 km</p>
+                             </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-heart"></i>
+                                <p>9,2K J'aime</p>
                             </div>
                         </div>
-                     </div>
-                     <div class="title-article full-width">
-                         <div class="title-resume-spot">
-                             <p class="body1">Parcours 122</p>
-                             <p class="resume-spot-content-ellipsis"><%= spot.name %></p>
-                         </div>
-                         <span class="oval-box-level level-middle"><%= spot.difficulty %> </span>
-                    </div>
-                    <div class="quick-features-spot full-width ">
-                        <div class="quick-features-spot">
-                            <i class="bi bi-clock"></i>
-                            <p>1h32</p>
-                        </div>
-                        <div class="quick-features-spot">
-                            <i class="bi bi-flag"></i>
-                            <p>33 km</p>
-                         </div>
-                        <div class="quick-features-spot">
-                            <i class="bi bi-heart"></i>
-                            <p>9,2K J'aime</p>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </a>
 
             <% }) %> 
             </section>
 
-        </div>
-        
     </section>
 
 <%- include ('partials/footer'); %>
-<script src="js/explore.js"></script>
 </body>
 </html>
