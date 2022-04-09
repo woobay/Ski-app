@@ -1361,3 +1361,60 @@ textarea {
     color: #0060AD; 
     background-color: rgb(0, 96, 173,0.2); 
 }
+.list-normal{
+    list-style-type: circle;
+    padding-left: 1.5em;
+}
+.list-normal li{
+    font-weight: 100;
+}
+.container-image-parcours{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.container-image-parcours div{      
+    border: 1px solid #CFD4DA;
+    box-sizing: border-box;
+    border-radius: 4px; 
+    margin-right: 2em;
+    
+}
+.container-image-parcours img{
+    width: 100%;
+    height: auto;     
+}
+.container-activity{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.container-activity img{
+    width: 100%;
+    height: auto;
+}
+#image-profil-friend {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    padding: 0.8em;
+}
+.info-activity {
+    display: flex;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.info-activity div {
+    flex-direction: row;
+    align-items: center;
+} 
+.info-activity div > i{
+    font-size: 16px;
+    margin: 0px 10px;
+}
+.margin-right-20{
+    margin-right: 20px;
+}
