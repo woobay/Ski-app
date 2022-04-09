@@ -89,9 +89,14 @@ exports.addedSpots = (req, res) => {
     const description = req.body.description
     const adresse = req.body.address
     const difficulty = req.body.difficulty
-    let coordinates = req.body.coordinates
+    const left = req.body.left
+    const right = req.body.right
 
-    const array = JSON.parse("[" + coordinates + "]")
+    const array = JSON.parse(`[${left}, ${right}]`)
+
+    console.log(array)
+    // const array = JSON.parse(`[${coordinates}]`)
+    // const array = JSON.parse("[" + coordinates + "]")
     
     const TOKEN = req.app.locals.token
     
@@ -122,7 +127,7 @@ exports.deletePost = (req, res) => {
             "Authorization": TOKEN
         }}
     ).then(()=>{
-        res.redirect("/spots")
+        res.redirect("/profil")
     }).catch((err) => {
         console.log(err)
         

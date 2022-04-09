@@ -62,12 +62,43 @@
                         <img  class="margin-bottom-1em" src="img/icon-add-circle.svg" alt="icône ajouter">
                         Créer<br>un parcours
                     </a>
-
+                    
                     <% spots.forEach(spot => { %>
 
                     <article class="container-resume-spot">
                             <div class="container-image-small" >
-                                <img src="img/image-parcours8.jpg" alt="">
+                                <img src="<% 
+                                const array_images = [
+                                    "image-parcours1.jpg",
+                                    "image-parcours2.jpg",
+                                    "image-parcours3.jpg",
+                                    "image-parcours4.jpg",
+                                    "image-parcours5.jpg",
+                                    "image-parcours6.jpg",
+                                    "image-parcours7.jpg",
+                                    "image-parcours8.jpg",
+                                    "image-parcours9.jpg",
+                                    "image-parcours10.jpg",
+                                    "image-parcours12.jpg",
+                                        ]
+
+                                    const random_images = () => {
+                                        
+                                        let random_index = Math.floor(Math.random() * array_images.length)
+                                        
+                                        
+                                        let image_selected = array_images[random_index];
+                                        
+                                        return image_selected;
+                                    }
+
+                                    const img = random_images()     
+
+                                    const display = `img/${img}` 
+                                      
+                                %>
+                                
+                                <%= display %>" id="random_img" alt="">
                                 <div class="popover__wrapper">
                                     <i class="bi bi-three-dots icon"></i>
                                     <div class="popover__content popover-resume-spot">
