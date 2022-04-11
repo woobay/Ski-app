@@ -1320,7 +1320,6 @@ textarea {
     height: 1.5px;
     background-color: #0060AD;
     opacity: 0.3;
-    margin-bottom: 16px;
 }
 
 .container-meteo-small {
@@ -1328,7 +1327,7 @@ textarea {
     justify-content: flex-start;
 }
 
-.container-meteo-row {
+.container-meteo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1350,7 +1349,7 @@ textarea {
     text-align: left;
 }
 
-.container-meteo-row i:first-child {
+.container-meteo i:first-child {
     font-size: 2em;
 }
 
@@ -1413,13 +1412,13 @@ textarea {
     font-weight: 100;
 }
 
-.container-image-parcours {
+.container-image-parcours{
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.container-image-parcours div {
+.container-image-parcours div{
     border: 1px solid #CFD4DA;
     box-sizing: border-box;
     border-radius: 4px;
@@ -1427,7 +1426,7 @@ textarea {
 
 }
 
-.container-image-parcours img {
+.container-image-parcours img{
     width: 100%;
     height: auto;
 }
@@ -1459,7 +1458,6 @@ textarea {
     flex-direction: row;
     align-content: space-around;
 }
-
 .info-activity div {
     flex-direction: row;
     align-items: center;
