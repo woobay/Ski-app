@@ -1304,31 +1304,32 @@ textarea {
     display: flex;
     justify-content: flex-start;
 }
-.container-meteo-row {
+.container-meteo{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    padding-right: 2em;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.container-meteo-row p {
+.container-meteo div {
     text-align: left;
 }
 
-.container-meteo-row p span {
+.container-meteo p span {
     font-weight: 600;
 }
 
-.container-meteo-row i {
+.container-meteo i {
     font-size: 2.063 em;
     color: #0060AD;
     padding-right: 0.5em;
+    text-align: left;
 }
-.container-meteo-row i:first-child {
+.container-meteo i:first-child {
     font-size: 2em;
 }
 
-.container-meteo-row i:last-child {
+.container-meteo i:last-child {
     font-size: 2em;
 }
 .container-icon-header-parcours{
@@ -1349,9 +1350,21 @@ textarea {
 }.icon-header-parcours i {
     font-size: 24px;
 }
+.container-tag{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.container-tag span{
+    margin-bottom:30px;
+}
+
 .oval-box-tags {   
     border-radius: 22px;
     padding: 8px 12px;
+    margin-right: 5px;
 }
 .oval-box-tags span{   
     margin-bottom: 50px;
@@ -1387,7 +1400,6 @@ textarea {
 .container-activity{
     display: flex;
     width: 100%;
-    flex-direction: row;
     align-items: center;
 }
 .container-activity img{
@@ -1396,25 +1408,30 @@ textarea {
 }
 #image-profil-friend {
     display: flex;
-    width: 50px;
-    height: 50px;
-    padding: 0.8em;
+    width: 20%;
+    height: auto;
+    padding: 10px;
 }
 .info-activity {
     display: flex;
+    width: 100%;
     background-color: #fff;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    justify-content: flex-start;
+    align-content: space-around;
 }
 
-.info-activity div {
-    flex-direction: row;
-    align-items: center;
-} 
 .info-activity div > i{
-    font-size: 16px;
-    margin: 0px 10px;
+   padding-right: 5px;
+   font-size: 18px;
 }
 .margin-right-20{
     margin-right: 20px;
+}
+.icon-star i {
+    font-size: 1.5em;
+    color: #0060AD;
+    padding-right: 0.2em;
+    text-align: left;
 }
