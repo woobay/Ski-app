@@ -9,9 +9,9 @@
 <div class="grid container-hero">
     <div class="col-6 margin-bottom-extra-extra-large">
         <h1>Parcours 22</h1>
-        <h1 class="primary">Mont-Nicol Albert</h1>
-        <h3 class="margin-bottom-32">Crée par <span class="primary">Simon Hebert</span></h3>
-        <span class="oval-box-level level-easy">Facile</span>
+        <h1 class="primary"><%= spot.name %></h1> </h1>
+        <h3 class="margin-bottom-32">Crée par <span class="primary"><%= info.name %> </span></h3>
+        <span class="oval-box-level level-easy"><%= spot.difficulty%> </span>
     </div>
     <div class="container-icon-header-parcours col-4">
         <div class="icon-header-parcours">
@@ -74,7 +74,7 @@
                     </div> 
                 </div>                   
                 <div class="margin-top-small"> 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis rhoncus suscipit diam morbi neque auctor gravida at. Mi dolor bibendum sed mi nulla pharetra blandit lectus. Pretium interdum lobortis metus vulputate maecenas. Et pretium pulvinar nisl imperdiet. Ut neque, sit morbi aliquam nunc vestibulum, convallis. Duis faucibus adipiscing eget sed adipiscing risus, proin. Ac iaculis nunc enim auctor vitae auctor hendrerit felis, mi. Consectetur facilisis ipsum, adipiscing urna, interdum. A sit amet tellus mi risus ut dignissim.</p> 
+                    <p><%= spot.description %></p> 
                     <br>
                     <p>Nisl lectus tristique arcu pellentesque ultrices. Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse. Felis non tellus elit cursus erat dictumst turpis lacus. Lorem urna, adipiscing convallis mi, cursus faucibus ipsum magna. Massa eu nunc turpis cras. Blandit sagittis tellus in amet nunc, amet, posuere id. </p>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="margin-top-small">
                     <p>Nisl lectus tristique arcu pellentesque ultrices. Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse. Felis non tellus elit cursus erat dictumst turpis lacus. </p>
                     <br>
-                    <p>Début du parcours :  48.80058223201716, -66.76889587503786</p>
+                    <p>Début du parcours :  <%= spot.coordinates %> </p>
                     <p>Fin du parcours :   48.80058223201716, -66.76889587503786</p>
                 </div>
             </article>

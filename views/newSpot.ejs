@@ -1,44 +1,8 @@
 <%- include ('partials/head'); %>
-    <title>Créer un parcours</title>
+<title>Créer un parcours</title>
 </head>
 
-<body>
-    <header class="main-header">
-        <div class="main-header-content">
-            <a class="title-logo" href="/">Logo</a>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="/profil">Accueil</a></li>
-                    <li><a href="/spots">Explore</a></li>
-                    <li><a href="/spots/new">Créer</a></li>
-                    <li><a href="">Guide</a></li>
-                    <li><a href="">Évènements</a></li>
-                    <li><a href="">Discussions</a></li>
-                </ul>
-            </nav>
-            <div class="nav-right">
-                <i class="bi bi-bell"></i>
-                <div class="nav-separator"></div>
-
-                <div class="popover__wrapper">
-                    <a href="#">
-                        <img class="image-profil-user" src="img/image-user@2x.png" alt="">
-                    </a>
-                    <div class="popover__content">
-                        <nav class="nav-links-vertical">
-                            <ul>
-                                <i class="bi bi-person"></i>
-                                <li><a href=""> Profil</a></li>
-                                <div class="nav-separator-horizontal"></div>
-                                <li><a id="clearData" href="/">Déconnexion</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <span id="userName"></span>
-            </div>
-        </div>
-    </header>
+<%- include ('partials/header'); %>
     <main>
         <form action="/spots/new" method="post">
             <div class="container-hero grid">
@@ -59,8 +23,8 @@
                         ci-dessous.</p>
                     <label for="localisation">Localisation (obligatoire)</label>
                     <div class="input-field margin-bottom-32">
-                        <input class="input-newspot" id="" type="" name="address" placeholder="Écrire la localisation">
-                        <i class="fa-regular fa-envelope" id="">
+                        <input id="" type="" name="address" placeholder="Écrire la localisation">
+                        <i class="bi bi-geo-alt" id="">
                         </i>
                     </div>
                     <!-- Localisation section gauche: mini-grille -->
@@ -69,14 +33,13 @@
                         <div class="mini-col-5a">
                             <label for="latitude">Latitude (obligatoire)</label>
                             <div class="input-field margin-bottom-32">
-                                <input class="input-newspot" id="" type="" name="coordinates"
-                                    placeholder="Écrire la latitude">
+                                <input class="input-newspot" id="" type="" name="left" placeholder="Écrire la latitude">
                             </div>
                         </div>
                         <div class="mini-col-5b">
                             <label for="latitude">Longitude (obligatoire)</label>
                             <div class="input-field">
-                                <input class="input-newspot" id="" type="" name="coordinates"
+                                <input class="input-newspot" id="" type="" name="right"
                                     placeholder="Écrire la longitude">
                             </div>
                         </div>
@@ -106,20 +69,24 @@
                     <h3>Informations générales</h3>
                 </div>
                 <div class="col-5">
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="difficulte">Difficulté technique (obligatoire)</label>
                         <div class="input-field">
-                            <input class="input-newspot" id="" type="" name="difficulty"
-                                placeholder="Entrez le niveau de difficulté">
+                            <select class="input-newspot" id="" type="" name="difficulty">
+                                <option value="" disabled selected>Sélectionnez le niveau de difficulté</option>
+                                <option value="facile">Facile</option>
+                                <option value="intermédiaire">Intermédiaire</option>
+                                <option value="difficile">Avancé</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="duree">Estimation de la durée</label>
                         <div class="input-field">
                             <input class="input-newspot" id="" type="" name="" placeholder="ex: 1h45">
                         </div>
                     </div>
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="distance">Distance</label>
                         <div class="input-field">
                             <input class="input-newspot" id="" type="" name="" placeholder="Entrez la distance en km">
@@ -127,19 +94,19 @@
                     </div>
                 </div>
                 <div class="col-5b">
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="denivele">Dénivelé</label>
                         <div class="input-field">
                             <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
                         </div>
                     </div>
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="duree">Altitude maximale</label>
                         <div class="input-field">
                             <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
                         </div>
                     </div>
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="distance">Altitude minimale</label>
                         <div class="input-field">
                             <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
@@ -147,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-10 margin-bottom-64">
-                    <div class="input-control">
+                    <div class="input-control-2">
                         <label for="description">Description et accès de parcours (obligatoire)</label>
                         <div class="input-field">
                             <textarea class="input-newspot" id="" type="" name="description"
@@ -160,91 +127,131 @@
                     <h3 class="margin-bottom-32">Caractéristiques du parcours</h3>
                 </div>
                 <div class="col-10">
-                    <h4>Spécificités</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia, fuga iure
+                    <h4 class="margin-bottom-24">Spécificités</h4>
+                    <p class="margin-bottom-24">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+                        officia, fuga iure
                         distinctio quod quaerat corrupti quis.</p>
-                    <div class="btn-container">
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Fermée</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Végétation dense</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Vue panoramique</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Yéti</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Cascade</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Nature</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Rocheux</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Propriété privée</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Sécurisé</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Lac</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Boueux</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Grottes</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Marmottes</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Montée</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Dénivelé</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Stalactique</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Arbres tombés</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Chalet</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Vent</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Pont inutilisable</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Rivière</label>
-                        <input type="checkbox" id="btnControl">
-                        <label for="btnControl" class="tag">Risque d'avalanche</label>
+                    <div class="btn-container margin-bottom-24">
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Fermée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Végétation dense</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Vue panoramique</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Cascade</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Rocheux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Propriété privée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Lac</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Grottes</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Montée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Dénivelé</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Stalactique</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Arbres tombés</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Chalet</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Venteux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Pont inutilisable</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Rivière</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Risque d'avalanche</span>
+                            </label>
+                        </div>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit ?</p>
                 </div>
-                <div class="col-7">
-                    <div class="input-control">
-                        <div class="input-field">
-                            <input class="input-newspot" id="" type="" name=""
-                                placeholder="ex: neige abondante, ours, etc">
-                        </div>
+                <div class="col-7 margin-bottom-32"">
+                        <div class=" input-field">
+                    <input class="input-newspot" id="" type="" name="" placeholder="ex: neige abondante, ours, etc">
+                </div>
+            </div>
+            <div class="col-3b">
+                <button id="" type="" class="btn-tertiary input-newspot">Ajouter un nouveau tag</button>
+            </div>
+            <!-- Conditions obligatoires -->
+            <div class="col-10">
+                <h4 class="margin-bottom-24">Conditions obligatoires : matériel, équipement et sécurité</h4>
+                <div class="margin-bottom-64">
+                    <label for="description">Description</label>
+                    <div class="input-field ">
+                        <textarea class="input-newspot" id="" type="" name=""
+                            placeholder="Écrire les conditions nécessaires à l'expédition"></textarea>
                     </div>
                 </div>
-                <div class="col-3b">
-                    <button id="" type="" class="btn-tertiary">Ajouter un nouveau tag</button>
+                <!-- Ajout photo et tracking -->
+                <h3 class="margin-bottom-32">Ajouter des photos ou des vidéos</h3>
+                <div class="img-upload margin-bottom-64"></div>
+                <h3 class="margin-bottom-32">Charger des données de tracking</h3>
+                <div class="tracking-upload margin-bottom-95"></div>
+                <div class="btn-container margin-bottom-95">
+                    <button id="" type="reset" class="btn-secondary">Annuler</button>
+                    <button id="" type="submit" class="btn-tertiary">Créer le parcours</button>
                 </div>
-                <!-- Conditions obligatoires -->
-                <div class="col-10">
-                    <h4>Conditions obligatoires : matériel, équipement et sécurité</h4>
-                    <div class="input-control">
-                        <label for="description">Description</label>
-                        <div class="input-field">
-                            <textarea class="input-newspot" id="" type="" name=""
-                                placeholder="Écrire les conditions nécessaires à l'expédition"></textarea>
-                        </div>
-                    </div>
-                    <!-- Ajout photo et tracking -->
-                    <h3>Ajouter des photos ou des vidéos</h3>
-                    <div class="img-upload"></div>
-                    <h3>Charger des données de tracking</h3>
-                    <div class="tracking-upload"></div>
-                    <div class="btn-container">
-                        <button id="" type="reset" class="btn-secondary">Annuler</button>
-                        <button id="" type="submit" class="btn-tertiary">Créer le parcours</button>
-                    </div>
-                </div>
+            </div>
             </div>
         </form>
     </main>
-<%- include ('partials/footer'); %>
+    <%- include ('partials/footer'); %>
 </body>
+
 </html>
