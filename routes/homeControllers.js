@@ -77,7 +77,7 @@ exports.renderSpotDescription = (req, res) => {
                 "Authorization": TOKEN
             }})
             .then(info => {
-                // console.log(info.data.user)
+                console.log(info.data)
                 res.render("description", {spot: result.data.skiSpot})
 
             })
