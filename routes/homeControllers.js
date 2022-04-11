@@ -62,23 +62,26 @@ exports.postAuthentication = (req, res) => {
 
 exports.renderSpotDescription = (req, res) => {
     const TOKEN = req.app.locals.token
-    const queryId = {_id: req.params.id}
+    const queryId = req.params.id
+    const created = req.params.create
 
-    axios.get(`http://ski-api.herokuapp.com/ski-spot/${queryId._id}`, {
+    axios.get(`http://ski-api.herokuapp.com/ski-spot/${queryId}`, {
         headers: {
             "content-type": "application/json",
             "Authorization": TOKEN
         }}
     ).then(result => {
-        
-        axios.get(`https://ski-api.herokuapp.com/user/${queryId._id}`, {
+        console.log(queryId)
+        console.log(created)
+        axios.get(`https://ski-api.herokuapp.com/user/${created}`, {
             headers: {
                 "content-type": "application/json",
                 "Authorization": TOKEN
             }})
             .then(info => {
+                // console.log(queryId._id)
                 console.log(info.data)
-                res.render("description", {spot: result.data.skiSpot})
+                res.render("description", {spot: result.data.skiSpot, info: info.data.user})
 
             })
             .catch(err => {console.log(err)})

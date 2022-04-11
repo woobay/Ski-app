@@ -11,7 +11,7 @@ router.post('/signup', homeController.renderNewUser)
 router.get('/profil', homeController.renderProfil);
 
 router.get("/spots", homeController.renderSpots);
-router.get("/description/:id", homeController.renderSpotDescription)
+router.get("/description/:id/:create", homeController.renderSpotDescription)
 // router.get("/spots/edit/:id", homeController.editSpot)
 
 router.get("/spots/new", homeController.newSpots)
