@@ -61,7 +61,30 @@ exports.postAuthentication = (req, res) => {
 }
 
 exports.renderSpotDescription = (req, res) => {
-    res.render("spot-description")
+    const TOKEN = req.app.locals.token
+    const queryId = {_id: req.params.id}
+
+    axios.get(`http://ski-api.herokuapp.com/ski-spot/${queryId._id}`, {
+        headers: {
+            "content-type": "application/json",
+            "Authorization": TOKEN
+        }}
+    ).then(result => {
+        
+        axios.get(`https://ski-api.herokuapp.com/user/${queryId._id}`, {
+            headers: {
+                "content-type": "application/json",
+                "Authorization": TOKEN
+            }})
+            .then(info => {
+                // console.log(info.data.user)
+                res.render("description", {spot: result.data.skiSpot})
+
+            })
+            .catch(err => {console.log(err)})
+    })
+    .catch(err => {console.log(err)})
+    
 }
 
 
@@ -91,10 +114,10 @@ exports.addedSpots = (req, res) => {
     const difficulty = req.body.difficulty
     const left = req.body.left
     const right = req.body.right
-
     const array = JSON.parse(`[${left}, ${right}]`)
+    
+    console.log(difficulty)
 
-    console.log(array)
     // const array = JSON.parse(`[${coordinates}]`)
     // const array = JSON.parse("[" + coordinates + "]")
     
