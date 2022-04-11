@@ -10,7 +10,7 @@
                 <div class="col-10 margin-bottom-28">
                     <h1 class="margin-bottom-48">Créer un nouveau parcours</h1>
                     <h3 class="margin-bottom-32">Nom et coordonnées géographiques</h3>
-                    <p class="margin-bottom-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="margin-bottom-1em">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <label for="nom-parcours">Nom du parcours (obligatoire)</label>
                     <div class="input-field">
                         <input class="input-newspot" id="" type="" name="name" placeholder="Écrire le nom du parcours">
@@ -68,15 +68,15 @@
                 <div class="col-10 margin-bottom-32">
                     <h3>Informations générales</h3>
                 </div>
-                <div class="col-5">
+                <div class="col-5 margin-bottom-1em">
                     <div class="input-control-2">
                         <label for="difficulte">Difficulté technique (obligatoire)</label>
                         <div class="input-field">
                             <select class="input-newspot" id="" type="" name="difficulty">
                                 <option value="" disabled selected>Sélectionnez le niveau de difficulté</option>
-                                <option value="easy">Facile</option>
-                                <option value="normal">Intermédiaire</option>
-                                <option value="hard">Avancé</option>
+                                <option value="facile">facile</option>
+                                <option value="intermédiaire">intermédiaire</option>
+                                <option value="difficile">difficile</option>
                             </select>
                         </div>
                     </div>
@@ -127,11 +127,11 @@
                     <h3 class="margin-bottom-32">Caractéristiques du parcours</h3>
                 </div>
                 <div class="col-10">
-                    <h4 class="margin-bottom-24">Spécificités</h4>
-                    <p class="margin-bottom-24">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+                    <h4 class="margin-bottom-32">Spécificités</h4>
+                    <p class="margin-bottom-32">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
                         officia, fuga iure
                         distinctio quod quaerat corrupti quis.</p>
-                    <div class="btn-container margin-bottom-24">
+                    <div class="btn-container margin-bottom-28">
                         <div class="cb-button">
                             <label>
                                 <input type="checkbox"><span>Fermée</span>
@@ -149,7 +149,17 @@
                         </div>
                         <div class="cb-button">
                             <label>
+                                <input type="checkbox"><span>Yéti</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
                                 <input type="checkbox"><span>Cascade</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Nature</span>
                             </label>
                         </div>
                         <div class="cb-button">
@@ -164,12 +174,27 @@
                         </div>
                         <div class="cb-button">
                             <label>
+                                <input type="checkbox"><span>Sécurisé</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
                                 <input type="checkbox"><span>Lac</span>
                             </label>
                         </div>
                         <div class="cb-button">
                             <label>
+                                <input type="checkbox"><span>Boueux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
                                 <input type="checkbox"><span>Grottes</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Marmotte</span>
                             </label>
                         </div>
                         <div class="cb-button">
@@ -204,7 +229,16 @@
                         </div>
                         <div class="cb-button">
                             <label>
+                                <input type="checkbox"><span>Venteux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
                                 <input type="checkbox"><span>Pont inutilisable</span>
+                            </label>
+                        </div> <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Température extrême</span>
                             </label>
                         </div>
                         <div class="cb-button">
@@ -220,9 +254,9 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit ?</p>
                 </div>
-                <div class="col-7 margin-bottom-32"">
+                <div class="col-7 margin-bottom-32">
                         <div class=" input-field">
-                    <input class="input-newspot" id="" type="" name="" placeholder="ex: neige abondante, ours, etc">
+                    <input class="input-newspot" id="newtag" type="" name="" placeholder="ex: neige abondante, ours, etc">
                 </div>
             </div>
             <div class="col-3b">
@@ -230,7 +264,7 @@
             </div>
             <!-- Conditions obligatoires -->
             <div class="col-10">
-                <h4 class="margin-bottom-24">Conditions obligatoires : matériel, équipement et sécurité</h4>
+                <h4 class="margin-bottom-1em">Conditions obligatoires : matériel, équipement et sécurité</h4>
                 <div class="margin-bottom-64">
                     <label for="description">Description</label>
                     <div class="input-field ">
@@ -251,7 +285,7 @@
             </div>
         </form>
     </main>
-    <%- include ('partials/footer'); %>
+    
+<%- include ('partials/footer'); %>
 </body>
-
 </html>

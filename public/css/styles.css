@@ -70,7 +70,7 @@ p {
 
 .medium,
 label {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .bold {
@@ -81,6 +81,7 @@ label {
 .primary {
     color: #0060AD;
 }
+
 
 /* =========== Button =========== */
 
@@ -126,7 +127,7 @@ label {
     font-size: 1em;
     font-weight: 500;
     letter-spacing: 1px;
-    padding: 11px 25px;
+    padding: 14px 25px;
     background-color: #0060AD;
     border-radius: 0.375em;
     border: none;
@@ -136,7 +137,7 @@ label {
 .btn-secondary-light {
     width: 100%;
     padding: 14px 24px;
-    font-size: 1.1em;
+    font-size: 1em;
     background: none;
     color: #CFD4DA;
     border: 1px solid #CFD4DA;
@@ -588,6 +589,8 @@ label {
     width: unset;
 }
 
+
+
 .container-content-request {
     display: flex;
 }
@@ -696,23 +699,22 @@ label {
     padding: 8px 12px;
 }
 
-.oval-box-level::first-letter {
-    text-transform: capitalize;
-}
-
 .oval-box-container i {
     font-size: 18px;
 }
 
 .level-easy {
+    text-transform: capitalize;
     background-color: #339933;
 }
 
 .level-middle {
+    text-transform: capitalize;
     background-color: #00008B;
 }
 
 .level-difficult {
+    text-transform: capitalize;
     background-color: #000;
 }
 
@@ -1173,7 +1175,6 @@ label {
 .input-field i {
     position: absolute;
     right: 0px;
-    top: 3px;
     color: #CFD4DA;
     padding: 10px;
     min-width: 50px;
@@ -1218,6 +1219,10 @@ label[for="localisation"]+div {
     margin-top: 0.5rem;
 }
 
+#newtag {
+    padding: 12px 24px;
+}
+
 .input-newspot {
     margin-top: 0.5rem;
 }
@@ -1244,13 +1249,24 @@ textarea {
     gap: 15px;
 }
 
+.btn-container .btn-secondary {
+    color: #CFD4DA;
+    border: 1px solid #CFD4DA;
+}
+
+.btn-container .btn-secondary:hover {
+    color: #AEB2B8;
+    border: 1px solid #AEB2B8;
+}
 .cb-button {
     border-radius: 35px;
     border: 1px solid #AEB2B8;
     overflow: hidden;
+    ;
 }
 
 .cb-button label {
+    font-weight: 500;
     line-height: 2em;
     cursor: pointer;
 }
@@ -1267,6 +1283,7 @@ textarea {
 }
 
 .cb-button label input+span {
+    
     color: #AEB2B8;
 }
 
@@ -1282,7 +1299,7 @@ textarea {
 
 .img-upload {
     background-image: url("../img/image-drag-and-drop-photo.svg");
-    height: 200px;
+    height: 135px;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -1290,7 +1307,7 @@ textarea {
 .tracking-upload {
     background-image: url("../img/image-drag-and-drop-activity.svg");
     width: 100%;
-    height: 200px;
+    height: 135px;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -1320,7 +1337,6 @@ textarea {
     height: 1.5px;
     background-color: #0060AD;
     opacity: 0.3;
-    margin-bottom: 16px;
 }
 
 .container-meteo-small {
@@ -1328,32 +1344,33 @@ textarea {
     justify-content: flex-start;
 }
 
-.container-meteo-row {
+.container-meteo {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    padding-right: 2em;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.container-meteo-row p {
+.container-meteo div {
     text-align: left;
 }
 
-.container-meteo-row p span {
+.container-meteo p span {
     font-weight: 600;
 }
 
-.container-meteo-row i {
+.container-meteo i {
     font-size: 2.063 em;
     color: #0060AD;
     padding-right: 0.5em;
+    text-align: left;
 }
 
-.container-meteo-row i:first-child {
+.container-meteo i:first-child {
     font-size: 2em;
 }
 
-.container-meteo-row i:last-child {
+.container-meteo i:last-child {
     font-size: 2em;
 }
 
@@ -1378,10 +1395,20 @@ textarea {
 .icon-header-parcours i {
     font-size: 24px;
 }
-
+.container-tag{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.container-tag span{
+    margin-bottom:30px;
+}
 .oval-box-tags {
     border-radius: 22px;
     padding: 8px 12px;
+    margin-right: 5px;
 }
 
 .oval-box-tags span {
@@ -1402,13 +1429,13 @@ textarea {
     font-weight: 100;
 }
 
-.container-image-parcours {
+.container-image-parcours{
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.container-image-parcours div {
+.container-image-parcours div{
     border: 1px solid #CFD4DA;
     box-sizing: border-box;
     border-radius: 4px;
@@ -1416,7 +1443,7 @@ textarea {
 
 }
 
-.container-image-parcours img {
+.container-image-parcours img{
     width: 100%;
     height: auto;
 }
@@ -1424,7 +1451,6 @@ textarea {
 .container-activity {
     display: flex;
     width: 100%;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -1435,18 +1461,20 @@ textarea {
 
 #image-profil-friend {
     display: flex;
-    width: 50px;
-    height: 50px;
-    padding: 0.8em;
+    width: 20%;
+    height: auto;
+    padding: 10px;
 }
 
 .info-activity {
     display: flex;
+    width: 100%;
     background-color: #fff;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    justify-content: flex-start;
+    align-content: space-around;
 }
-
 .info-activity div {
     flex-direction: row;
     align-items: center;
@@ -1459,4 +1487,20 @@ textarea {
 
 .margin-right-20 {
     margin-right: 20px;
+}
+.icon-star i {
+    font-size: 1.5em;
+    color: #0060AD;
+    padding-right: 0.2em;
+    text-align: left;
+}
+.container-photo-profil{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-photo-profil img{
+    width: 6%;
+    margin: 20px;
 }
