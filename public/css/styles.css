@@ -1477,3 +1477,13 @@ textarea {
     padding-right: 0.2em;
     text-align: left;
 }
+.container-photo-profil{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-photo-profil img{
+    width: 6%;
+    margin: 20px;
+}
