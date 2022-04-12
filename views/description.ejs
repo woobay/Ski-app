@@ -11,7 +11,7 @@
         <h1>Parcours 22</h1>
         <h2 class=" h1 primary"><%= spot.name %></h2>
         <h3 class="margin-bottom-32">Crée par <span class="primary"><%= info.name %> </span></h3>
-        <span class="oval-box-level <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+        <span class="oval-box-level oval-box-level-big <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
             <%= spot.difficulty%>
         </span>
     </div>

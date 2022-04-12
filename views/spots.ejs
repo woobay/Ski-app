@@ -107,15 +107,20 @@
             <% }) %> 
             </section>
 
-            <% for (var i = 1; i <= pages; i++) { 
+            <% for (var i = 1; i <= pages; i++) {  %>
+                <section class="col-4 ">
 
-                %>
-                <div>
-                    <form action="/spots">
-                        <input type="hidden" name="page" value="<%= i %> "/>
-                        <button class=""><%= i %></button>
-                    </form>
-                </div>
+                    <ul class="pagination">
+                        <li>
+                            <form action="/spots">
+             
+                                <input type="hidden" name="page" value="<%= i %> "/>
+                                    <button class="test"><%= i %></button>   
+                            </form>
+                        </li>
+                    </ul>
+                    
+                </section>
             <% } %> 
 
     </section>

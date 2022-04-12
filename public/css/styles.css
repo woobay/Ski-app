@@ -712,6 +712,14 @@ label {
     padding: 8px 12px;
 }
 
+.oval-box-level-big {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 25px;
+    padding: 12px 30px;
+
+}
+
 .oval-box-container i {
     font-size: 18px;
 }
@@ -1061,6 +1069,34 @@ label {
     padding-bottom: 8px;
 }
 
+.pagination {
+    margin-left: 42%;
+    list-style-type:none;
+}
+
+.pagination li {
+    float: left;
+    margin-right: 8px;
+}
+
+.pagination button {
+    font-family: 'Montserrat', 'sans-serif';
+    width: 100%;
+    padding: 16px;
+    border: none;
+    background-color: #F4F6F8;
+    cursor: pointer;
+    transition: 0.3s ease; 
+
+}
+
+.pagination button:hover{
+    font-weight: bold;
+    color: #0060AD;
+    transform: translateX(5px);   
+}
+
+
 /* =============== Page Signup ================ */
 .bg {
     background-image: url("../img/background-onboarding@2x.jpg");
@@ -1282,9 +1318,7 @@ textarea {
 }
 .cb-button {
     border-radius: 35px;
-    border: 1px solid #AEB2B8;
     overflow: hidden;
-    ;
 }
 
 .cb-button label {
@@ -1304,12 +1338,12 @@ textarea {
     display: none;
 }
 
-.cb-button label input+span {
-    
-    color: #AEB2B8;
+.cb-button label input + span {
+    color:#AEB2B8;
+    background-color: rgba(174,178,184, 0.2);
 }
 
-.cb-button input:checked+span {
+.cb-button input:checked + span {
     color: #0060AD;
     background-color: rgba(0, 96, 173, 0.2);
 }
@@ -1319,21 +1353,6 @@ textarea {
     width: 100%;
 }
 
-.img-upload {
-    background-image: url("../img/image-drag-and-drop-photo.svg");
-    height: 135px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.tracking-upload {
-    background-image: url("../img/image-drag-and-drop-activity.svg");
-    width: 100%;
-    height: 135px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
 .btn-container .btn-secondary,
 .btn-container .btn-tertiary {
 
@@ -1341,6 +1360,7 @@ textarea {
 }
 
 /* =========== Page spot description =========== */
+
 .container-meteo-features {
     display: flex;
     flex-direction: column;
@@ -1375,41 +1395,23 @@ textarea {
     height: 1.5px;
     background-color: #0060AD;
     opacity: 0.3;
+    margin: 24px 0;
+}
+
+.container-meteo-features-small {
+    display: flex;
+    margin-right: 28px;
+}
+
+.container-meteo-features-small i {
+    font-size: 2.6em;
+    color: #0060AD;
+    margin-right: 16px;
 }
 
 .container-meteo-small {
     display: flex;
 }
-
-.container-meteo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container-meteo div {
-    text-align: left;
-} */
-
-.container-meteo p span {
-    font-weight: 600;
-} */
-
-.container-meteo i {
-    font-size: 2.063 em;
-    color: #0060AD;
-    padding-right: 0.5em;
-    text-align: left;
-}
-
-.container-meteo i:first-child {
-    font-size: 2em;
-}
-
-.container-meteo i:last-child {
-    font-size: 2em;
-} */
 
 .container-icon-header-parcours {
     display: flex;
@@ -1424,7 +1426,7 @@ textarea {
     background-color: #FFFFFF;
     color: #0060AD;
     box-shadow: 0px -3px 2px rgb(40 41 61 / 4%), 0px 4px 8px rgb(96 97 112 / 16%);
-    padding: 10px;
+    padding: 10px 13px;
     border-radius: 4px;
     margin: 10px;
 }
@@ -1432,25 +1434,26 @@ textarea {
 .icon-header-parcours i {
     font-size: 24px;
 }
+
 .container-tag{
     display: flex;
     flex-direction: row;
-    margin-bottom: 30px;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
+
 .container-tag span{
-    margin-bottom:30px;
+    margin-bottom: 16px;
+    margin-right: 16px;
 }
+
 .oval-box-tags {
     border-radius: 22px;
     padding: 8px 12px;
     margin-right: 5px;
 }
 
-.oval-box-tags span {
-    margin-bottom: 50px;
-}
+
 
 .tags-color {
     color: #0060AD;
@@ -1473,14 +1476,15 @@ textarea {
     width: 100%;
 }
 
-.container-image-parcours div{
+.container-image-parcours img{
+    width: 100%;
+    height: auto;
     border: 1px solid #CFD4DA;
     border-radius: 6px;
 }
 
-.container-image-parcours img{
-    width: 100%;
-    height: auto;
+.container-image-parcours i {
+    font-size: 1.5em;
 }
 
 .container-activity {
@@ -1495,24 +1499,35 @@ textarea {
     height: auto;
 }
 
-#image-profil-friend {
-    display: flex;
-    width: 20%;
-    height: auto;
-    padding: 10px;
+.container-activity i {
+    font-size: 1.5em;
+}
+
+.container-info-activity {
+    background-color: #fff;
+    border-radius: 0px 0px 6px 6px;
+    box-shadow: 0px -3px 2px rgb(40 41 61 / 4%), 0px 4px 8px rgb(96 97 112 / 16%);
+}
+
+.info-activity img {
+    width: 48px;
+    height: 48px;
+    margin-right: 8px;
 }
 
 .info-activity {
     display: flex;
-    width: 100%;
-    background-color: #fff;
-    justify-content: center;
+    padding: 12px 4px ;
     align-items: center;
-    flex-direction: row;
-    align-content: space-around;
+    justify-content: center;
 }
-.info-activity div {
-    flex-direction: row;
+
+.margin-right-16{
+    margin-right: 16px;
+}
+
+.info-activity-features {
+    display: flex;
     align-items: center;
 }
 
@@ -1524,12 +1539,19 @@ textarea {
 .margin-right-20 {
     margin-right: 20px;
 }
+
+.icon-star {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 .icon-star i {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #0060AD;
-    padding-right: 0.2em;
     text-align: left;
 }
+
 .container-photo-profil{
     display: flex;
     align-items: center;
