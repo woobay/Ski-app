@@ -2,12 +2,10 @@
 
 let loginForm = document.querySelector('#log');
 
-let emailDiv = document.querySelector('#emailDiv');
 let email = document.querySelector('#email');
 let emailIcon = document.querySelector('#emailIcon')
 let errorEmail = document.querySelector('#errorEmail');
 
-let passwordDiv = document.querySelector('#passwordDiv');
 let password = document.querySelector('#password');
 let passwordIcon = document.querySelector('#passwordIcon');
 let errorPassword = document.querySelector('#errorPassword');
