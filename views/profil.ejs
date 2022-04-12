@@ -65,7 +65,7 @@
                     
                     <% spots.forEach(spot => { %>
 
-                    <a href="/description/<%= spot._id %> ">
+                        <a href="/description/<%= spot._id %>/<%= spot.created_by %>">
                         <article class="container-resume-spot">
                             <div class="container-image-small" >
                                 <img src="<% 
@@ -122,7 +122,9 @@
                                 <p class="body1">Parcours 201</p>
                                 <p class="resume-spot-content-ellipsis"><%= spot.name %> </p>
                             </div>
-                            <span class="oval-box-level level-middle">Intermédiaire</span>
+                            <span class="oval-box-level <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+                                <%= spot.difficulty%>
+                            </span>
                         </div>
                         <div class="quick-features-spot full-width ">
                             <div class="quick-features-spot">

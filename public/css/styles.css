@@ -31,7 +31,7 @@ body {
     height: 100%;
 }
 
-h1 {
+h1, .h1 {
     margin: 0;
     font-size: 3em;
     font-weight: 600;
@@ -134,9 +134,11 @@ label {
 }
 
 .btn-secondary-light {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     padding: 14px 24px;
-    font-size: 1.1em;
+    font-size: 1em;
+    letter-spacing: 1px;
     background: none;
     color: #CFD4DA;
     border: 1px solid #CFD4DA;
@@ -227,6 +229,14 @@ label {
     margin-top: 32px;
 }
 
+.margin-top-48 {
+    margin-top : 48px;
+}
+
+.margin-top-72 {
+    margin-top: 72px;
+}    
+
 /* --- margin-bottom --- */
 
 .margin-bottom-extra-extra-large {
@@ -239,6 +249,10 @@ label {
 
 .margin-bottom-95 {
     margin-bottom: 95px;
+}
+
+.margin-bottom-72 {
+    margin-bottom: 72px;
 }
 
 .margin-bottom-64 {
@@ -696,23 +710,22 @@ label {
     padding: 8px 12px;
 }
 
-.oval-box-level::first-letter {
-    text-transform: capitalize;
-}
-
 .oval-box-container i {
     font-size: 18px;
 }
 
 .level-easy {
+    text-transform: capitalize;
     background-color: #339933;
 }
 
 .level-middle {
+    text-transform: capitalize;
     background-color: #00008B;
 }
 
 .level-difficult {
+    text-transform: capitalize;
     background-color: #000;
 }
 
@@ -962,8 +975,17 @@ label {
 
 .section-title {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
+}
+
+.section-title-start {
+    display: flex;
+    align-items: center;
+}
+
+.section-title-start h3 {
+    margin-right: 16px;
 }
 
 .one-link {
@@ -1302,11 +1324,27 @@ textarea {
 }
 
 /* =========== Page spot description =========== */
+.container-meteo-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-meteo-features > i {
+  font-size: 2.7em;
+  color: #0060AD;
+  margin-bottom: 16px;
+}
+
+.container-meteo-features span {
+    font-weight: 600;
+}
+
 .container-meteo {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1em;
+    justify-content: space-between;
 }
 
 .separator-meteo {
@@ -1320,42 +1358,60 @@ textarea {
     height: 1.5px;
     background-color: #0060AD;
     opacity: 0.3;
+    margin: 24px 0;
+}
+
+.container-meteo-features-small {
+    display: flex;
+    margin-right: 28px;
+}
+
+.container-meteo-features-small i {
+    font-size: 2.6em;
+    color: #0060AD;
+    margin-right: 16px;
 }
 
 .container-meteo-small {
     display: flex;
-    justify-content: flex-start;
 }
 
-.container-meteo {
+
+
+/* .container-meteo-small {
+    display: flex;
+    justify-content: flex-start;
+} */
+
+/* .container-meteo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.container-meteo div {
+/* .container-meteo div {
     text-align: left;
-}
+} */
 
-.container-meteo p span {
+/* .container-meteo p span {
     font-weight: 600;
-}
+} */
 
-.container-meteo i {
+/* .container-meteo i {
     font-size: 2.063 em;
     color: #0060AD;
     padding-right: 0.5em;
     text-align: left;
-}
+} */
 
-.container-meteo i:first-child {
+/* .container-meteo i:first-child {
     font-size: 2em;
 }
 
 .container-meteo i:last-child {
     font-size: 2em;
-}
+} */
 
 .container-icon-header-parcours {
     display: flex;
@@ -1381,21 +1437,17 @@ textarea {
 .container-tag{
     display: flex;
     flex-direction: row;
-    margin-bottom: 30px;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 .container-tag span{
-    margin-bottom:30px;
+    margin-bottom: 16px;
+    margin-right :16px;
 }
 .oval-box-tags {
     border-radius: 22px;
     padding: 8px 12px;
     margin-right: 5px;
-}
-
-.oval-box-tags span {
-    margin-bottom: 50px;
 }
 
 .tags-color {
@@ -1414,27 +1466,27 @@ textarea {
 
 .container-image-parcours{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-.container-image-parcours div{
-    border: 1px solid #CFD4DA;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-right: 2em;
-
 }
 
 .container-image-parcours img{
     width: 100%;
     height: auto;
+    border: 1px solid #CFD4DA;
+    border-radius: 6px;
+}
+
+.container-image-parcours i {
+    font-size: 1.5em;
 }
 
 .container-activity {
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container-activity img {
@@ -1442,41 +1494,59 @@ textarea {
     height: auto;
 }
 
-#image-profil-friend {
-    display: flex;
-    width: 20%;
-    height: auto;
-    padding: 10px;
+.container-activity i {
+    font-size: 1.5em;
+}
+
+.container-info-activity {
+    background-color: #fff;
+    border-radius: 0px 0px 6px 6px;
+    box-shadow: 0px -3px 2px rgb(40 41 61 / 4%), 0px 4px 8px rgb(96 97 112 / 16%);
+}
+
+.info-activity img {
+    width: 48px;
+    height: 48px;
+    margin-right: 8px;
 }
 
 .info-activity {
     display: flex;
-    width: 100%;
-    background-color: #fff;
-    justify-content: center;
+    padding: 12px 4px ;
     align-items: center;
-    flex-direction: row;
-    align-content: space-around;
+    justify-content: center;
 }
-.info-activity div {
-    flex-direction: row;
+
+.margin-right-16{
+    margin-right: 16px;
+}
+
+.info-activity-features {
+    display: flex;
     align-items: center;
 }
 
-.info-activity div>i {
-    font-size: 16px;
-    margin: 0px 10px;
+.info-activity-features > i {
+    font-size: 18px;
+    padding: 0px 10px;
 }
 
 .margin-right-20 {
     margin-right: 20px;
 }
+
+.icon-star {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 .icon-star i {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #0060AD;
-    padding-right: 0.2em;
     text-align: left;
 }
+
 .container-photo-profil{
     display: flex;
     align-items: center;
