@@ -31,7 +31,7 @@ body {
     height: 100%;
 }
 
-h1 {
+h1, .h1 {
     margin: 0;
     font-size: 3em;
     font-weight: 600;
@@ -135,6 +135,7 @@ label {
 }
 
 .btn-secondary-light {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     padding: 14px 24px;
     font-size: 1em;
@@ -228,6 +229,14 @@ label {
     margin-top: 32px;
 }
 
+.margin-top-48 {
+    margin-top : 48px;
+}
+
+.margin-top-72 {
+    margin-top: 72px;
+}    
+
 /* --- margin-bottom --- */
 
 .margin-bottom-extra-extra-large {
@@ -240,6 +249,10 @@ label {
 
 .margin-bottom-95 {
     margin-bottom: 95px;
+}
+
+.margin-bottom-72 {
+    margin-bottom: 72px;
 }
 
 .margin-bottom-64 {
@@ -964,8 +977,17 @@ label {
 
 .section-title {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
+}
+
+.section-title-start {
+    display: flex;
+    align-items: center;
+}
+
+.section-title-start h3 {
+    margin-right: 16px;
 }
 
 .one-link {
@@ -1319,11 +1341,27 @@ textarea {
 }
 
 /* =========== Page spot description =========== */
+.container-meteo-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-meteo-features > i {
+  font-size: 2.7em;
+  color: #0060AD;
+  margin-bottom: 16px;
+}
+
+.container-meteo-features span {
+    font-weight: 600;
+}
+
 .container-meteo {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1em;
+    justify-content: space-between;
 }
 
 .separator-meteo {
@@ -1341,7 +1379,6 @@ textarea {
 
 .container-meteo-small {
     display: flex;
-    justify-content: flex-start;
 }
 
 .container-meteo {
@@ -1353,11 +1390,11 @@ textarea {
 
 .container-meteo div {
     text-align: left;
-}
+} */
 
 .container-meteo p span {
     font-weight: 600;
-}
+} */
 
 .container-meteo i {
     font-size: 2.063 em;
@@ -1372,7 +1409,7 @@ textarea {
 
 .container-meteo i:last-child {
     font-size: 2em;
-}
+} */
 
 .container-icon-header-parcours {
     display: flex;
@@ -1431,16 +1468,14 @@ textarea {
 
 .container-image-parcours{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
 .container-image-parcours div{
     border: 1px solid #CFD4DA;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-right: 2em;
-
+    border-radius: 6px;
 }
 
 .container-image-parcours img{
@@ -1452,6 +1487,7 @@ textarea {
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container-activity img {
@@ -1480,9 +1516,9 @@ textarea {
     align-items: center;
 }
 
-.info-activity div>i {
-    font-size: 16px;
-    margin: 0px 10px;
+.info-activity-features > i {
+    font-size: 18px;
+    padding: 0px 10px;
 }
 
 .margin-right-20 {

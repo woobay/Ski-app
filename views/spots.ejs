@@ -83,7 +83,9 @@
                                  <p class="body1">Parcours 122</p>
                                  <p class="resume-spot-content-ellipsis"><%= spot.name %></p>
                              </div>
-                             <span class="oval-box-level level-middle"><%= spot.difficulty %> </span>
+                             <span class="oval-box-level <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+                                <%= spot.difficulty%>
+                            </span>
                         </div>
                         <div class="quick-features-spot full-width ">
                             <div class="quick-features-spot">
@@ -104,7 +106,7 @@
 
             <% }) %> 
             </section>
-            
+
             <% for (var i = 1; i <= pages; i++) { 
 
                 %>
