@@ -79,8 +79,7 @@ exports.renderSpotDescription = (req, res) => {
                 "Authorization": TOKEN
             }})
             .then(info => {
-                // console.log(queryId._id)
-                console.log(info.data)
+        
                 res.render("description", {spot: result.data.skiSpot, info: info.data.user})
 
             })
@@ -96,15 +95,16 @@ exports.newSpots = (req, res) => {
 }
 exports.renderSpots = (req, res) => {
     const TOKEN = req.app.locals.token
+    const page = req.query.page
     
-    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=12&page=1`, {
+    axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=12&page=${page}`, {
         headers: {
             "Content-Type": "application/json", 
             "Authorization": TOKEN
         }
     })
     .then(result => {
-        res.render("spots", {spots: result.data.skiSpots})})
+        res.render("spots", {spots: result.data.skiSpots, pages: result.data.totalPages})})
     .catch(err => {console.log(err)})
 
 }
@@ -119,10 +119,6 @@ exports.addedSpots = (req, res) => {
     const right = req.body.right
     const array = JSON.parse(`[${left}, ${right}]`)
     
-    console.log(difficulty)
-
-    // const array = JSON.parse(`[${coordinates}]`)
-    // const array = JSON.parse("[" + coordinates + "]")
     
     const TOKEN = req.app.locals.token
     

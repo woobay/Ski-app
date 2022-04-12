@@ -12,7 +12,7 @@ router.get('/profil', homeController.renderProfil);
 
 router.get("/spots", homeController.renderSpots);
 router.get("/description/:id/:create", homeController.renderSpotDescription)
-// router.get("/spots/edit/:id", homeController.editSpot)
+
 
 router.get("/spots/new", homeController.newSpots)
 router.post("/spots/new", homeController.addedSpots)

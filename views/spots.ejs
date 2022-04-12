@@ -104,6 +104,17 @@
 
             <% }) %> 
             </section>
+            
+            <% for (var i = 1; i <= pages; i++) { 
+
+                %>
+                <div>
+                    <form action="/spots">
+                        <input type="hidden" name="page" value="<%= i %> "/>
+                        <button class=""><%= i %></button>
+                    </form>
+                </div>
+            <% } %> 
 
     </section>
 
