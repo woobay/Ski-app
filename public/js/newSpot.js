@@ -1,5 +1,6 @@
 // Query selectors
 
+let btnContainer = document.querySelector('#btnContainer');
 let newTagText = document.querySelector('#newTagText');
 let newTagBtn = document.querySelector('#newTagBtn');
 
@@ -20,16 +21,19 @@ let errorDifficulty = document.querySelector('#errorDifficulty');
 let errorDescription = document.querySelector('#errorDescription');
 
 
-// Create new tag
+// Create new tag function
 
-// newTagBtn.addEventListener('click', createNewTag);
+newTagBtn.addEventListener('click', createNewTag);
 
-// function createNewTag() {
-//     let newTag = document.createElement('div');
-//     newTag.setAttribute('class', 'cb-button');
-//     let label = newTag.appendChild(document.createElement('label'));
-//     label.createElement('span').textcontent(newTagText.value);
-// }
+function createNewTag() {
+    let newTag = btnContainer.appendChild(document.createElement('div'));
+    newTag.setAttribute('class', 'cb-button');
+    let label = newTag.appendChild(document.createElement('label'));
+    let checkbox = label.appendChild(document.createElement('input'));
+    checkbox.type = "checkbox";
+    label.appendChild(document.createElement('span')).textContent = newTagText.value;
+};
+
 
 // input validations functions
 
