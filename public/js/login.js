@@ -1,6 +1,6 @@
 // Query selectors
 
-let loginForm = document.querySelector('#log');
+let loginForm = document.querySelector('#validateNewUser');
 
 let email = document.querySelector('#email');
 let emailIcon = document.querySelector('#emailIcon')
