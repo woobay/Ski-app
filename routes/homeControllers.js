@@ -71,8 +71,6 @@ exports.renderSpotDescription = (req, res) => {
             "Authorization": TOKEN
         }}
     ).then(result => {
-        console.log(queryId)
-        console.log(created)
         axios.get(`https://ski-api.herokuapp.com/user/${created}`, {
             headers: {
                 "content-type": "application/json",
