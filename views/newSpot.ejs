@@ -12,9 +12,9 @@
                     <h3 class="margin-bottom-32">Nom et coordonnées géographiques</h3>
                     <p class="margin-bottom-1em">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <label for="nom-parcours">Nom du parcours (obligatoire)</label>
-                    <div class="error" id="errorSpotName">Veuillez entrer un nom de parcours</div>
                     <div class="input-field">
                         <input class="input-newspot" id="spotName" type="" name="name" placeholder="Écrire le nom du parcours" autofocus>
+                        <div class="error" id="errorSpotName">Veuillez entrer un nom de parcours</div>
                     </div>
                 </div>
                 <!-- Localisation du parcours -->
@@ -34,17 +34,17 @@
                         <h4 class="margin-bottom-8 col-12">Montée</h4>
                         <div class="mini-col-5a">
                             <label for="latitude">Latitude (obligatoire)</label>
-                            <div class="error" id="errorLatitude">Veuillez entrer la latitude</div>
                             <div class="input-field margin-bottom-32">
                                 <input class="input-newspot" id="latitude" type="" name="left" placeholder="Écrire la latitude">
+                                <div class="error" id="errorLatitude">Veuillez entrer la latitude</div>
                             </div>
                         </div>
                         <div class="mini-col-5b">
                             <label for="latitude">Longitude (obligatoire)</label>
-                            <div class="error" id="errorLongitude">Veuillez entrer la longitude</div>
                             <div class="input-field">
                                 <input class="input-newspot" id="longitude" type="" name="right"
-                                    placeholder="Écrire la longitude">
+                                placeholder="Écrire la longitude">
+                                <div class="error" id="errorLongitude">Veuillez entrer la longitude</div>
                             </div>
                         </div>
                         <h4 class="margin-bottom-8 col-12">Descente</h4>
@@ -75,7 +75,6 @@
                 <div class="col-5 margin-bottom-1em">
                     <div class="input-control-2">
                         <label for="difficulte">Difficulté technique (obligatoire)</label>
-                        <div class="error" id="errorDifficulty">Veuillez sélectionner la difficulté du parcours</div>
                         <div class="input-field">
                             <select class="input-newspot" id="selectDifficulty" type="" name="difficulty">
                                 <option value="0" disabled selected>Sélectionnez le niveau de difficulté</option>
@@ -83,6 +82,7 @@
                                 <option value="intermédiaire">Intermédiaire</option>
                                 <option value="difficile">Difficile</option>
                             </select>
+                            <div class="error" id="errorDifficulty">Veuillez sélectionner la difficulté du parcours</div>
                         </div>
                     </div>
                     <div class="input-control-2">
@@ -121,10 +121,10 @@
                 <div class="col-10 margin-bottom-64">
                     <div class="input-control-2">
                         <label for="description">Description et accès de parcours (obligatoire)</label>
-                        <div class="error" id="errorDescription">Veuillez entrer une description pour le parcours</div>
                         <div class="input-field">
                             <textarea class="input-newspot" id="description" type="" name="description"
-                                placeholder="Écrire la description du parcours et son accès"></textarea>
+                            placeholder="Écrire la description du parcours et son accès"></textarea>
+                            <div class="error" id="errorDescription">Veuillez entrer une description pour le parcours</div>
                         </div>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
                     <img class="img-map-form" src="../img/image-drag-and-drop-activity.svg">
                 </div>
                 <div class="btn-container margin-bottom-95">
-                    <button id="resetNewSpot" type="reset" class="btn-secondary">Annuler</button>
+                    <button id="resetNewSpot" type="reset" class="btn-secondary" onclick="backToTop()">Annuler</button>
                     <button id="submitNewSpot" type="submit" class="btn-tertiary">Créer le parcours</button>
                 </div>
             </div>
@@ -298,6 +298,6 @@
     </main>
     
 <%- include ('partials/footer'); %>
-<script src="js/newSpot.js"></script>
+<script src="/js/newSpot.js"></script>
 </body>
 </html>
