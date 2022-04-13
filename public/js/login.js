@@ -76,10 +76,10 @@ function validate(e) {
 
 passwordIcon.addEventListener('click', function () {
     if (password.type === "password") {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye');
         password.type = "text";
     } else {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash');
         password.type = "password";
     }
 })

@@ -1,6 +1,5 @@
 // Query selectors
 
-let reset = document.querySelector('#resetNewSpot');
 let submitNewSpot = document.querySelector('#submitNewSpot');
 
 let spotName = document.querySelector('#spotName');
@@ -111,8 +110,6 @@ function validate(e) {
 
 
 // reset form
-
-reset.addEventListener('click', backToTop());
 
 function backToTop() {
     window.scrollTo(0, 0);
