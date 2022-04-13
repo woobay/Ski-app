@@ -137,7 +137,7 @@ exports.addedSpots = (req, res) => {
     .catch(err => {console.log(err)})
 }
 
-exports.deletePost = (req, res) => {
+exports.deletePostProfil = (req, res) => {
     const queryId = {_id: req.params.id}
     const TOKEN = req.app.locals.token
 
@@ -148,6 +148,22 @@ exports.deletePost = (req, res) => {
         }}
     ).then(()=>{
         res.redirect("/profil")
+    }).catch((err) => {
+        console.log(err)
+        
+    })
+}
+exports.deletePostSpots = (req, res) => {
+    const queryId = {_id: req.params.id}
+    const TOKEN = req.app.locals.token
+
+    axios.delete(`http://ski-api.herokuapp.com/ski-spot/${queryId._id}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }}
+    ).then(()=>{
+        res.redirect("/spots")
     }).catch((err) => {
         console.log(err)
         
