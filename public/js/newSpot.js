@@ -1,5 +1,8 @@
 // Query selectors
 
+let newTagText = document.querySelector('#newTagText');
+let newTagBtn = document.querySelector('#newTagBtn');
+
 let submitNewSpot = document.querySelector('#submitNewSpot');
 
 let spotName = document.querySelector('#spotName');
@@ -16,6 +19,17 @@ let errorLongitude = document.querySelector('#errorLongitude');
 let errorDifficulty = document.querySelector('#errorDifficulty');
 let errorDescription = document.querySelector('#errorDescription');
 
+
+// Create new tag
+
+// newTagBtn.addEventListener('click', createNewTag);
+
+// function createNewTag() {
+//     let newTag = document.createElement('div');
+//     newTag.setAttribute('class', 'cb-button');
+//     let label = newTag.appendChild(document.createElement('label'));
+//     label.createElement('span').textcontent(newTagText.value);
+// }
 
 // input validations functions
 
