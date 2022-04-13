@@ -1,18 +1,3 @@
-<!-- <form action="/spots/edit/<%= spot._id%>"_method="put" method="post">
-    <br>
-    <input type="text" value="<%= spot.name %>" name="name" class="form-control">
-    <br>
-    <input type="text" value="<%= spot.description %>" name="description" class="form-control">
-    <br>
-    <input type="text" value="<%= spot.address %>" name="address" class="form-control">phone" class="form-control">
-   <br>
-   <input type="text" value="<%= spot.difficulty %>" name="difficulty" class="form-control">
-   <br>
-   <input type="text" value="<%= spot.coordinates %>" name="coordinates" class="form-control">
-   <br>
-    <button type="submit" class="btn btn-info btn-block mt-3">Update User</button>
-</form> -->
-
 <%- include ('partials/head'); %>
 <title>Créer un parcours</title>
 </head>
@@ -28,7 +13,7 @@
                     <p class="margin-bottom-1em">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <label for="nom-parcours">Nom du parcours (obligatoire)</label>
                     <div class="input-field">
-                        <input class="input-newspot" id="" type="" name="name" placeholder="Écrire le nom du parcours">
+                        <input class="input-newspot" id="" type="" value="<%= spot.name %>" name="name" placeholder="Écrire le nom du parcours">
                     </div>
                 </div>
                 <!-- Localisation du parcours -->
@@ -38,7 +23,7 @@
                         ci-dessous.</p>
                     <label for="localisation">Localisation (obligatoire)</label>
                     <div class="input-field margin-bottom-32">
-                        <input id="" type="" name="address" placeholder="Écrire la localisation">
+                        <input id="" type="" name="address" value="<%= spot.address %>" placeholder="Écrire la localisation">
                         <i class="bi bi-geo-alt" id="">
                         </i>
                     </div>
@@ -48,13 +33,13 @@
                         <div class="mini-col-5a">
                             <label for="latitude">Latitude (obligatoire)</label>
                             <div class="input-field margin-bottom-32">
-                                <input class="input-newspot" id="" type="" name="left" placeholder="Écrire la latitude">
+                                <input class="input-newspot" id="" type="" value="<%= spot.coordinates[0] %>" name="left" placeholder="Écrire la latitude">
                             </div>
                         </div>
                         <div class="mini-col-5b">
                             <label for="latitude">Longitude (obligatoire)</label>
                             <div class="input-field">
-                                <input class="input-newspot" id="" type="" name="right"
+                                <input class="input-newspot" value="<%= spot.coordinates[1] %>" id="" type="" name="right"
                                     placeholder="Écrire la longitude">
                             </div>
                         </div>
@@ -133,7 +118,7 @@
                         <label for="description">Description et accès de parcours (obligatoire)</label>
                         <div class="input-field">
                             <textarea class="input-newspot" id="" type="" name="description"
-                                placeholder="Écrire la description du parcours et son accès"></textarea>
+                                placeholder="Écrire la description du parcours et son accès"><%= spot.description %></textarea>
                         </div>
                     </div>
                 </div>

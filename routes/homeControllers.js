@@ -160,6 +160,8 @@ exports.editSpot = (req, res) => {
     const TOKEN = req.app.locals.token
     const queryId = {_id: req.params.id}
 
+
+
     axios.get(`http://ski-api.herokuapp.com/ski-spot/${queryId._id}`, {
         headers: {
             "content-type": "application/json",
@@ -178,9 +180,10 @@ exports.updateSpot = (req, res) => {
     const description = req.body.description
     const adresse = req.body.address
     const difficulty = req.body.difficulty
-    let coordinates = req.body.coordinates
-
-    const array = JSON.parse("[" + coordinates + "]")
+    const left = req.body.left
+    const right = req.body.right
+    
+    const array = JSON.parse(`[${left}, ${right}]`)
     
     const TOKEN = req.app.locals.token
 
