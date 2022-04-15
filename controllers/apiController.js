@@ -94,7 +94,7 @@ const editSpot = async (queryId, TOKEN) => {
 
 const putSpot = async (queryId, TOKEN, name, description,adresse, difficulty, array) => {
 
-    const result = await axios.put(`https://ski-api.herokuapp.com/ski-spot/${queryId._id}`, {
+    const result = await axios.put(`https://ski-api.herokuapp.com/ski-spot/${queryId}`, {
         name: name,
         description: description,
         address: adresse,

@@ -118,7 +118,7 @@ exports.editSpot = async (req, res) => {
 }
 
 exports.updateSpot = async (req, res) => {
-    const queryId = {_id: req.params.id}
+    const queryId = req.params.id
 
     const name = req.body.name
     const description = req.body.description
