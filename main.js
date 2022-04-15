@@ -1,6 +1,6 @@
 const express = require ("express");
 const dotenv = require("dotenv");
-const routes = require("./routes/users")
+const routes = require("./controllers/users")
 const methodOverride = require("method-override")
 
 
