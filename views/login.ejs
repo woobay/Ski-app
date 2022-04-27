@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/redirect.js"></script>
-    <script src="js/login.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Login</title>
+<%- include ('partials/head'); %>
+<title>Login</title>
 </head>
+
 <body>
     <div class="bg">
         <div class="container">
@@ -42,44 +33,36 @@
                 <p>Pas encore membre ? <a href="/signup">S'inscrire</a></p>
                 <p>Lorem ipsum dolor sit amet, consectadiscing elit.</p>
                 
-                <div class="form" id="loginForm">
-                    
+                <form action="/" method="post" class="form">
                     <div class="input-control">
                         <label for="email">Courriel</label>
                         <div class="input-field" id="emailDiv">
-                            <input id="email" type="email" name="email" placeholder="exemple@nomdedomaine.com" value
-                                required>
-                            <i class="fa-regular fa-envelope" id="emailIcon"></i>
+                            <input id="email" type="email" name="email" placeholder="exemple@nomdedomaine.com">
+                            <i class="fa-regular fa-envelope" id="emailIcon">
+                            </i>
                         </div>
                         <div class="caption error" id="errorEmail">Adresse courriel invalide</div>
                     </div>
-                 
 
-                    
                     <div class="input-control">
-                        <label for="email">Mot de passe</label>
+                        <label for="password">Mot de passe</label>
                         <div class="input-field" id="passwordDiv">
-                            <input id="password" type="password" name="password" placeholder="Entrez votre mot de passe"
-                            required>
+                            <input id="password" type="password" name="password"
+                                placeholder="Entrez votre mot de passe">
                             <i class="fa-regular fa-eye-slash" id="passwordIcon"></i>
                         </div>
-        
+                        <div class="caption error" id="errorPassword">Mot de passe invalide</div>
+
                         <div class="row">
                             <a href="">Mot de passe oublié ?</a>
                             <div class="caption error" id="errorPassword">Mot de passe invalide</div>
                         </div>
                     </div>
-
-                    <button type="submit" id="log" class="btn-primary">Se connecter</button>
-                        
-                </div>
-                    
-
-                
+                    <button id="validateNewUser" type="submit" class="btn-primary">Se connecter</button>
+                </form>
             </section>
         </main>
     </div>
-</body>
-         
-        
+<script src="js/login.js"></script>
+</body>   
 </html>

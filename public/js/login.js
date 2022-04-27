@@ -1,13 +1,11 @@
 // Query selectors
 
-let loginForm = document.querySelector('#log');
+let loginForm = document.querySelector('#validateNewUser');
 
-let emailDiv = document.querySelector('#emailDiv');
 let email = document.querySelector('#email');
 let emailIcon = document.querySelector('#emailIcon')
 let errorEmail = document.querySelector('#errorEmail');
 
-let passwordDiv = document.querySelector('#passwordDiv');
 let password = document.querySelector('#password');
 let passwordIcon = document.querySelector('#passwordIcon');
 let errorPassword = document.querySelector('#errorPassword');
@@ -78,35 +76,11 @@ function validate(e) {
 
 passwordIcon.addEventListener('click', function () {
     if (password.type === "password") {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye');
         password.type = "text";
     } else {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash');
         password.type = "password";
     }
 })
 const log = document.querySelector("#log");
-const login = async () => {
-
-    const emailValue = document.querySelector("#email").value;
-    const passwordValue = document.querySelector("#password").value;
-    console.log(emailValue, passwordValue)
-    if (!!emailValue && !!passwordValue) {
-        const body = JSON.stringify({ email: emailValue, password: passwordValue });
-        const response = await fetch(`https://ski-api.herokuapp.com/login`, {
-            method: 'POST',
-            body, 
-            headers: { 'Content-Type': 'application/json',
-            'Accept': 'application/json'}
-        });
-        const data = await response.json();
-        
-        if (!!data.token) {
-            window.localStorage.setItem('ACCESS_TOKEN', data.token);
-            window.localStorage.setItem('NAME', data.name);
-            window.location.replace("/profil"); 
-        }
-    }
-}
-log.addEventListener("click", login)
-

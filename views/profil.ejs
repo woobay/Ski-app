@@ -1,106 +1,189 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/redirect.js"></script>
-    <script src="js/profil.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Profil</title>
+<%- include ('partials/head'); %>
+<title>Profil</title>
 </head>
-<body>
-    <header class="main-header">
-        <div class="main-header-content">
-            <a class="title-logo" href="/">Logo</a>
-            <nav class="nav-links">
-                    <ul>
-                        <li><a href="">Accueil</a></li>
-                        <li><a href="">Explore</a></li>
-                        <li><a href="">Créer</a></li>
-                        <li><a href="">Guide</a></li>
-                        <li><a href="">Évènements</a></li>
-                        <li><a href="">Discussions</a></li>
-                    </ul>
-            </nav>
-            <div class="nav-right">
-                <i class="bi bi-bell"></i>
-                <div class="nav-separator"></div>
-                
-                <div class="popover__wrapper">
-                    <a href="#">  
-                        <img class="image-profil-user" src="img/image-user@2x.png" alt="">                               
-                    </a>
-                <div class="popover__content">
-                    <nav class="nav-links-vertical">
-                        <ul>
-                            <i class="bi bi-person"></i><li><a href=""> Profil</a></li>
-                            <div class="nav-separator-horizontal"></div>
-                            <li><a id="clearData" href="/">Déconnexion</a></li>
-                        </ul>
-                    </nav>                    
-                </div>
-                </div>                
-                <span id="userName"></span>
-             </div>                    
-            </div>   
-    </header> 
+
+<%- include ('partials/header'); %>
+<main class="margin-bottom-120">
+
     <!-- map -->      
     <div class="hero"></div>
     <!-- Welcome & Search bar -->
-    <div class="grid container-hero">
-        <div class="col-6 margin-bottom-large">
-            <h1>Bienvenue <span class="primary" id="surname"></span></h1>
-            <h3 class="margin-bottom-medium ">Que veux-tu faire aujourd'hui ?</h3>
+     <div class="grid container-hero">
+        <div class="col-6">
+            <div class="icon-header margin-bottom-24">
+                <i class="bi bi-cloud-snow"></i>
+                <p>-13°</p>
+            </div>
+            <h1>Bonjour <span class="primary" id="surname"><%= surname %> !</pan></h1>
+            <h3 class="margin-bottom-32 welcome ">Que veux-tu faire aujourd'hui ?</h3>
             <form action="" method="">
-                <input class="search-bar margin-bottom-medium" id="search-bar" type="text" placeholder="Rechercher un parcours ...">
-                <input class="btn-primary body1 semibold" type="submit"  id="btn-search" value="Filtrer ma recherche">
+                <input class="search-bar margin-bottom-32" id="search-bar" type="text" placeholder="Rechercher un parcours ...">
+                <input class="btn-primary width-unset" type="submit"  id="btn-search" value="Filtrer ma recherche">
             </form>
+        </div>
+
+        <div class="col-4">
+            <div class="icon-header" id="icon-expand-map">
+                <i class="bi bi-arrows-fullscreen"></i>
+            </div>
         </div>
          <!-- Résumé du profil -->
          <div class="container-features col-10">
             <div class="profil-features">
                 <i class="bi bi-people"></i>
-                <p><span>14</span><br>Followers</p>
+                <p>Followers<br><span>14</span></p>
             </div><div class="features-separator"></div>
             <div class="profil-features">
                 <i class="bi bi-speedometer"></i>
-                <p><span>20km</span><br>Parcourus</p>
+                <p>Parcourus<br><span>20 Km</span></p>
             </div><div class="features-separator"></div>
             <div class="profil-features">
-                <i class="bi bi-calendar"></i>
-                <p><span>17</span><br>Sorties</p>
+                <i class="bi bi-calendar4-event"></i>
+                <p>Sorties<br><span>17</span></p>
             </div><div class="features-separator"></div>
             <div class="profil-features">
                 <i class="bi bi-send"></i>
-                <p><span>44</span><br>Posts</p>
+                <p>Posts<br><span>44</span></p>
             </div><div class="features-separator"></div>
             <div class="profil-features">
                 <i class="bi bi-award"></i>
-                <p><span>7</span><br>Badges<br></p>
+                <p>Badges<br><span>7</span></p>
             </div>
         </div>
     </div>
-    <main>
+
+
         <div class="container-main grid">
-             <!-- Colonne gauche - Post -->
+            <!--Encars Parcours-->
+            <section class="col-10 margin-bottom-60">
+                <h4 class="margin-bottom-24 ">Derniers parcours publiés</h4>
+                <div class="container-spot">
+                    <a href="/spots/new" class="btn-create body1 medium">
+                        <img  class="margin-bottom-1em" src="img/icon-add-circle.svg" alt="icône ajouter">
+                        Créer<br>un parcours
+                    </a>
+                    
+                    <% spots.forEach(spot => { %>
+
+                    <a href="/description/<%= spot._id %>/<%= spot.created_by %>">
+                        <article class="container-resume-spot">
+                            <div class="container-image-small" >
+                                <img src="<% 
+                                const array_images = [
+                                    "image-parcours1.jpg",
+                                    "image-parcours2.jpg",
+                                    "image-parcours3.jpg",
+                                    "image-parcours4.jpg",
+                                    "image-parcours5.jpg",
+                                    "image-parcours6.jpg",
+                                    "image-parcours7.jpg",
+                                    "image-parcours8.jpg",
+                                    "image-parcours9.jpg",
+                                    "image-parcours10.jpg",
+                                    "image-parcours12.jpg",
+                                        ]
+
+                                    const random_images = () => {
+                                        
+                                        let random_index = Math.floor(Math.random() * array_images.length)
+                                        
+                                        
+                                        let image_selected = array_images[random_index];
+                                        
+                                        return image_selected;
+                                    }
+
+                                    const img = random_images()     
+
+                                    const display = `img/${img}` 
+                                      
+                                %>
+                                
+                                <%= display %>" id="random_img" alt="">
+                                <div class="popover__wrapper">
+                                    <i class="bi bi-three-dots icon"></i>
+                                    <div class="popover__content popover-resume-spot">
+                                        <div class="nav-links-vertical">
+         
+                                             <form action="/spots/edit/<%= spot._id %>" method="get">
+                                                 <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                             </form>
+        
+                                             <form action="/profil/delete/<%= spot._id %>" method="get">
+                                                 <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Delete</button>
+                                             </form>
+        
+                                        </div>         
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="title-article full-width">
+                            <div class="title-resume-spot">
+                                <p class="body1">Parcours 201</p>
+                                <p class="resume-spot-content-ellipsis"><%= spot.name %> </p>
+                            </div>
+                            <span class="oval-box-level <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+                                <%= spot.difficulty%>
+                            </span>
+                        </div>
+                        <div class="quick-features-spot full-width ">
+                            <div class="quick-features-spot">
+                                <i class="bi bi-clock"></i>
+                                <p>1h32</p>
+                            </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-flag"></i>
+                                <p>33 km</p>
+                            </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-heart"></i>
+                                <p>9,2K J'aime</p>
+                            </div>
+                        </div>
+                    </article>
+                    </a>
+
+                    <% }) %> 
+                    
+                <div class="btn-center margin-bottom-32">
+                    <a href="/spots" class="btn-secondary-light width-unset">
+                        Voir tous les parcours
+                    </a>
+                </div>
+            </section>
+
+
+             <!-- Colonne gauche - Post & Alert -->
             <section class="col-6">
-                <h4 class="margin-bottom-small">Flux d'actualités</h4>
-                <!-- Card Post 1 -->
-                <article class="container-post margin-bottom-medium ">
-                    <header class="title-article margin-bottom-small">
-                        <img class="image-profil-friend" src="img/image-friend3@2x.png" alt="">
+                <h4 class="margin-bottom-24">Flux d'actualités</h4>
+                <!--News Alert 1-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
                         <div>
-                            <p class="body1">Jane Cooper</p>
-                            <p>Montréal, Québec</p>
+                            <p><span class="tag-name">Simon Hebert</span> a créé un nouveau parcours :<br>
+                                <span class="primary">@parcours 122 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card Post 1 -->
+                <article class="container-post margin-bottom-32 ">
+                    <header class="title-article margin-bottom-24">
+                        <img class="image-profil-friend" src="img/image-friend3@2x.png" alt="">
+                        <div class="title-article-header" >
+                            <p class="body1">Jane Cooper<br>
+                                <span>Montréal, Québec</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
                         </div>
                     </header>
-                    <div class="container-image-medium margin-bottom-small"> 
+                    <p class="margin-bottom-24"><span class="tag-name">Jane Cooper</span> a ajouté une photo au <span class="primary">@parcours 47 !</span></p>
+                    <div class="container-image-medium margin-bottom-24"> 
                         <img src="img/image-post1.jpg" alt="">
                     </div>
-                    <div class="container-social margin-bottom-small">
+                    <div class="container-social margin-bottom-24">
                         <div>
                             <i class="bi bi-heart"></i>
                             <p>22,5K J'aime</p>
@@ -116,10 +199,10 @@
                         <div>
                             <i class="bi bi-star"></i>
                             <p>Favoris</p>
-                        </div> 
+                        </div>
                     </div>
                     <!-- Description et commentaire -->
-                    <div class="margin-bottom-small">
+                    <div class="margin-bottom-24">
                         <div class="article-separator "></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi orci tempor tellus quam donec sed quisque condimentum sed. Amet, turpis sapien sapien hendrerit lacus aliquam ullamcorper !</p>
                     </div>
@@ -134,16 +217,62 @@
                             </div>
                     </div>
                 </article>
-                <!-- Card Post 2 -->
-                <article class="container-post margin-bottom-medium">
-                    <header class="title-article margin-bottom-small">
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                <!--News Alert 2-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend2@2x.png" alt="">
                         <div>
-                            <p class="body1">Simon Hebert</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Guy Hawkins</span> a terminé le <span class="primary">@parcours 124 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </article>
+                <!--News Alert 3-->
+                <article class="container-post margin-bottom-28">
+                    <div class="alert-news margin-bottom-24">
+                        <img class="image-profil-friend" src="img/image-friend2@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Guy Hawkins</span> a collecté le <span class="primary">Badge Yéti</span> en<br> terminant le défi 4 parcours difficiles terminés !
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
+                        <div>
+                            <i class="bi bi-heart"></i>
+                            <p>92,5K J'aime</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-chat"></i>
+                            <p>54 Commentaires</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-share"></i>
+                            <p>Partager</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                            <p>Favoris</p>
+                        </div> 
+                    </div>
+                </article>
+                <!-- Card Post 2 -->
+                <article class="container-post margin-bottom-32">
+                    <header class="title-article margin-bottom-24">
+                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                        <div class="title-article-header">
+                            <p class="body1">Simon Hebert<br>
+                                <span>Québec City, Québec</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
                         </div>
                     </header>
-                    <div class="container-image-medium-divided margin-bottom-small"> 
+                    <p class="margin-bottom-24"><span class="tag-name">Simon Hebert</span> a ajouté des photos au <span class="primary">@parcours 90 !</span></p>
+                    <div class="container-image-medium-divided margin-bottom-24"> 
                         <div class="container-image-left">
                             <img src="img/image-post2-left.jpg" alt="">
                         </div>
@@ -153,7 +282,7 @@
                         </div>
                        
                     </div>
-                    <div class="container-social margin-bottom-small">
+                    <div class="container-social margin-bottom-24">
                         <div>
                             <i class="bi bi-heart"></i>
                             <p>72,2K J'aime</p>
@@ -172,7 +301,7 @@
                         </div> 
                     </div>
                     <!-- Description et commentaire -->
-                    <div class="margin-bottom-small">
+                    <div class="margin-bottom-24">
                         <div class="article-separator"></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in suscipit lorem, viverra ultricies eros. Pellentesque volutpat ipsum eu tellus fermentum porttitor. Aenean ut augue orci. Phasellus eleifend nunc ut posuere tincidunt. Vestibulum sed facilisis magna. Pellentesque molestie dui eu tempor efficitur. Integer congue sollicitudin lacus sed laoreet. Sed bibendum ante et lectus aliquam dapibus. Phasellus diam ligula, vehicula sed justo vel, ultrices sagittis quam. Donec rhoncus mattis !</p>
                     </div>
@@ -187,142 +316,201 @@
                             </div>
                     </div>
                 </article>
-                <!-- Card Post 3 -->
-                <article class="container-post margin-bottom-medium">
-                    <header class="title-article margin-bottom-small">
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                <!--News Alert 4-->
+                <article class="container-post">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend11@2x.png" alt="">
                         <div>
-                            <p class="body1">Simon Hebert</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Theresa Web</span> a créé un guide <span class="primary">@bonnes-<br>
+                                pratiques-de-sécurité-en-montagne-2022 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
                         </div>
-                    </header>
-                    <div class="container-image-medium margin-bottom-small"> 
-                        <img src="img/image-post3.jpg" alt="">
                     </div>
-                    <div class="container-social margin-bottom-small">
-                        <div>
-                            <i class="bi bi-heart"></i>
-                            <p>92,5K J'aime</p>
-                        </div>
-                        <div>
-                            <i class="bi bi-chat"></i>
-                            <p>54 Commentaires</p>
-                        </div>
-                        <div>
-                            <i class="bi bi-share"></i>
-                            <p>Partager</p>
-                        </div>
-                        <div>
-                            <i class="bi bi-star"></i>
-                            <p>Favoris</p>
-                        </div> 
-                    </div>
-                    <!-- Description et commentaire -->
-                    <div class="margin-bottom-small">
-                        <div class="article-separator"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis egestas vulputate. Donec ipsum enim, dignissim in dolor quis, bibendum sodales tellus. Duis ut convallis tellus. Quisque rhoncus rutrum massa eget efficitur. Mauris sed ornare leo, in aliquet nunc. Sed sodales magna ac purus pellentesque, ut egestas nisl consequat. Nam non ex nec orci elementum ornare quis at mauris. Duis venenatis diam lorem, ac egestas nisl lobortis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur ex metus, tincidunt eget dictum ac, commodo nec arcu. Donec rhoncus nisl ac nisi vulputate porta.</p><br>
-                        <p>Pellentesque in lacinia mi, sit amet suscipit enim. Aenean in gravida lorem. Curabitur lacinia feugiat urna, ut venenatis nisi vestibulum id. In rhoncus interdum libero, id dictum nunc placerat in. Sed scelerisque mi eget dui tincidunt blandit. Vestibulum bibendum tortor vitae cursus interdum. Proin efficitur nunc augue !</p>
-                    </div>
-                    <div class="container-comment">
-                        <img  class="image-profil-friend" src="img/image-user2@2x.png" alt="">
-                        <div class="input-icons">
-                            <input class="input-comment" type="text" placeholder="Écrire un commentaire">
-                            <div class="icons">
-                             <i class="bi bi-paperclip "></i>
-                             <i class="bi bi-emoji-smile"></i>
-                             <i class="bi bi-image"></i>
-                            </div>
-                    </div>
-                </article>
+                </article>                
             </section>
             
-             <!-- Colonne droite - Parcours -->
+
+             <!-- Colonne droite - Social - Requêtes -->
             <section class="col-4">
-                <div class="section-title margin-bottom-small">
-                    <h4 >Suggestions</h4>
-                    <span class="medium">Voir plus</span>
+                <div class="section-title margin-bottom-24">
+                    <h4>Requêtes <span class="primary">(3)</span></h4>
+                    <span class="medium one-link">Voir plus 
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
                 </div>
-                <!-- article 1 -->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours1.jpg" alt="">
-                    </div>
-                    <div class="title-article full-width">
+
+                <!-- article Request 1 -->
+                <article class="container-post margin-bottom-32">
+                    <div class="container-content-request">
                         <div>
-                            <p class="body1">Parcours 201</p>
-                            <p>Québec City, Québec</p>
+                            <img class="image-profil-friend" src="img/image-friend4@2x.png" alt="">
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                        
+                        <div class="aide">
+
+                            <p><span class="tag-name">Floyd Miles</span> veut vous<br>
+                                ajouter en ami.
+                            </p>
+
+                            <div class="request-btn">
+                                <a class="btn-primary">Ajouter</a>
+                                <a class="btn-secondary-light">Décliner</a>
+                            </div>
+                        </div>
                     </div>
                 </article>
-                <!-- article 2-->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours2.jpg" alt="">
-                    </div>
-                    <div class="title-article full-width">
+
+                <!-- article Request 2 -->
+                <article class="container-post margin-bottom-32">
+                    <div class="container-content-request">
                         <div>
-                            <p class="body1">Parcours 201</p>
-                            <p>Québec City, Québec</p>
+                            <img class="image-profil-friend" src="img/image-friend5@2x.png" alt="">
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                        
+                        <div class="aide">
+
+                            <p><span class="tag-name">Darrel Steward</span> veut vous<br>
+                                ajouter en ami.
+                            </p>
+
+                            <div class="request-btn">
+                                <a class="btn-primary">Ajouter</a>
+                                <a class="btn-secondary-light">Décliner</a>
+                            </div>
+                        </div>
                     </div>
                 </article>
-                <!-- article 3 -->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours3.jpg" alt="">
-                    </div>
-                    <div class="title-article full-width">
+
+
+            <!--Colonne droite - Social - Suivre-->
+                <div class="section-title margin-bottom-24">
+                    <h4 >Qui suivre</h4>
+                    <span class="medium one-link">Voir plus 
+                         <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div> 
+
+            <!-- article 3-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend8@2x.png" alt="">
                         <div>
-                            <p class="body1 semibold">Parcours 90</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Jacob Jones</span><br>
+                                @JacobJones
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
                     </div>
-                </article>
-                <!-- article 4 -->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours4.jpg" alt="">
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
                     </div>
-                    <div class="title-article full-width">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend6@2x.png" alt="">
                         <div>
-                            <p class="body1 semibold">Parcours 66</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Kristin Watson</span><br>
+                                @KristinWatson
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
                     </div>
-                </article>
-                <!-- article 5 -->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours5.jpg" alt="">
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
                     </div>
-                    <div class="title-article full-width">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend7@2x.png" alt="">
                         <div>
-                            <p class="body1 semibold">Parcours 290</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Devon Lane</span><br>
+                                @DevonLane
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
                     </div>
-                </article>
-                <!-- article 6 -->
-                <article class="container-post margin-bottom-medium">
-                    <div class="container-image-small margin-bottom-small" >
-                        <img src="img/image-parcours6.jpg" alt="">
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
                     </div>
-                    <div class="title-article full-width">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="img/image-friend9@2x.png" alt="">
                         <div>
-                            <p class="body1 semibold">Parcours 158</p>
-                            <p>Québec City, Québec</p>
+                            <p><span class="tag-name">Esther Howard</span><br>
+                                @EstherHoward
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
                         </div>
-                        <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
                     </div>
+
                 </article>
+ 
+
+            <!--Colonne droite - Social - Contacts -->
+            <div class="section-title margin-bottom-24">
+                <h4 >Contacts</h4>
+                <span class="medium one-link">Voir plus 
+                     <i class="bi bi-arrow-right"></i>
+                </span>
+            </div> 
+
+            <!-- article 3-->
+            <article class="container-post margin-bottom-32 ">
+                <div class="alert-news">
+                    <img class="image-profil-friend" src="img/image-friend10@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Leslie Alexander</span><br>En ligne</p>
+                    </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="img/image-friend3@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Jane Cooper</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="img/image-friend2@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Guy Hawkins</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Simon Hebert</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="img/image-friend11@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Theresa Web</span><br>En ligne
+                         </p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28 contact-friend-offline">
+                    <img class="image-profil-friend" src="img/image-friend12@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Eleanor Pena</span><br>Hors ligne</p>
+                         <p>18mn</p>
+                    </div>
+                </div>
+
+                <div class="alert-news margin-top-28 contact-friend-offline">
+                    <img class="image-profil-friend" src="img/image-friend13@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Ronald Richards</span><br>Hors ligne</p>
+                         <p>2h</p>
+                    </div>
+                </div>
+            </article>
             </section>
         </div>
-    </main>
-    <footer></footer>
+
+<%- include ('partials/footer'); %>
+<script src="js/profil.js"></script>
 </body>
 </html>
