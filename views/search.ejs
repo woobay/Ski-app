@@ -1,0 +1,98 @@
+<%- include ('partials/head'); %>
+<title>Search</title>
+</head>
+
+<%- include ('partials/header'); %>
+
+<main class="margin-bottom-120">
+    <section class="grid container-search">
+        <div class="col-7">
+            <h1 class="margin-bottom-32">Résultats : <span class="primary">Amandine Flores (08)</span></h1>
+            <form action="" method="" class="margin-bottom-48">
+                <input class="search-bar margin-bottom-32" id="searchBarPage" type="text" placeholder="Amandine Flores">
+                <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Lancer la recherche">
+            </form>
+        </div>
+
+        <div class="col-10 allParcours">
+            <a class="link-click-off">Tous les résultats (08)</a>
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Parcours (01)</a>  
+            <div class="nav-separator"></div>
+            <a class="link-click-on">Personnes (07)</a>    
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Guides</a>     
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Événements</a>                                      
+        </div>
+    </section>
+
+    <section class="container-main grid">
+
+
+        <div class="col-10">
+
+            <div class="container-post margin-bottom-24">
+                <div class="alert-news">
+                    <img class="image-profil-friend" src="img/img-person-search1.png" alt="">
+                    <div>
+                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
+                            Québec City, Québec
+                        </p>
+                        <div id="btns-search-results">
+                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
+                            <button class="btn-secondary-light width-unset">Suivre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="container-post margin-bottom-24">
+                <div class="alert-news">
+                    <img class="image-profil-friend" src="img/img-person-search2.png" alt="">
+                    <div>
+                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
+                            Québec City, Québec
+                        </p>
+                        <div id="btns-search-results">
+                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
+                            <button class="btn-secondary-light width-unset">Suivre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="container-post margin-bottom-24">
+                <div class="alert-news">
+                    <img class="image-profil-friend" src="img/img-profil-follower7.png" alt="">
+                    <div>
+                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
+                            Québec City, Québec
+                        </p>
+                        <div id="btns-search-results">
+                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
+                            <button class="btn-secondary-light width-unset">Suivre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+        <section class="col-4 ">
+
+            <ul class="pagination">
+                <li>
+                    <form action="">
+     
+                        <input type="hidden" name="page" value=""/>
+                            <button></button>   
+                    </form>
+                </li>
+            </ul>
+            
+        </section>
+  
+
+
+<%- include ('partials/footer'); %>
+</body>
+</html>

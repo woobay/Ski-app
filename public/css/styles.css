@@ -185,6 +185,14 @@ label {
     grid-column: 7/12;
 }
 
+.col-5c {
+    grid-column: 5/10;
+}
+
+.col-5d{
+    grid-column: 6;
+}
+
 .col-6 {
     grid-column: 2/8;
 }
@@ -279,6 +287,10 @@ label {
     margin-bottom: 24px;
 }
 
+.margin-bottom-16 {
+    margin-bottom: 16px;
+}
+
 .margin-bottom-8 {
     margin-bottom: 8px;
 }
@@ -327,40 +339,41 @@ label {
     border: none;
 }
 
-.nav-links-vertical {
+.nav-links-vertical-main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
-.nav-links-vertical ul {
+.nav-links-vertical-main ul {
     list-style-type: none;
+    display: inline-block; 
 }
 
-.nav-links-vertical ul li {
-    display: inline-block;
-    padding-top: 10px;
-    padding-left: 5px;
+.nav-links-vertical-main ul li {
+    display: flex;
+    align-items: center;
 }
 
-.nav-links-vertical ul li:last-child {
-    padding-right: inherit;
+.nav-links-vertical-main ul li:last-child {
+    margin-top: 0.5em;
 }
 
-.nav-links-vertical a:hover {
+.nav-links-vertical-main ul li:hover, ul li a:hover {
+    color: #0060AD;
+}
+
+.nav-links-vertical-main ul li i {
+    font-size: 1.125em;
+    margin-right: 0.5em;
+}
+
+.nav-links-vertical-main a:hover {
     color: #04477C;
     font-weight: 600;
     border: none;
-}
-
-.nav-links-vertical form {
-    margin-top: 10px;
-    padding-left: 6px;
-    padding-right: 8px;
-}
-
-.nav-links-vertical form:first-child {
-    margin-bottom: 2px;
 }
 
 .btn-settings {
@@ -378,7 +391,7 @@ label {
 
 .btn-settings i {
     font-size: 17px;
-    padding-right: 8px;
+    padding-right: 0.5em;
 }
 
 .title-logo {
@@ -464,6 +477,67 @@ label {
     margin-top: 10px;
 }
 
+/* Search bar feed & search bar header */
+
+.search{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search input {
+    width: 150px;
+    padding: 10px 12px;
+    border: 1px solid #CFD4DA;
+    border-radius: 4px;
+    transition: all .5s;
+}
+
+.search i {
+    font-size: 17px;
+    position: absolute;
+    right: 5%;
+    color: #CFD4DA;
+
+}
+
+.search input:focus {
+    width: 200px;
+}
+
+#search-bar {
+    font-family: "Montserrat", sans-serif;
+    width: 525px;
+    height: 42px;
+}
+
+.search select {
+    font-family: "Montserrat", sans-serif;
+    width: 200px;
+    height: 42px;
+    color: #CFD4DA;
+    border: 1px solid #CFD4DA;
+    border-radius: 4px;
+    padding: 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    margin-left: -8px;
+}
+
+.selectIcon::after {
+    content: url("../img/chevron-down-search.svg");
+    width: 18px;
+    top: 15px;
+    right: 14px;
+    position: absolute;
+}
+
+#search-btn {
+    font-size: 1em;
+    height: 42px;  
+}
+
 /* ================== Footer =================== */
 
 .main-footer {
@@ -541,7 +615,7 @@ label {
 /* ================== Map & Input ==================== */
 
 .container-hero {
-    margin-top: 10.25em;
+    margin-top: 19.25em;
 }
 
 .icon-header {
@@ -581,6 +655,28 @@ label {
     z-index: -1;
 }
 
+
+.test {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 2px solid #04477C;
+    position: absolute;
+}
+
+#moche {
+    background-image: url(../img/image-friend15@2.png);
+    top: 198px;
+    left: 765.5px;
+}
+
+#truc {
+    background-image: url(../img/image-friend16@2.png);
+    left: 732.5px;
+    top: 198px;
+}
+
 .parcours {
     background-image: url('../img/map-fiche-parcours@2.jpg');
 }
@@ -602,8 +698,6 @@ label {
     width: unset;
 }
 
-
-
 .container-content-request {
     display: flex;
 }
@@ -620,14 +714,15 @@ label {
 
 /*=================== Page Profil/Feed =====================*/
 
-.container-features {
+.container-searchBar {
     display: flex;
     justify-content: space-around;
-    padding: 0.875em 1.125em;
+    padding: 1.75em 1.5em;
     margin-top: 3em;
     background-color: #FFF;
     border-radius: 0.5em;
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+
 }
 
 .profil-features {
@@ -787,20 +882,6 @@ label {
     top: -160px;
 }
 
-.nav-links-vertical ul li {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links-vertical ul li:hover {
-    color: #0060AD;
-}
-
-.nav-links-vertical ul li i {
-    font-size: 17px;
-    margin-right: 8px;
-}
-
 .container-image-small img {
     border-radius: 0.25em;
     width: 100%;
@@ -810,6 +891,16 @@ label {
 .popover-resume-spot {
     top: -140px;
     left: 167px;
+}
+
+.nav-links-vertical form {
+    margin-top: 10px;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+.nav-links-vertical form:first-child {
+    margin-bottom: 2px;
 }
 
 /* Posts & Alerts */
@@ -1052,7 +1143,7 @@ label {
 .allParcours a:hover {
     font-weight: 600;
     color: #0060AD;
-    text-decoration-line: underline;
+    text-decoration-line: none;
     text-underline-offset: 8px;
     text-decoration-thickness: 2px;
     cursor: pointer;
@@ -1271,7 +1362,7 @@ label {
     color: #C4C4C4;
 }
 
-/* ----- page newSpot ------ */
+/* ================ page newSpot ================= */
 
 label[for="localisation"]+div {
     margin-top: 0.5rem;
@@ -1561,4 +1652,191 @@ textarea {
 .container-photo-profil img{
     width: 6%;
     margin: 20px;
+}
+
+/* ================ page Recherche ================= */
+
+.container-search {
+    margin-top: 10.25em;
+}
+
+#searchBarPage {
+    width: 88%;
+}
+
+#SearchResultFilter { /* à checker code blandine pour éviter éventuel conflit Azure */
+    justify-content: initial;
+}
+
+.col-10.allParcours > * {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.tag-name-result {
+    width: 21%;
+}
+
+#btns-search-results {  
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btns-search-results button:first-child {
+    margin-right: 16px;
+    width: 30%;
+}
+
+#btns-search-results button:last-child {  
+    width: 15%;
+}
+
+
+/* ================ page Profil & page Profil - My Friends ================= */
+
+/* à checker code blandine pour éviter éventuel conflit Azure */
+
+.hero-profil {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-profil@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.container-hero-profil {
+    display: flex;
+    color: #fff;
+}
+
+.container-hero-profil img {
+    margin-right: 1em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.container-hero-profil-content div:nth-child(2){
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 16px;
+   
+}
+
+.container-hero-profil-content div:nth-child(2) >* {
+   font-weight: 600;
+   margin-right: 16px;
+   font-size: 16px;
+}
+
+.container-hero-profil-content button {
+    width: auto;
+}
+
+.container-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.875em 1.125em;
+    /* margin-top: 3em; */
+    margin-top: 92px;
+    background-color: #FFF;
+    border-radius: 0.5em;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.profil-features {
+    display: flex;
+    align-items: center;
+}
+
+.profil-features p {
+    margin-left: 16px;
+}
+
+.profil-features p span {
+    font-weight: 600;
+}
+
+.profil-features i {
+    font-size: 2.063em;
+    color: #0060AD;
+}
+
+.profil-features i:first-child {
+    font-size: 2.5em;
+}
+
+.profil-features i:last-child {
+    font-size: 2.313em;
+}
+
+.features-separator {
+    width: 1px;
+    height: 5em;
+    background-color: #F2F2F2;
+}
+
+/* potentiel conflit */
+
+.col-10.allParcours {
+    justify-content: center;
+}
+
+.col-10.allParcours >* {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.btn-create.btn-horizontal {
+    width: 100%;
+    height: 138px;
+   background-image: url('../img/background-btn-rectangle.jpg');
+}
+
+.btn-create.btn-horizontal img {
+    margin-bottom: 12px;
+}
+
+.img-post-parcours {
+    width: 142px;
+    /* height: 88px; */
+    border-radius: 4px;
+}
+
+.hero-person {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-friend@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.fs-24 {
+    font-size: 24px!important;
+}
+
+.container-ami {
+    padding: 24px;
+    width: 470px;
+    height:96px;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0px 4px 8px 0px #60617029,0px -3px 2px 0px #28293D0A;
+
+}
+
+.container-ami > .alert-news > button {
+    width: unset!important;
 }
