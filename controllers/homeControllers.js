@@ -9,7 +9,23 @@ exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
 }
 
+<<<<<<< HEAD
 exports.renderProfil = async (req, res) => {
+=======
+exports.renderProfil = (req, res) => {
+    res.render("profil.ejs")
+}
+
+exports.renderSearch = (req, res) => {
+    res.render("search.ejs")
+}
+
+exports.renderProfilMyFriends = (req,res) => {
+    res.render("profil-user-myfriends.ejs")
+}
+
+exports.renderFeed = async (req, res) => {
+>>>>>>> Develop_v2.0_Frontend_Constance
     const TOKEN = req.app.locals.token
     
    const result = await axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=5&page=1`, {
@@ -18,7 +34,11 @@ exports.renderProfil = async (req, res) => {
             "Authorization": TOKEN
         }
     })
+<<<<<<< HEAD
     res.render("profil", {spots: result.data.skiSpots})
+=======
+    res.render("feed", {spots: result.data.skiSpots})
+>>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 
@@ -31,9 +51,12 @@ exports.renderNewUser = async (req, res) => {
     res.render("login", result)
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> Develop_v2.0_Frontend_Constance
 exports.postAuthentication = async (req, res) => {
     const emailValue = req.body.email
     const passwordValue = req.body.password
@@ -46,7 +69,11 @@ exports.postAuthentication = async (req, res) => {
 
     const spot = await apiController.getSkiSpot(info.token, 5, 1)
 
+<<<<<<< HEAD
     res.render("profil", {info: info, spots: spot.skiSpots})
+=======
+    res.render("feed", {info: info, spots: spot.skiSpots})
+>>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 
@@ -91,12 +118,20 @@ exports.addedSpots = async (req, res) => {
     res.redirect("/spots")
 }
 
+<<<<<<< HEAD
 exports.deletePostProfil = async (req, res) => {
+=======
+exports.deletePostFeed = async (req, res) => {
+>>>>>>> Develop_v2.0_Frontend_Constance
     const queryId = req.params.id
     const TOKEN = req.app.locals.token
 
     await apiController.deletePost(queryId, TOKEN)
+<<<<<<< HEAD
     res.redirect("/profil")    
+=======
+    res.redirect("/feed")    
+>>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 exports.deletePostSpots =  async (req, res) => {

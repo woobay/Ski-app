@@ -4,7 +4,11 @@
             <a class="title-logo" href="/">Logo</a>
             <nav class="nav-links">
                     <ul>
+<<<<<<< HEAD
                         <li><a href="/profil">Feed</a></li>
+=======
+                        <li><a href="/feed">Feed</a></li>
+>>>>>>> Develop_v2.0_Frontend_Constance
                         <li><a href="/spots">Explore</a></li>
                         <li><a href="/spots/new">Créer</a></li>
                         <li><a href="">Guide</a></li>
@@ -13,6 +17,12 @@
                     </ul>
             </nav>
             <div class="nav-right">
+                <div class="search">
+                    <input type="search" placeholder="Rechercher">
+                    <i class="bi bi-search"></i>
+                </div>
+                
+                <div class="nav-separator"></div>
                 <i class="bi bi-bell"></i>
                 <div class="nav-separator"></div>
                 
@@ -21,10 +31,17 @@
                         <img class="image-profil-user" src="/img/image-user@2x.png" alt="">                               
                     </a>
                 <div class="popover__content">
-                    <nav class="nav-links-vertical">
+                    <nav class="nav-links-vertical-main">
                         <ul>
-                            <li><i class="bi bi-person"></i>
-                                <a href="">Profil</a></li>
+                            <li class="margin-bottom-16"><i class="bi bi-person"></i>
+                                <a href="/profil">Profil</a>
+                            </li>
+                            <li class="margin-bottom-16"><i class="bi bi-star"></i>
+                                <a href="">Mes favoris</a>
+                            </li>
+                            <li class="margin-bottom-16"><i class="bi bi-gear"></i>
+                                <a href="">Paramètres</a>
+                            </li> 
                             <div class="nav-separator-horizontal"></div>
                             <li><a id="clearData" href="/">Déconnexion</a></li>
                         </ul>
