@@ -9,23 +9,38 @@ exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
 }
 
-exports.renderSearch = (req, res) => {
+exports.renderSearch = async (req, res) => {
     const TOKEN = req.app.locals.token
     const word = req.query.word
+     
+    const result = await apiController.searchFriend(TOKEN, word)
+    res.render("search", {users: result.users, word: word})
+}
+
+exports.renderProfilMyFriends = async (req,res) => {
+    const TOKEN = req.app.locals.token
     
-    res.render("search.ejs")
+    const result = await apiController.getFriends(TOKEN)
+    
+    res.render("profil-user-myfriends", {users: result.friends})
+
 }
 
-exports.renderProfilMyFriends = (req,res) => {
-    res.render("profil-user-myfriends.ejs")
+exports.renderProfilUser = async (req, res) => {
+    const TOKEN = req.app.locals.token
+    
+    const result = await apiController.getFriends(TOKEN)
+    
+    res.render("profilUser", {users: result.friends})
 }
 
-exports.renderProfilUser = (req, res) => {
-    res.render("profilUser.ejs")
-}
-
-exports.renderProfilPerson = (req, res) => {
-    res.render("profilPerson.ejs")
+exports.renderProfilPerson = async (req, res) => {
+    const TOKEN = req.app.locals.token
+    const friendId = req.params.id
+     
+    const result = await apiController.infoFriend(friendId, TOKEN)
+    console.log(result)
+    res.render("profilPerson", {users: result.friends})
 }
 
 exports.renderFeed = async (req, res) => {
@@ -39,7 +54,15 @@ exports.renderFeed = async (req, res) => {
     })
     res.render("feed", {spots: result.data.skiSpots})
 }
+exports.addFriend = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+    const word = req.query.word
 
+    console.log(word)
+    await apiController.addFriend(friendId, TOKEN)
+    res.render("search", {word: word})
+}
 
 exports.renderNewUser = async (req, res) => {
     let username = req.body.userName

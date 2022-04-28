@@ -14,7 +14,7 @@
                 <img src="../img/img-profil-hero2.jpg" alt="...">
                 <div class="container-hero-profil-content">
                     <div>
-                        <h1>Robert Fox</h1>
+                        <h1><%= name %> </h1>
                         <h3>Québec City, Québec</h3>
                     </div>
                     <div>
@@ -71,29 +71,21 @@
 
         <div class="col-10">
             <div class="container-spot">
+                <% users.forEach(user => { %>
+
                 <section class="container-ami">
                     <div class="alert-news">
                     <img class="image-profil-friend" src="../img/img-profil-follower2.png" alt="">
                     <div>
-                        <p><span class="tag-name">Amandine Flores</span><br>
+                        <p><span class="tag-name"><%= user.name %> </span><br>
                             Québec City, Québec
                         </p>
                     </div>
                     <button class="btn-secondary-light">Ami.e</button>
             
                 </section>
-                <section class="container-ami">
-                    <div class="alert-news">
-                    <img class="image-profil-friend" src="../img/img-profil-follower3.png" alt="">
-                    <div>
-                        <p><span class="tag-name">Annette Black</span><br>
-                            Trois-rivières, Québec
-                        </p>
-                    </div>
-                    <button class="btn-secondary-light">Ami.e</button>
-            
-                </section>
                 
+                <% }) %> 
             </div>
             
 

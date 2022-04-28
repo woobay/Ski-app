@@ -7,9 +7,9 @@
 <main class="margin-bottom-120">
     <section class="grid container-search">
         <div class="col-7">
-            <h1 class="margin-bottom-32">Résultats : <span class="primary">Amandine Flores (08)</span></h1>
-            <form action="" method="" class="margin-bottom-48">
-                <input class="search-bar margin-bottom-32" id="searchBarPage" type="text" placeholder="Amandine Flores">
+            <h1 class="margin-bottom-32">Résultats : <span class="primary"><%= word %> </span></h1>
+            <form action="/search" method="get" class="margin-bottom-48">
+                <input class="search-bar margin-bottom-32" name="word" id="searchBarPage" type="text" placeholder="Amandine Flores">
                 <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Lancer la recherche">
             </form>
         </div>
@@ -31,50 +31,29 @@
 
 
         <div class="col-10">
-
+            
+            <% users.forEach(user => { %>
+            
             <div class="container-post margin-bottom-24">
                 <div class="alert-news">
                     <img class="image-profil-friend" src="img/img-person-search1.png" alt="">
                     <div>
-                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
-                            Québec City, Québec
-                        </p>
+                        <form action="/search/friend/<%= user.id%>" method="get">
+                            <button type="submit"><%=user.name %></button>
+                        </form>
                         <div id="btns-search-results">
-                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
-                            <button class="btn-secondary-light width-unset">Suivre</button>
+                            <form action="/search/<%= user.id %>" method="get">
+                             <input type="hidden" name="word" value="<%= word %>">
+                                <button type="submit" class="btn-primary width-unset">Ajouter</button>
+                                <!-- <button class="btn-secondary-light width-unset">Suivre</button> -->
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>  
-            <div class="container-post margin-bottom-24">
-                <div class="alert-news">
-                    <img class="image-profil-friend" src="img/img-person-search2.png" alt="">
-                    <div>
-                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
-                            Québec City, Québec
-                        </p>
-                        <div id="btns-search-results">
-                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
-                            <button class="btn-secondary-light width-unset">Suivre</button>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            <div class="container-post margin-bottom-24">
-                <div class="alert-news">
-                    <img class="image-profil-friend" src="img/img-profil-follower7.png" alt="">
-                    <div>
-                        <p class="tag-name-result"><span class="tag-name">Amandine Flores</span><br>
-                            Québec City, Québec
-                        </p>
-                        <div id="btns-search-results">
-                            <button class="btn-primary width-unset">Ajouter en ami.e</button>
-                            <button class="btn-secondary-light width-unset">Suivre</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
+
+            <% }) %> 
+            
     </section>
 
         <section class="col-4 ">

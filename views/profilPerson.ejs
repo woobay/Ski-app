@@ -288,47 +288,17 @@
 
         <!-- article 3-->
         <article class="container-post margin-bottom-32 ">
+            <% users.forEach(user => { %>
+
             <div class="alert-news">
                 <img class="image-profil-friend" src="img/image-friend10@2x.png" alt="">
                 <div>
-                     <p><span class="tag-name">Leslie Alexander</span><br>En ligne</p>
+                     <p><span class="tag-name"><%= user.name %> </span><br>En ligne</p>
                      <p><i class="bi bi-three-dots"></i></p>
                 </div>
                 
             </div>
-
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend3@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Jane Cooper</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
-
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend2@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Guy Hawkins</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
-
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Simon Hebert</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
-
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend11@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Theresa Web</span><br>En ligne
-                     </p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
+            <% }) %> 
 
             <div class="alert-news margin-top-28 contact-friend-offline">
                 <img class="image-profil-friend" src="img/image-friend12@2x.png" alt="">
