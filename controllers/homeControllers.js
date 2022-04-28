@@ -21,6 +21,14 @@ exports.renderProfilMyFriends = (req,res) => {
     res.render("profil-user-myfriends.ejs")
 }
 
+exports.renderProfilUser = (req, res) => {
+    res.render("profilUser.ejs")
+}
+
+exports.renderProfilPerson = (req, res) => {
+    res.render("profilPerson.ejs")
+}
+
 exports.renderFeed = async (req, res) => {
     const TOKEN = req.app.locals.token
     

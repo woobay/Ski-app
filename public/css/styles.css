@@ -725,38 +725,6 @@ label {
 
 }
 
-.profil-features {
-    display: flex;
-    align-items: center;
-}
-
-.profil-features p {
-    margin-left: 16px;
-}
-
-.profil-features p span {
-    font-weight: 600;
-}
-
-.profil-features i {
-    font-size: 2.063em;
-    color: #0060AD;
-}
-
-.profil-features i:first-child {
-    font-size: 2.5em;
-}
-
-.profil-features i:last-child {
-    font-size: 2.313em;
-}
-
-.features-separator {
-    width: 1px;
-    height: 5em;
-    background-color: #F2F2F2;
-}
-
 /* Main  */
 
 .container-main {
@@ -1021,6 +989,7 @@ label {
 
 .container-social div {
     display: flex;
+    align-items: center;
 }
 
 .container-social div p {
@@ -1697,7 +1666,6 @@ textarea {
 
 /* ================ page Profil & page Profil - My Friends ================= */
 
-/* à checker code blandine pour éviter éventuel conflit Azure */
 
 .hero-profil {
     width: 100%;
@@ -1824,6 +1792,15 @@ textarea {
 
 .fs-24 {
     font-size: 24px!important;
+}
+
+.popover-friend {
+    top: 76px;
+    left: 99px;
+}
+
+#popover-friend-new-padding {
+    padding-left: initial;
 }
 
 .container-ami {
