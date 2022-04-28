@@ -10,6 +10,9 @@ exports.renderSignup = (req, res) => {
 }
 
 exports.renderSearch = (req, res) => {
+    const TOKEN = req.app.locals.token
+    const word = req.query.word
+    
     res.render("search.ejs")
 }
 

@@ -32,12 +32,13 @@
          <!-- Recherche principale -->
          <div class="container-searchBar col-10">
 
+             <form action="/search" method="get">
              <div class="search">
-                <input type="search" id="search-bar" placeholder="Rechercher">
+                <input type="text" name="word" id="search-bar" placeholder="Rechercher">
                 <i class="bi bi-search"></i>
             </div>
             <div class="search selectIcon">
-                <select name="selectRecherche">
+                <select>
                     <option>Tous</option>
                     <option>Parcours</option>
                     <option>Personne</option>
@@ -45,8 +46,7 @@
                     <option>Événements</option>
                 </select>
             </div>
-             <form action="" method="">
-                <input class="btn-primary" type="submit" id="search-btn" value="Rechercher">
+                <button class="btn-primary" type="submit">Recherche</button>
             </form>
         </div>
     </div>
