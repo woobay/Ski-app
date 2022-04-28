@@ -22,4 +22,8 @@ router.get("/spots/delete/:id", homeController.deletePostSpots)
 router.get("/spots/edit/:id", homeController.editSpot)
 router.post("/spots/edit/:id", homeController.updateSpot)
 
+router.get("/profil2", homeController.renderProfilUser);
+
+router.get("/profil3", homeController.renderProfilPerson);
+
 module.exports = router

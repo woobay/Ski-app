@@ -201,6 +201,10 @@ label {
     grid-column: 1/12;
 }
 
+.col-5c {
+    grid-column: 5/10;
+}
+
 .mini-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -327,27 +331,38 @@ label {
     border: none;
 }
 
-.nav-links-vertical {
+nav-links-vertical-main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
-.nav-links-vertical ul {
+.nav-links-vertical-main ul {
     list-style-type: none;
+    display: inline-block; 
 }
 
-.nav-links-vertical ul li {
-    display: inline-block;
-    padding-top: 10px;
-    padding-left: 5px;
+.nav-links-vertical-main ul li {
+    display: flex;
+    align-items: center;
 }
 
-.nav-links-vertical ul li:last-child {
-    padding-right: inherit;
+.nav-links-vertical-main ul li:last-child {
+    margin-top: 0.5em;
 }
 
-.nav-links-vertical a:hover {
+.nav-links-vertical-main ul li:hover, ul li a:hover {
+    color: #0060AD;
+}
+
+.nav-links-vertical-main ul li i {
+    font-size: 1.125em;
+    margin-right: 0.5em;
+}
+
+.nav-links-vertical-main a:hover {
     color: #04477C;
     font-weight: 600;
     border: none;
@@ -418,8 +433,8 @@ label {
 }
 
 .popover__content {
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0;
+    visibility: hidden; */
     position: absolute;
     left: -48px;
     top: 25px;
@@ -620,47 +635,7 @@ label {
 
 /*=================== Page Profil/Feed =====================*/
 
-.container-features {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.875em 1.125em;
-    margin-top: 3em;
-    background-color: #FFF;
-    border-radius: 0.5em;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-}
 
-.profil-features {
-    display: flex;
-    align-items: center;
-}
-
-.profil-features p {
-    margin-left: 16px;
-}
-
-.profil-features p span {
-    font-weight: 600;
-}
-
-.profil-features i {
-    font-size: 2.063em;
-    color: #0060AD;
-}
-
-.profil-features i:first-child {
-    font-size: 2.5em;
-}
-
-.profil-features i:last-child {
-    font-size: 2.313em;
-}
-
-.features-separator {
-    width: 1px;
-    height: 5em;
-    background-color: #F2F2F2;
-}
 
 /* Main  */
 
@@ -930,6 +905,7 @@ label {
 
 .container-social div {
     display: flex;
+    align-items: center;
 }
 
 .container-social div p {
@@ -937,6 +913,7 @@ label {
 }
 
 .container-social div i {
+    font-size: 18px;
     padding-right: 8px;
 }
 
@@ -1561,4 +1538,147 @@ textarea {
 .container-photo-profil img{
     width: 6%;
     margin: 20px;
+}
+
+
+/* =========== Page Profil =========== */
+.hero-profil {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-profil@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.container-hero-profil {
+    display: flex;
+    color: #fff;
+}
+
+.container-hero-profil img {
+    margin-right: 1em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.container-hero-profil-content div:nth-child(2){
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 16px;
+   
+}
+
+.container-hero-profil-content div:nth-child(2) >* {
+   font-weight: 600;
+   margin-right: 16px;
+   font-size: 16px;
+}
+
+.container-hero-profil-content button {
+    width: auto;
+}
+
+.container-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.875em 1.125em;
+    /* margin-top: 3em; */
+    margin-top: 92px;
+    background-color: #FFF;
+    border-radius: 0.5em;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.profil-features {
+    display: flex;
+    align-items: center;
+}
+
+.profil-features p {
+    margin-left: 16px;
+}
+
+.profil-features p span {
+    font-weight: 600;
+}
+
+.profil-features i {
+    font-size: 2.063em;
+    color: #0060AD;
+}
+
+.profil-features i:first-child {
+    font-size: 2.5em;
+}
+
+.profil-features i:last-child {
+    font-size: 2.313em;
+}
+
+.features-separator {
+    width: 1px;
+    height: 5em;
+    background-color: #F2F2F2;
+}
+
+/* potentiel conflit */
+
+.col-10.allParcours {
+    justify-content: center;
+}
+
+.col-10.allParcours >* {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.btn-create.btn-horizontal {
+    width: 100%;
+    height: 138px;
+   background-image: url('../img/background-btn-rectangle.jpg');
+}
+
+.btn-create.btn-horizontal img {
+    margin-bottom: 12px;
+}
+
+.img-post-parcours {
+    width: 142px;
+    /* height: 88px; */
+    border-radius: 4px;
+}
+
+.hero-person {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-friend@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.fs-24 {
+    font-size: 24px!important;
+}
+
+/* .popover__content{
+    opacity: 1;
+    visibility: visible; 
+} */
+
+.popover-friend {
+    top: 76px;
+    left: 99px;
+}
+
+#popover-friend-new-padding {
+    padding-left: initial;
 }
