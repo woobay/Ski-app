@@ -83,10 +83,4 @@ passwordIcon.addEventListener('click', function () {
         password.type = "password";
     }
 })
-<<<<<<< HEAD
 const log = document.querySelector("#log");
-
-
-=======
-const log = document.querySelector("#log");
->>>>>>> Develop_v2.0_Frontend_Constance
