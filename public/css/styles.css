@@ -185,8 +185,6 @@ label {
     grid-column: 7/12;
 }
 
-<<<<<<< HEAD
-=======
 .col-5c {
     grid-column: 5/10;
 }
@@ -195,7 +193,6 @@ label {
     grid-column: 6;
 }
 
->>>>>>> Develop_v2.0_Frontend_Constance
 .col-6 {
     grid-column: 2/8;
 }
@@ -290,13 +287,10 @@ label {
     margin-bottom: 24px;
 }
 
-<<<<<<< HEAD
-=======
 .margin-bottom-16 {
     margin-bottom: 16px;
 }
 
->>>>>>> Develop_v2.0_Frontend_Constance
 .margin-bottom-8 {
     margin-bottom: 8px;
 }
@@ -345,19 +339,12 @@ label {
     border: none;
 }
 
-<<<<<<< HEAD
-.nav-links-vertical {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-=======
 .nav-links-vertical-main {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-left: 0.5em;
     margin-right: 0.5em;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .nav-links-vertical-main ul {
@@ -365,16 +352,6 @@ label {
     display: inline-block; 
 }
 
-<<<<<<< HEAD
-.nav-links-vertical ul li {
-    display: inline-block;
-    padding-top: 10px;
-    padding-left: 5px;
-}
-
-.nav-links-vertical ul li:last-child {
-    padding-right: inherit;
-=======
 .nav-links-vertical-main ul li {
     display: flex;
     align-items: center;
@@ -391,7 +368,6 @@ label {
 .nav-links-vertical-main ul li i {
     font-size: 1.125em;
     margin-right: 0.5em;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .nav-links-vertical-main a:hover {
@@ -400,19 +376,6 @@ label {
     border: none;
 }
 
-<<<<<<< HEAD
-.nav-links-vertical form {
-    margin-top: 10px;
-    padding-left: 6px;
-    padding-right: 8px;
-}
-
-.nav-links-vertical form:first-child {
-    margin-bottom: 2px;
-}
-
-=======
->>>>>>> Develop_v2.0_Frontend_Constance
 .btn-settings {
     display: flex;
     background-color: #fff;
@@ -428,11 +391,7 @@ label {
 
 .btn-settings i {
     font-size: 17px;
-<<<<<<< HEAD
-    padding-right: 8px;
-=======
     padding-right: 0.5em;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .title-logo {
@@ -518,113 +477,6 @@ label {
     margin-top: 10px;
 }
 
-<<<<<<< HEAD
-/* ================== Footer =================== */
-
-.main-footer {
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-}
-
-.main-footer-content {
-    width: 80%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.footer-top-content {
-    display: flex;
-    margin-bottom: 48px;
-}
-
-.footer-top-content div:first-child {
-    margin-right: 125px
-}
-
-.footer-top-content h3 {
-    text-transform: uppercase;
-}
-
-.footer-top-content p {
-    margin-top: 8px;
-}
-
-.footer-top-content div:last-child {
-    margin-top: 24px;
-}
-
-.footer-top-content i {
-    font-size: 1.75em;
-    color: #0060AD;
-    margin-right: 24px;
-}
-
-.footer-top-content nav {
-    display: flex;
-}
-
-.footer-top-content ul {
-    list-style-type: none;
-}
-
-.footer-top-content ul:first-child {
-    margin-right: 128px;
-}
-
-.footer-top-content li:first-child {
-    color: #0060AD;
-}
-
-.footer-top-content nav ul li {
-    margin-bottom: 24px;
-}
-
-.footer-top-content a {
-    font-weight: normal;
-}
-
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-bottom-content p {
-    margin-top: 16px;
-}
-
-/* ================== Map & Input ==================== */
-
-.container-hero {
-    margin-top: 10.25em;
-}
-
-.icon-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FFFFFF;
-    color: #0060AD;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-    width: 9%;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.icon-header i {
-    font-size: 24px;
-}
-
-.icon-header p {
-    font-size: 16px;
-}
-
-#icon-expand-map {
-    width: 48px;
-    position: absolute;
-    top: 413px;
-    right: 205px;
-=======
 /* Search bar feed & search bar header */
 
 .search{
@@ -639,7 +491,6 @@ label {
     border: 1px solid #CFD4DA;
     border-radius: 4px;
     transition: all .5s;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .search i {
@@ -650,369 +501,6 @@ label {
 
 }
 
-<<<<<<< HEAD
-.parcours {
-    background-image: url('../img/map-fiche-parcours@2.jpg');
-}
-
-.welcome {
-    font-weight: 500;
-}
-
-.search-bar {
-    width: 100%;
-    height: 42px;
-    padding: 15px;
-    border-radius: 4px;
-    border: none;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-}
-
-.width-unset {
-    width: unset;
-}
-
-
-
-.container-content-request {
-    display: flex;
-}
-
-.container-content-request img {
-    margin-right: 16px;
-}
-
-.aide {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/*=================== Page Profil/Feed =====================*/
-
-.container-features {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.875em 1.125em;
-    margin-top: 3em;
-    background-color: #FFF;
-    border-radius: 0.5em;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-=======
-.search input:focus {
-    width: 200px;
-}
-
-#search-bar {
-    font-family: "Montserrat", sans-serif;
-    width: 525px;
-    height: 42px;
-}
-
-.search select {
-    font-family: "Montserrat", sans-serif;
-    width: 200px;
-    height: 42px;
-    color: #CFD4DA;
-    border: 1px solid #CFD4DA;
-    border-radius: 4px;
-    padding: 12px;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    margin-left: -8px;
-}
-
-.selectIcon::after {
-    content: url("../img/chevron-down-search.svg");
-    width: 18px;
-    top: 15px;
-    right: 14px;
-    position: absolute;
-}
-
-#search-btn {
-    font-size: 1em;
-    height: 42px;  
->>>>>>> Develop_v2.0_Frontend_Constance
-}
-
-/* ================== Footer =================== */
-
-.main-footer {
-    background-color: #FFF;
-    display: flex;
-<<<<<<< HEAD
-    align-items: center;
-}
-
-.profil-features p {
-    margin-left: 16px;
-=======
-    justify-content: center;
-}
-
-.main-footer-content {
-    width: 80%;
-    padding-top: 50px;
-    padding-bottom: 50px;
->>>>>>> Develop_v2.0_Frontend_Constance
-}
-
-.footer-top-content {
-    display: flex;
-    margin-bottom: 48px;
-}
-
-<<<<<<< HEAD
-.profil-features i {
-    font-size: 2.063em;
-    color: #0060AD;
-}
-
-.profil-features i:first-child {
-    font-size: 2.5em;
-=======
-.footer-top-content div:first-child {
-    margin-right: 125px
->>>>>>> Develop_v2.0_Frontend_Constance
-}
-
-.footer-top-content h3 {
-    text-transform: uppercase;
-}
-
-.footer-top-content p {
-    margin-top: 8px;
-}
-
-<<<<<<< HEAD
-/* Main  */
-
-.container-main {
-    margin-top: 3.75em;
-}
-
-/* Encart Parcours & Créer Un Nouveau Parcours */
-
-.container-spot {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.btn-center {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.btn-create {
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 298px;
-    height: 298px;
-    cursor: pointer;
-    color: #fff;
-    border-radius: 8px;
-    background-image: url('../img/background-btn2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-}
-
-.btn-create:hover {
-    outline: solid 2px #0060AD;
-}
-
-.oval-box-level {
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
-    border-radius: 22px;
-    padding: 8px 12px;
-}
-
-.oval-box-level-big {
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 25px;
-    padding: 12px 30px;
-
-}
-
-.oval-box-container i {
-    font-size: 18px;
-}
-
-.level-easy {
-    text-transform: capitalize;
-    background-color: #339933;
-}
-
-.level-middle {
-    text-transform: capitalize;
-    background-color: #00008B;
-}
-
-.level-difficult {
-    text-transform: capitalize;
-    background-color: #000;
-}
-
-.quick-features-spot {
-    display: flex;
-}
-
-.quick-features-spot div {
-    display: flex;
-    align-items: center;
-}
-
-.quick-features-spot div>i {
-    font-size: 16px;
-    margin-right: 6px;
-}
-
-.title-resume-spot {
-    width: 130px;
-}
-
-.resume-spot-content-ellipsis {
-    width: calc(92%);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.container-resume-spot {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 298px;
-    height: 298px;
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 0.5em;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-    margin-bottom: 32px;
-}
-
-.icon {
-    cursor: pointer;
-    font-size: 28px;
-    color: #fff;
-    position: absolute;
-    z-index: 2;
-    right: 10px;
-    top: -160px;
-}
-
-.nav-links-vertical ul li {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links-vertical ul li:hover {
-    color: #0060AD;
-}
-
-.nav-links-vertical ul li i {
-    font-size: 17px;
-    margin-right: 8px;
-}
-
-.container-image-small img {
-    border-radius: 0.25em;
-    width: 100%;
-    height: 160px;
-}
-
-.popover-resume-spot {
-    top: -140px;
-    left: 167px;
-}
-
-/* Posts & Alerts */
-
-.container-post {
-    height: auto;
-    background-color: #FFF;
-    border-radius: 0.5em;
-    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-    padding: 24px;
-}
-
-.title-article {
-    display: flex;
-    align-items: center;
-}
-
-.image-profil-friend {
-    width: 50px;
-}
-
-.alert-news {
-    display: flex;
-    align-items: center;
-}
-
-.alert-news div {
-    padding-left: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.alert-news div p:last-child {
-    padding-right: 28px;
-}
-
-.alert-news i {
-    font-size: 24px;
-    color: #AEB2B8;
-}
-
-.title-article-header {
-    padding-left: 24px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.title-article div p:first-child {
-    font-weight: 600;
-}
-
-.title-article div span {
-    font-weight: initial;
-    font-size: 1em;
-}
-
-.title-article i {
-    font-size: 24px;
-    margin-left: 10px;
-    color: #AEB2B8;
-}
-
-.tag-name {
-    font-weight: 600;
-}
-
-.container-image-medium img {
-    border-radius: 0.25em;
-    width: 100%;
-}
-
-/* container post à 3 images */
-.container-image-medium-divided {
-=======
 .footer-top-content div:last-child {
     margin-top: 24px;
 }
@@ -1048,7 +536,6 @@ label {
 }
 
 .footer-bottom-content {
->>>>>>> Develop_v2.0_Frontend_Constance
     display: flex;
     justify-content: space-between;
 }
@@ -1057,15 +544,6 @@ label {
     margin-top: 16px;
 }
 
-<<<<<<< HEAD
-.container-image-left img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.25em;
-}
-
-.container-image-right {
-=======
 /* ================== Map & Input ==================== */
 
 .container-hero {
@@ -1073,7 +551,7 @@ label {
 }
 
 .icon-header {
->>>>>>> Develop_v2.0_Frontend_Constance
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1957,6 +1435,7 @@ textarea {
 
 .container-meteo-small {
     display: flex;
+    align-items: center;
 }
 
 .container-icon-header-parcours {
@@ -1981,20 +1460,11 @@ textarea {
     font-size: 24px;
 }
 
-<<<<<<< HEAD
-.article-separator {
-    width: 100%;
-    height: 1.5px;
-    background-color: #CFD4DA;
-    opacity: 0.3;
-    margin-bottom: 16px;
-=======
 .container-tag{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .container-tag span{
@@ -2084,133 +1554,17 @@ textarea {
 .info-activity-features {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    justify-content: space-between;
-}
-
-.section-title-start {
-    display: flex;
-    align-items: center;
-}
-
-.section-title-start h3 {
-    margin-right: 16px;
-}
-
-.one-link {
-    font-size: 0.875em;
-    color: #AEB2B8;
-    display: flex;
-}
-
-.one-link i {
-    color: #CFD4DA;
-    font-size: 16px;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 8px;
-}
-
-.contact-friend-offline {
-    color: #AEB2B8;
-=======
 }
 
 .info-activity-features > i {
     font-size: 18px;
     padding: 0px 10px;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .margin-right-20 {
     margin-right: 20px;
 }
 
-<<<<<<< HEAD
-.container-image-small img {
-    border-radius: 0.25em;
-    width: 100%;
-}
-
-.request-btn {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 18px;
-}
-
-.request-btn a {
-    padding: 12px 24px;
-}
-
-.request-btn a:first-child {
-    margin-right: 1em;
-}
-
-
-/* ================ Page Explore ============== */
-
-.allParcours {
-    display: flex;
-    align-items: center;
-    font-size: 1.1em;
-}
-
-.allParcours a:hover {
-    font-weight: 600;
-    color: #0060AD;
-    text-decoration-line: underline;
-    text-underline-offset: 8px;
-    text-decoration-thickness: 2px;
-    cursor: pointer;
-}
-
-.link-click-on {
-    font-weight: 600;
-    color: #0060AD;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #0060AD;
-}
-
-.link-click-off {
-    padding-bottom: 8px;
-}
-
-.pagination {
-    margin-left: 40%;
-    list-style-type:none;
-}
-
-.pagination li {
-    float: left;
-    margin-right: 8px;
-}
-
-.pagination button {
-    font-family: 'Montserrat', 'sans-serif';
-    width: 100%;
-    padding: 16px;
-    border: none;
-    background-color: #F4F6F8;
-    cursor: pointer;
-    transition: 0.3s ease; 
-
-}
-
-.pagination button:hover{
-    font-weight: bold;
-    color: #0060AD;
-    transform: translateX(5px);   
-}
-
-
-/* =============== Page Signup ================ */
-.bg {
-    background-image: url("../img/background-onboarding@2x.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-=======
 .icon-star {
     width: auto;
     display: flex;
@@ -2221,7 +1575,6 @@ textarea {
     font-size: 1.3em;
     color: #0060AD;
     text-align: left;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .container-photo-profil{
@@ -2275,16 +1628,12 @@ textarea {
     width: 15%;
 }
 
-<<<<<<< HEAD
-.box-transparent>p {
-=======
 
 /* ================ page Profil & page Profil - My Friends ================= */
 
 /* à checker code blandine pour éviter éventuel conflit Azure */
 
 .hero-profil {
->>>>>>> Develop_v2.0_Frontend_Constance
     width: 100%;
     height: 450px;
     background-image: url('../img/banner-profil@2x.jpg');
@@ -2309,19 +1658,9 @@ textarea {
 
 .container-hero-profil-content div:nth-child(2){
     display: flex;
-<<<<<<< HEAD
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background: rgba(57, 79, 90, 0.16);
-    border-radius: 35px;
-    padding: 0.625em 1.125em;
-    margin-right: 12px;
-=======
     margin-top: 8px;
     margin-bottom: 16px;
    
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .container-hero-profil-content div:nth-child(2) >* {
@@ -2367,15 +1706,8 @@ textarea {
     font-size: 2.5em;
 }
 
-<<<<<<< HEAD
-.input-control,
-.input-control-2 {
-    width: 100%;
-    margin-bottom: 16px;
-=======
 .profil-features i:last-child {
     font-size: 2.313em;
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .features-separator {
@@ -2384,7 +1716,7 @@ textarea {
     background-color: #F2F2F2;
 }
 
-<<<<<<< HEAD
+
 .input-field {
     width: 100%;
     position: relative;
@@ -2418,7 +1750,8 @@ textarea {
     min-width: 50px;
     text-align: center;
     font-size: 16px;
-=======
+}
+
 /* potentiel conflit */
 
 .col-10.allParcours {
@@ -2437,7 +1770,6 @@ textarea {
     width: 100%;
     height: 138px;
    background-image: url('../img/background-btn-rectangle.jpg');
->>>>>>> Develop_v2.0_Frontend_Constance
 }
 
 .btn-create.btn-horizontal img {
@@ -2464,7 +1796,6 @@ textarea {
     font-size: 24px!important;
 }
 
-<<<<<<< HEAD
 /* ============== Page Login  =============== */
 
 .row a {
@@ -2764,7 +2095,189 @@ textarea {
 .container-photo-profil img{
     width: 6%;
     margin: 20px;
-=======
+
+}
+
+/* ================ page Recherche ================= */
+
+.container-search {
+    margin-top: 10.25em;
+}
+
+#searchBarPage {
+    width: 88%;
+}
+
+#SearchResultFilter { /* à checker code blandine pour éviter éventuel conflit Azure */
+    justify-content: initial;
+}
+
+.col-10.allParcours > * {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.tag-name-result {
+    width: 21%;
+}
+
+#btns-search-results {  
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btns-search-results button:first-child {
+    margin-right: 16px;
+    width: 30%;
+}
+
+#btns-search-results button:last-child {  
+    width: 15%;
+}
+
+
+/* ================ page Profil & page Profil - My Friends ================= */
+
+
+.hero-profil {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-profil@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.container-hero-profil {
+    display: flex;
+    color: #fff;
+}
+
+.container-hero-profil img {
+    margin-right: 1em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.container-hero-profil-content div:nth-child(2){
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 16px;
+   
+}
+
+.container-hero-profil-content div:nth-child(2) >* {
+   font-weight: 600;
+   margin-right: 16px;
+   font-size: 16px;
+}
+
+.container-hero-profil-content button {
+    width: auto;
+}
+
+.container-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.875em 1.125em;
+    /* margin-top: 3em; */
+    margin-top: 92px;
+    background-color: #FFF;
+    border-radius: 0.5em;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.profil-features {
+    display: flex;
+    align-items: center;
+}
+
+.profil-features p {
+    margin-left: 16px;
+}
+
+.profil-features p span {
+    font-weight: 600;
+}
+
+.profil-features i {
+    font-size: 2.063em;
+    color: #0060AD;
+}
+
+.profil-features i:first-child {
+    font-size: 2.5em;
+}
+
+.profil-features i:last-child {
+    font-size: 2.313em;
+}
+
+.features-separator {
+    width: 1px;
+    height: 5em;
+    background-color: #F2F2F2;
+}
+
+/* potentiel conflit */
+
+.col-10.allParcours {
+    justify-content: center;
+}
+
+.col-10.allParcours >* {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.btn-create.btn-horizontal {
+    width: 100%;
+    height: 138px;
+   background-image: url('../img/background-btn-rectangle.jpg');
+}
+
+.btn-create.btn-horizontal img {
+    margin-bottom: 12px;
+}
+
+.img-post-parcours {
+    width: 142px;
+    /* height: 88px; */
+    border-radius: 4px;
+}
+
+.hero-person {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-friend@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.fs-24 {
+    font-size: 24px!important;
+}
+
+.popover-friend {
+    top: 76px;
+    left: 99px;
+}
+
+#popover-friend-new-padding {
+    padding-left: initial;
+}
+
 .container-ami {
     padding: 24px;
     width: 470px;
@@ -2778,5 +2291,5 @@ textarea {
 
 .container-ami > .alert-news > button {
     width: unset!important;
->>>>>>> Develop_v2.0_Frontend_Constance
+
 }
