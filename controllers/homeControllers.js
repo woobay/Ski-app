@@ -9,10 +9,6 @@ exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
 }
 
-exports.renderProfil = (req, res) => {
-    res.render("profil.ejs")
-}
-
 exports.renderSearch = (req, res) => {
     res.render("search.ejs")
 }

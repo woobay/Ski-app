@@ -21,13 +21,12 @@ router.get("/spots/delete/:id", homeController.deletePostSpots)
 router.get("/spots/edit/:id", homeController.editSpot)
 router.post("/spots/edit/:id", homeController.updateSpot)
 
-router.get('/profil', homeController.renderProfil);
 router.get('/search', homeController.renderSearch);
 
 router.get('/profil/myfriends', homeController.renderProfilMyFriends);
 
-router.get("/profil2", homeController.renderProfilUser);
+router.get("/profil", homeController.renderProfilUser);
 
-router.get("/profil3", homeController.renderProfilPerson);
+router.get("/profil2", homeController.renderProfilPerson);
 
 module.exports = router
