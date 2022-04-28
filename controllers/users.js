@@ -26,7 +26,6 @@ router.get('/search', homeController.renderSearch);
 
 router.get('/profil/myfriends', homeController.renderProfilMyFriends);
 
-
 router.get("/profil2", homeController.renderProfilUser);
 
 router.get("/profil3", homeController.renderProfilPerson);
