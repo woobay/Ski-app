@@ -66,13 +66,13 @@
                             <div class="popover__wrapper">
                                 <i class="bi bi-three-dots icon"></i>
                                 <div class="popover__content popover-resume-spot">
-                                    <div class="nav-links-vertical">
+                                    <div id="nav-links-vertical">
                                          <form action="/spots/edit/<%= spot._id %>" method="get">
-                                             <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                             <button type="submit" id="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
                                         </form>
     
                                         <form action="/spots/delete/<%= spot._id %>" method="get">
-                                             <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                                             <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
                                         </form>
                                     </div>         
                                 </div>

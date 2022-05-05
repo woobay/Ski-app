@@ -9,7 +9,7 @@
         <div class="col-7">
             <h1 class="margin-bottom-32">Résultats : <span class="primary"><%= word %> </span></h1>
             <form action="/search" method="get" class="margin-bottom-48">
-                <input class="search-bar margin-bottom-32" name="word" id="searchBarPage" type="text" placeholder="Amandine Flores">
+                <input class="search-bar margin-bottom-32" name="word" id="searchBarPage" type="text" placeholder="Écrivez votre recherche" value="<%= word %>">
                 <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Lancer la recherche">
             </form>
         </div>
@@ -35,18 +35,20 @@
             <% users.forEach(user => { %>
             
             <div class="container-post margin-bottom-24">
-                <div class="alert-news">
-                    <img class="image-profil-friend" src="img/img-person-search1.png" alt="">
-                    <div>
-                        <form action="/search/friend/<%= user.id%>" method="get">
-                            <button type="submit"><%=user.name %></button>
+                <div class="search-results">
+                    <img class="image-profil-friend" src="img/image-friend6@2x.png" alt="">
+                    <div id="search-results-cursor">
+                        <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form">
+                            <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                            <p>Québec City, Québec</p>
                         </form>
+
                         <div id="btns-search-results">
                             <form action="/search/<%= user.id %>" method="get">
                              <input type="hidden" name="word" value="<%= word %>">
-                                <button type="submit" class="btn-primary width-unset">Ajouter</button>
-                                <!-- <button class="btn-secondary-light width-unset">Suivre</button> -->
+                                <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
                             </form>
+                             <button class="btn-secondary-light width-unset" id="btn-search-follow">Suivre</button>
                         </div>
                     </div>
                 </div>
