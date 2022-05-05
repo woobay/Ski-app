@@ -13,7 +13,9 @@
                 <img src="/img/img-profil-person.jpg" alt="...">
                 <div class="container-hero-profil-content">
                     <div>
-                        <h1>Jane Cooper</h1>
+                        <h1>
+                            <%= userInfo.name %>
+                        </h1>
                         <h3>Montréal, Québec</h3>
                     </div>
                     <div>
@@ -21,7 +23,15 @@
                         <p class="medium">22 Followers</p>
                         <p class="medium">26 ami.e.s</p>
                     </div>
-                    <button class="btn-primary">Ami.e</button>
+                    <% console.log(users) %>
+                            <%    if (friends.includes(users.id)) { %>
+                                <button class="btn-secondary-light">Ami.e</button>
+                                   
+                                   <% } else { %>  
+                                       <form action="/search/<%= users.id %>" method="get">
+                                           <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                       </form>
+                                   <% }%> 
                 </div>
             </div>
         </div>
