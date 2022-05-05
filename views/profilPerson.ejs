@@ -23,10 +23,15 @@
                                 <p class="medium">22 Followers</p>
                                 <p class="medium">26 ami.e.s</p>
                             </div>
-                            <form action="/search/<%= user.id %>" method="get">
-                                <input type="hidden" name="word" value="<%= word %>">
-                                <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
-                            </form>
+                            <% console.log(users) %>
+                            <%    if (friends.includes(users.id)) { %>
+                                <button class="btn-secondary-light">Ami.e</button>
+                                   
+                                   <% } else { %>  
+                                       <form action="/search/<%= users.id %>" method="get">
+                                           <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                       </form>
+                                   <% }%> 
                         </div>
                     </div>
                 </div>
