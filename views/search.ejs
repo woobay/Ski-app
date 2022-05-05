@@ -31,7 +31,9 @@
 
 
         <div class="col-10">
-            
+            <% if (users.length === 0) { %>
+                <p>PErsonne</p>
+                <% } else { %> 
             <% users.forEach(user => { %>
             
             <div class="container-post margin-bottom-24">
@@ -105,7 +107,7 @@
                 </div>
             </div>  
 
-            <% }) %> 
+            <% })} %> 
             
     </section>
 
