@@ -351,6 +351,11 @@ label {
     border: none;
 }
 
+.current {
+    color: #04477C;
+    font-weight: 600;
+}
+
 .nav-links-vertical-main {
     display: flex;
     align-items: center;
