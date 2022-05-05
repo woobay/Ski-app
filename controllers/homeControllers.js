@@ -37,10 +37,13 @@ exports.renderProfilUser = async (req, res) => {
 exports.renderProfilPerson = async (req, res) => {
     const TOKEN = req.app.locals.token
     const friendId = req.params.id
+    const userId = req.params.id
+    // const friends = req.locals.
      
     const result = await apiController.infoFriend(friendId, TOKEN)
-    console.log(result)
-    res.render("profilPerson", {users: result.friends})
+    const userInfo = await apiController.getUser(userId, TOKEN)
+    console.log(userInfo)
+    res.render("profilPerson", {users: result.friends, userInfo: userInfo.user})
 }
 
 exports.renderFeed = async (req, res) => {
