@@ -670,7 +670,7 @@ label {
 }
 
 
-.test {
+.pin-map {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -679,16 +679,41 @@ label {
     position: absolute;
 }
 
-#moche {
-    background-image: url(../img/image-friend15@2.png);
+#profil-1 {
+    background-image: url(../img/image-friend1@2x.png);
+    top: 257px;
+    left: 1248.5px;
+}
+#profil-2 {
+    background-image: url(../img/image-friend2@2x.png);
     top: 198px;
-    left: 765.5px;
+    left: 913.5px;
 }
 
-#truc {
-    background-image: url(../img/image-friend16@2.png);
-    left: 732.5px;
+#profil-3 {
+    background-image: url(../img/image-friend3@2x.png);
+    left: 880.5px;
     top: 198px;
+}
+#profil-4 {
+    background-image: url(../img/img-localisation-map3.jpg);
+    left: 1090.5px;
+    top: 198px;
+}
+#pin-icon-1{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 1222.5px;
+    top: 257px;
+}
+#pin-icon-2{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 1019.5px;
+    top: 103px;
+}
+#pin-icon-3{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 105.5px;
+    top: 283px;
 }
 
 .parcours {
