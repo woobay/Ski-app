@@ -22,11 +22,12 @@ router.get("/spots/edit/:id", homeController.editSpot)
 router.post("/spots/edit/:id", homeController.updateSpot)
 
 router.get('/search', homeController.renderSearch);
+router.get("/search/:id", homeController.addFriend)
 
 router.get('/profil/myfriends', homeController.renderProfilMyFriends);
 
 router.get("/profil", homeController.renderProfilUser);
 
-router.get("/profil2", homeController.renderProfilPerson);
+router.get("/search/friend/:id", homeController.renderProfilPerson);
 
 module.exports = router

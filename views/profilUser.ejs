@@ -13,7 +13,7 @@
                 <img src="img/img-profil-hero2.jpg" alt="...">
                 <div class="container-hero-profil-content">
                     <div>
-                        <h1>Robert Fox</h1>
+                        <h1><%= surname %></h1>
                         <h3>Québec City, Québec</h3>
                     </div>
                     <div>
@@ -64,7 +64,7 @@
             <div class="nav-separator"></div>
             <a class="link-click-off">Favoris</a>  
             <div class="nav-separator"></div>
-            <a class="link-click-off">Ami.e.s</a>               
+            <a href="/profil/myfriends" class="link-click-off">Ami.e.s</a>               
         </nav>
             
                 
@@ -109,7 +109,7 @@
                 <header class="title-article margin-bottom-24">
                     <img class="image-profil-friend" src="img/image-user2@2x.png" alt="">
                     <div class="title-article-header" >
-                        <p class="body1">Robert Fox<br>
+                        <p class="body1"><%= surname %><br>
                             <span>Québec City, Québec</span>
                         </p>
                         <i class="bi bi-three-dots"></i>
@@ -158,7 +158,7 @@
                 <header class="title-article margin-bottom-24">
                     <img class="image-profil-friend" src="img/image-user2@2x.png" alt="">
                     <div class="title-article-header" >
-                        <p class="body1">Robert Fox<br>
+                        <p class="body1"><%= surname %><br>
                             <span>Québec City, Québec</span>
                         </p>
                         <i class="bi bi-three-dots"></i>
@@ -208,7 +208,7 @@
                 <header class="title-article margin-bottom-24">
                     <img class="image-profil-friend" src="img/image-user2@2x.png" alt="">
                     <div class="title-article-header">
-                        <p class="body1">Robert Fox<br>
+                        <p class="body1"><%= surname %><br>
                             <span>Québec City, Québec</span>
                         </p>
                         <i class="bi bi-three-dots"></i>
@@ -370,74 +370,83 @@
 
         <!-- article 3-->
         <article class="container-post margin-bottom-32 ">
-            <div class="alert-news">
-                <img class="image-profil-friend" src="img/image-friend10@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Leslie Alexander</span><br>En ligne</p>
-                     <div class="popover__wrapper">
-                        <i class="bi bi-three-dots icon"></i>
-                        <div class="popover__content popover-friend" id="popover-friend-new-padding">
-                            <div class="nav-links-vertical">
-                                 <form action="" method="get">
-                                     <button type="submit" class="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
-                                </form>
-    
-                                <form action="" method="get">
-                                     <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
-                                </form>
-                            </div>         
+            <% users.forEach(user => { %>
+
+                <div class="alert-friend margin-bottom-28 ">
+                    <div class="alert-friend-name">
+                        <img class="image-profil-friend" src="img/image-friend10@2x.png" alt="">
+                        <div class="friend-name">
+                            <span class="tag-name"><%= user.name %></span>
+                            <p>En ligne</p>
                         </div>
                     </div>
-                </div>
                 
-            </div>
+                    <div class="popover__wrapper">
+                        <i class="bi bi-three-dots adroite" id="icon-dots-friends"></i>
+                        <div class="popover__content popover-friend">
+                            <div id="nav-links-vertical">
+                                <form action="" method="get">
+                                    <button type="submit" id="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
+                                </form>
+        
+                                <form action="" method="get">
+                                    <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                                </form>
+                            </div>         
+                        </div> 
+                    </div>
+                </div>
 
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend3@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Jane Cooper</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
+                <% }) %> 
 
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend2@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Guy Hawkins</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
 
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend1@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Simon Hebert</span><br>En ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
+            <div class="alert-friend contact-friend-offline">
+                <div class="alert-friend-name">
+                    <img class="image-profil-friend"src="img/image-friend12@2x.png" alt="">
+                    <div class="friend-name">
+                        <p><span class="tag-name">Eleanor Pena</span><br>Hors ligne</p>
+                    </div>
+                </div>
+              
 
-            <div class="alert-news margin-top-28">
-                <img class="image-profil-friend" src="img/image-friend11@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Theresa Web</span><br>En ligne
-                     </p>
-                     <p><i class="bi bi-three-dots"></i></p>
-                 </div>
-            </div>
-
-            <div class="alert-news margin-top-28 contact-friend-offline">
-                <img class="image-profil-friend" src="img/image-friend12@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Eleanor Pena</span><br>Hors ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
+                <div class="popover__wrapper">
+                    <i class="bi bi-three-dots adroite" id="icon-dots-friends"></i>
+                    <div class="popover__content popover-friend">
+                        <div id="nav-links-vertical">
+                            <form action="" method="get" id="fuck">
+                                <button type="submit" id="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
+                            </form>
+    
+                            <form action="" method="get">
+                                <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                            </form>
+                        </div>         
+                    </div> 
                 </div>
             </div>
 
-            <div class="alert-news margin-top-28 contact-friend-offline">
-                <img class="image-profil-friend" src="img/image-friend13@2x.png" alt="">
-                <div>
-                     <p><span class="tag-name">Ronald Richards</span><br>Hors ligne</p>
-                     <p><i class="bi bi-three-dots"></i></p>
+            <div class="alert-friend margin-top-28 contact-friend-offline">
+                <div class="alert-friend-name">
+                    <img class="image-profil-friend"src="img/image-friend13@2x.png" alt="">
+                    <div class="friend-name">
+                        <p><span class="tag-name">Ronald Richards</span><br>Hors ligne</p>
+                    </div>
+                </div>
+              
+
+                <div class="popover__wrapper">
+                    <i class="bi bi-three-dots adroite" id="icon-dots-friends"></i>
+                    <div class="popover__content popover-friend">
+                        <div id="nav-links-vertical">
+                            <form action="" method="get" id="fuck">
+                                <button type="submit" id="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
+                            </form>
+    
+                            <form action="" method="get">
+                                <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                            </form>
+                        </div>         
+                    </div> 
                 </div>
             </div>
         </article>

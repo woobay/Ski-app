@@ -37,12 +37,13 @@
          <!-- Recherche principale -->
          <div class="container-searchBar col-10">
 
-             <div class="search">
-                <input type="search" id="search-bar" placeholder="Rechercher">
+             <form action="/search" method="get">
+             <div class="search-feed">
+                <input type="text" name="word" id="search-bar" placeholder="Rechercher">
                 <i class="bi bi-search"></i>
             </div>
-            <div class="search selectIcon">
-                <select name="selectRecherche">
+            <div class="search-feed selectIcon">
+                <select>
                     <option>Tous</option>
                     <option>Parcours</option>
                     <option>Personne</option>
@@ -50,8 +51,7 @@
                     <option>Événements</option>
                 </select>
             </div>
-             <form action="" method="">
-                <input class="btn-primary" type="submit" id="search-btn" value="Rechercher">
+                <button class="btn-primary" type="submit">Recherche</button>
             </form>
         </div>
     </div>
@@ -107,14 +107,14 @@
                                 <div class="popover__wrapper">
                                     <i class="bi bi-three-dots icon"></i>
                                     <div class="popover__content popover-resume-spot">
-                                        <div class="nav-links-vertical">
+                                        <div id="nav-links-vertical">
          
                                              <form action="/spots/edit/<%= spot._id %>" method="get">
-                                                 <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                                 <button type="submit" id="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
                                              </form>
         
                                              <form action="/feed/delete/<%= spot._id %>" method="get">
-                                                 <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                                                 <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
                                              </form>
         
                                         </div>         
