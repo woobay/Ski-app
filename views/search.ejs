@@ -44,10 +44,15 @@
                         </form>
 
                         <div id="btns-search-results">
-                            <form action="/search/<%= user.id %>" method="get">
-                             <input type="hidden" name="word" value="<%= word %>">
-                                <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
-                            </form>
+                              <%    if (friends.includes(user.id)) { %>
+                                 <button class="btn-secondary-light">Ami.e</button>
+                                    
+                                    <% } else { %>  
+                                        <form action="/search/<%= user.id %>" method="get">
+                                         <input type="hidden" name="word" value="<%= word %>">
+                                            <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                        </form>
+                                    <% }%> 
                              <button class="btn-secondary-light width-unset" id="btn-search-follow">Suivre</button>
                         </div>
                     </div>
