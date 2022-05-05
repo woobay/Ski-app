@@ -12,9 +12,11 @@ exports.renderSignup = (req, res) => {
 exports.renderSearch = async (req, res) => {
     const TOKEN = req.app.locals.token
     const word = req.query.word
-     
+    const friends = req.app.locals.friends
+
+
     const result = await apiController.searchFriend(TOKEN, word)
-    res.render("search", {users: result.users, word: word})
+    res.render("search", {users: result.users, word: word, friends: friends})
 }
 
 exports.renderProfilMyFriends = async (req,res) => {
@@ -37,6 +39,7 @@ exports.renderProfilUser = async (req, res) => {
 exports.renderProfilPerson = async (req, res) => {
     const TOKEN = req.app.locals.token
     const friendId = req.params.id
+    
      
     const result = await apiController.infoFriend(friendId, TOKEN)
     console.log(result)
@@ -60,8 +63,10 @@ exports.addFriend = async (req, res) => {
     const word = req.query.word
 
     console.log(word)
-    await apiController.addFriend(friendId, TOKEN)
-    res.render("search", {word: word})
+    let result = await apiController.addFriend(friendId, TOKEN)
+    let friend = await apiController.searchFriend(TOKEN, word)
+    console.log(result)
+    res.render("search", {word: word, users: friend.users})
 }
 
 exports.renderNewUser = async (req, res) => {
@@ -82,6 +87,7 @@ exports.postAuthentication = async (req, res) => {
     res.app.locals.token = info.token;
     res.app.locals.name = info.name;
     res.app.locals.surname = info.name.split(' ')[0];
+    res.app.locals.friends = info.friends;
 
     const spot = await apiController.getSkiSpot(info.token, 5, 1)
 
