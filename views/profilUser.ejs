@@ -374,7 +374,53 @@
 
                 <div class="alert-friend margin-bottom-28 ">
                     <div class="alert-friend-name">
-                        <img class="image-profil-friend" src="img/image-friend10@2x.png" alt="">
+                        <img class="image-profil-friend" src="<% 
+                        const array_images = [
+                            "img-profil-follower1.png",
+                            "img-profil-follower2.png",
+                            "img-profil-follower3.png",
+                            "img-profil-follower4.png",
+                            "img-profil-follower5.png",
+                            "img-profil-follower6.png",
+                            "img-profil-follower7.png",
+                            "img-profil-follower8.png",
+                            "image-friend1@2x.png",
+                            "image-friend2@2x.png",
+                            "image-friend3@2x.png",
+                            "image-friend4@2x.png",
+                            "image-friend5@2x.png",
+                            "image-friend6@2x.png",
+                            "image-friend7@2x.png",
+                            "image-friend8@2x.png",
+                            "image-friend9@2x.png",
+                            "image-friend10@2x.png",
+                            "image-friend11@2x.png",
+                            "image-friend12@2x.png",
+                            "image-friend13@2x.png",
+                            "image-friend14@2x.png",
+                            "image-friend15@2.png",
+                            "image-friend16@2.png",
+                            "image-friend17@2.png",
+                            "image-friend18@2.png",
+                            "image-friend19@2.png"
+                                ]
+    
+                            const random_images = () => {
+                                
+                                let random_index = Math.floor(Math.random() * array_images.length)
+                                
+                                let image_selected = array_images[random_index];
+                                
+                                return image_selected;
+                            }
+    
+                            const img = random_images()     
+    
+                            const display = `../img/${img}` 
+                              
+                        %>
+                        
+                        <%= display %>" id="random_img" alt="">
                         <div class="friend-name">
                             <span class="tag-name"><%= user.name %></span>
                             <p>En ligne</p>
