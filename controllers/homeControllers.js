@@ -57,7 +57,12 @@ exports.renderProfilPerson = async (req, res) => {
     const userInfo = await apiController.getUser(userId, TOKEN)
     console.log(result)
 
-    res.render("profilPerson", {users: result.friends, userInfo: userInfo.user, friends: friends})
+    res.render("profilPerson", {
+        page_name : 'ProfilPerson',
+        users: result.friends, 
+        userInfo: userInfo.user, 
+        friends: friends
+    })
 }
 
 exports.renderFeed = async (req, res) => {
