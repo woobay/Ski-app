@@ -1775,8 +1775,6 @@ textarea {
     cursor: pointer;
 }
 
-
-
 #btns-search-results {  
     display: flex;
     justify-content: flex-end;
@@ -1788,6 +1786,10 @@ textarea {
 
 #btn-search-follow {  
     width: 15%;
+}
+
+.no-user-found{
+    font-size: 16px;
 }
 
 
