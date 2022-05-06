@@ -31,7 +31,9 @@
 
 
         <div class="col-10">
-            
+            <% if (users.length === 0) { %>
+                <p class="no-user-found">Oh ! Nous sommes désolés mais il semblerait que cet utilisateur n’existe pas… :(</p>
+                <% } else { %> 
             <% users.forEach(user => { %>
             
             <div class="container-post margin-bottom-24">
@@ -59,7 +61,7 @@
                         "image-friend11@2x.png",
                         "image-friend12@2x.png",
                         "image-friend13@2x.png",
-                        "image-friend14@2x.png",
+                        "image-friend14@2.png",
                         "image-friend15@2.png",
                         "image-friend16@2.png",
                         "image-friend17@2.png",
@@ -108,7 +110,7 @@
                 </div>
             </div>  
 
-            <% }) %> 
+            <% })} %> 
             
     </section>
 

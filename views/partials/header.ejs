@@ -1,16 +1,18 @@
 <body>
     <header class="main-header">
         <div class="main-header-content">
-            <a class="title-logo" href="/">Logo</a>
+            <div class="container-logo-nav ">
+                <a href="/"><img class="margin-top-7" src="/img/logo3.svg" alt="logo de Skidom"></a>
+           </div>
             <nav class="nav-links">
-                    <ul>
-                        <li><a href="/feed">Feed</a></li>
-                        <li><a href="/spots">Explore</a></li>
-                        <li><a href="/spots/new">Créer</a></li>
-                        <li><a href="">Guide</a></li>
-                        <li><a href="">Évènements</a></li>
-                        <li><a href="">Discussions</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="/feed" <% if (page_name === 'Feed') { %>class="current" <% } %> >Feed</a></li>
+                    <li><a href="/spots" <% if (page_name === 'Explore') { %>class="current" <% } %> >Explore</a></li>
+                    <li><a href="/spots/new" <% if (page_name === 'Créer') { %>class="current" <% } %> > Créer</a></li>
+                    <li><a href="">Guide</a></li>
+                    <li><a href="">Évènements</a></li>
+                    <li><a href="">Discussions</a></li>
+                </ul>
             </nav>
             <div class="nav-right">
                 <div class="search">
