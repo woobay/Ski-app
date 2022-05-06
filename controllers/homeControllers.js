@@ -64,6 +64,15 @@ exports.addFriend = async (req, res) => {
     res.render("search", {word: word})
 }
 
+exports.deleteFriend = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+
+    await apiController.deleteFriend(friendId, TOKEN)
+
+    res.redirect(req.get('referer'))  
+}
+
 exports.renderNewUser = async (req, res) => {
     let username = req.body.userName
     let email = req.body.mail

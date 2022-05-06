@@ -155,6 +155,26 @@ const infoFriend = async (friendId, TOKEN) => {
         return result.data
 }
 
+const getUser = async (userId, TOKEN) => {
+    const result = await axios.get(`http://ski-api.herokuapp.com/user/${userId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }
+    })
+    return result.data
+}
+
+const deleteFriend = async(friendId, TOKEN) => {
+    const result = await axios.delete(`http://ski-api.herokuapp.com/friend/${friendId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }}
+    )
+    return result.data
+}
+
 module.exports.infoFriend = infoFriend;
 module.exports.getFriends = getFriends
 module.exports.addFriend = addFriend;
@@ -168,3 +188,5 @@ module.exports.authenticationLogin = authenticationLogin;
 module.exports.getSkiSpot = getSkiSpot;
 module.exports.newUser = newUser;
 module.exports.addSpot = addSpot;
+module.exports.getUser = getUser;
+module.exports.deleteFriend = deleteFriend;

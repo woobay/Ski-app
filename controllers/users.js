@@ -22,7 +22,9 @@ router.get("/spots/edit/:id", homeController.editSpot)
 router.post("/spots/edit/:id", homeController.updateSpot)
 
 router.get('/search', homeController.renderSearch);
-router.get("/search/:id", homeController.addFriend)
+router.get("/search/:id", homeController.addFriend);
+router.get("/friend/delete/:id", homeController.deleteFriend);
+
 
 router.get('/profil/myfriends', homeController.renderProfilMyFriends);
 

@@ -21,7 +21,17 @@
                         <p class="medium">22 Followers</p>
                         <p class="medium">26 ami.e.s</p>
                     </div>
-                    <button class="btn-primary">Ami.e</button>
+                    <% console.log(users) %>
+                            <%    if (friends.includes(users.id)) { %>
+                                <form action="/friend/delete/<%= users.id %>" method="get">
+                                    <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                                </form>
+                                   
+                                   <% } else { %>  
+                                       <form action="/search/<%= users.id %>" method="get">
+                                           <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                       </form>
+                            <% }%> 
                 </div>
             </div>
         </div>
