@@ -92,15 +92,18 @@
                         </form>
 
                         <div id="btns-search-results">
-                              <%    if (friends.includes(user.id)) { %>
-                                 <button class="btn-secondary-light width-unset">Ami.e</button>
+                              <%if (friends.includes(user.id)) { %>
+                                 
+                                    <form action="/friend/delete/<%= user.id %>" method="get">
+                                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                                    </form>
                                     
                                     <% } else { %>  
-                                        <form action="/search/<%= user.id %>" method="get">
-                                         <input type="hidden" name="word" value="<%= word %>">
-                                            <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
-                                        </form>
-                                    <% }%> 
+                                    <form action="/search/<%= user.id %>" method="get">
+                                        <input type="hidden" name="word" value="<%= word %>">
+                                        <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                    </form>
+                                <% }%> 
                              <button class="btn-secondary-light width-unset" id="btn-search-follow">Suivre</button>
                         </div>
                     </div>

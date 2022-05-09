@@ -25,13 +25,15 @@
                     </div>
                     <% console.log(users) %>
                             <%    if (friends.includes(users.id)) { %>
-                                <button class="btn-secondary-light">Ami.e</button>
+                                <form action="/friend/delete/<%= users.id %>" method="get">
+                                    <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                                </form>
                                    
                                    <% } else { %>  
                                        <form action="/search/<%= users.id %>" method="get">
                                            <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
                                        </form>
-                                   <% }%> 
+                            <% }%> 
                 </div>
             </div>
         </div>

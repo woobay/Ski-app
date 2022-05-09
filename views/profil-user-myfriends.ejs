@@ -127,7 +127,9 @@
                             Québec City, Québec
                         </p>
                     </div>
-                    <button class="btn-secondary-light">Ami.e</button>
+                    <form action="/friend/delete/<%= user.id %>" method="get">
+                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                    </form>
             
                 </section>
                 
