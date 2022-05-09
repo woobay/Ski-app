@@ -23,6 +23,7 @@ exports.renderProfil = async (req, res) => {
 
 
 exports.renderNewUser = async (req, res) => {
+    
     let username = req.body.userName
     let email = req.body.mail
     let password = req.body.password
