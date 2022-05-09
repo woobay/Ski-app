@@ -567,7 +567,7 @@ label {
 }
 
 .selectIcon::after {
-    content: url("../img/chevron-down-search.svg");
+    content: url("..//img/chevron-down-search.svg");
     width: 18px;
     top: 15px;
     right: 14px;
@@ -703,7 +703,7 @@ label {
 .hero {
     width: 100%;
     height: 554px;
-    background-image: url('../img/map.jpg');
+    background-image: url('..//img/map.jpg');
     background-size: cover;
     position: absolute;
     top: 0;
@@ -721,44 +721,44 @@ label {
 }
 
 #profil-1 {
-    background-image: url(../img/image-friend1@2x.png);
+    background-image: url(..//img/image-friend1@2x.png);
     top: 257px;
     left: 1248.5px;
 }
 #profil-2 {
-    background-image: url(../img/image-friend2@2x.png);
+    background-image: url(..//img/image-friend2@2x.png);
     top: 198px;
     left: 913.5px;
 }
 
 #profil-3 {
-    background-image: url(../img/image-friend3@2x.png);
+    background-image: url(..//img/image-friend3@2x.png);
     left: 880.5px;
     top: 198px;
 }
 #profil-4 {
-    background-image: url(../img/img-localisation-map3.jpg);
+    background-image: url(..//img/img-localisation-map3.jpg);
     left: 1090.5px;
     top: 198px;
 }
 #pin-icon-1{
-    background-image: url(../img/pint-geocalisation-mag.svg);
+    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 1222.5px;
     top: 257px;
 }
 #pin-icon-2{
-    background-image: url(../img/pint-geocalisation-mag.svg);
+    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 1019.5px;
     top: 103px;
 }
 #pin-icon-3{
-    background-image: url(../img/pint-geocalisation-mag.svg);
+    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 105.5px;
     top: 283px;
 }
 
 .parcours {
-    background-image: url('../img/map-fiche-parcours@2.jpg');
+    background-image: url('..//img/map-fiche-parcours@2.jpg');
 }
 
 .welcome {
@@ -843,7 +843,7 @@ label {
     cursor: pointer;
     color: #fff;
     border-radius: 8px;
-    background-image: url('../img/background-btn2.jpg');
+    background-image: url('..//img/background-btn2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
@@ -1267,7 +1267,7 @@ label {
 
 /* =============== Page Signup ================ */
 .bg {
-    background-image: url("../img/background-onboarding@2x.jpg");
+    background-image: url("..//img/background-onboarding@2x.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1799,7 +1799,7 @@ textarea {
 .hero-profil {
     width: 100%;
     height: 450px;
-    background-image: url('../img/banner-profil@2x.jpg');
+    background-image: url('..//img/banner-profil@2x.jpg');
     background-size: cover;
     position: absolute;
     top: 0;
@@ -1894,7 +1894,7 @@ textarea {
 .btn-create.btn-horizontal {
     width: 100%;
     height: 138px;
-   background-image: url('../img/background-btn-rectangle.jpg');
+   background-image: url('..//img/background-btn-rectangle.jpg');
 }
 
 .btn-create.btn-horizontal img {
@@ -1910,7 +1910,7 @@ textarea {
 .hero-person {
     width: 100%;
     height: 450px;
-    background-image: url('../img/banner-friend@2x.jpg');
+    background-image: url('..//img/banner-friend@2x.jpg');
     background-size: cover;
     position: absolute;
     top: 0;
