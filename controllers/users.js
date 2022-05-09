@@ -27,6 +27,8 @@ router.get("/friend/delete/:id", homeController.deleteFriend);
 
 
 router.get('/profil/myfriends', homeController.renderProfilMyFriends);
+router.get("/profil/delete/:id", homeController.deleteFriendAmi);
+router.get("/profil/deleted/:id", homeController.deleteFriendAmis);
 
 router.get("/profil", homeController.renderProfilUser);
 

@@ -12,10 +12,13 @@ exports.renderSignup = (req, res) => {
 exports.renderSearch = async (req, res) => {
     const TOKEN = req.app.locals.token
     const word = req.query.word
-    const friends = req.app.locals.friends
 
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
 
     const result = await apiController.searchFriend(TOKEN, word)
+
+    
     res.render("search", {
         page_name : 'Search',
         users: result.users, 
@@ -51,11 +54,13 @@ exports.renderProfilPerson = async (req, res) => {
     const TOKEN = req.app.locals.token
     const friendId = req.params.id
     const userId = req.params.id
-    const friends = req.app.locals.friends
-     
+    
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+
     const result = await apiController.infoFriend(friendId, TOKEN)
     const userInfo = await apiController.getUser(userId, TOKEN)
-    console.log(result)
+    
 
     res.render("profilPerson", {
         page_name : 'ProfilPerson',
@@ -84,24 +89,67 @@ exports.addFriend = async (req, res) => {
     const TOKEN = req.app.locals.token
     const word = req.query.word
 
-    console.log(word)
+    
     let result = await apiController.addFriend(friendId, TOKEN)
     let friend = await apiController.searchFriend(TOKEN, word)
-    console.log(result)
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+
+    
+    
     res.render("search", {
         page_name : 'Search',
         word: word, 
-        users: friend.users
+        users: friend.users,
+        friends: friends
     })
 }
 
 exports.deleteFriend = async (req, res) => {
     const friendId = req.params.id
     const TOKEN = req.app.locals.token
+    const word = req.query.word
+    
+    const del = await apiController.deleteFriend(friendId, TOKEN)
+    const friend = await apiController.searchFriend(TOKEN, word)
+    const infoFriends = await apiController.getFriends(TOKEN)
 
-    await apiController.deleteFriend(friendId, TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+    
+    res.render("search", {
+        page_name : 'Search',
+        word: word,
+        users: friend.users,
+        friends: friends
+    })  
+}
+exports.deleteFriendAmi = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
 
-    res.redirect(req.get('referer'))  
+    const del = await apiController.deleteFriend(friendId, TOKEN)
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+    
+    res.render("profil-user-myfriends", {
+        page_name : 'Profil',
+        users: infoFriends.friends
+
+    })  
+}
+exports.deleteFriendAmis = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+
+    const del = await apiController.deleteFriend(friendId, TOKEN)
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+    
+    res.render("profilUser", {
+        page_name : 'Profil',
+        users: infoFriends.friends
+
+    })  
 }
 
 exports.renderNewUser = async (req, res) => {
@@ -123,7 +171,7 @@ exports.postAuthentication = async (req, res) => {
     res.app.locals.token = info.token;
     res.app.locals.name = info.name;
     res.app.locals.surname = info.name.split(' ')[0];
-    res.app.locals.friends = info.friends;
+
 
     const spot = await apiController.getSkiSpot(info.token, 5, 1)
 
@@ -155,6 +203,7 @@ exports.newSpots = (req, res) => {
         page_name : 'Créer'
     })
 }
+
 exports.renderSpots = async (req, res) => {
     const TOKEN = req.app.locals.token
     const page = req.query.page

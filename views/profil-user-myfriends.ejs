@@ -11,7 +11,7 @@
     
         <div class="col-5c">
             <div class="container-hero-profil">
-                <img src="../img/img-profil-hero2.jpg" alt="...">
+                <img src="/img/img-profil-hero2.jpg" alt="...">
                 <div class="container-hero-profil-content">
                     <div>
                         <h1><%= name %> </h1>
@@ -117,7 +117,7 @@
 
                         const img = random_images()     
 
-                        const display = `../img/${img}` 
+                        const display = `/img/${img}` 
                           
                     %>
                     
@@ -127,7 +127,7 @@
                             Québec City, Québec
                         </p>
                     </div>
-                    <form action="/friend/delete/<%= user.id %>" method="get">
+                    <form action="/profil/delete/<%= user.id %>" method="get">
                         <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
                     </form>
             

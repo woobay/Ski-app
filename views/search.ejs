@@ -30,12 +30,12 @@
     <section class="container-main grid">
 
 
-        <div class="col-10">
+        <div class="col-10"> 
             <% if (users.length === 0) { %>
                 <p class="no-user-found">Oh ! Nous sommes désolés mais il semblerait que cet utilisateur n’existe pas… :(</p>
                 <% } else { %> 
             <% users.forEach(user => { %>
-            
+             
             <div class="container-post margin-bottom-24">
                 <div class="search-results">
                     <img class="image-profil-friend" src="<% 
@@ -68,7 +68,6 @@
                         "image-friend18@2.png",
                         "image-friend19@2.png"
                             ]
-
                         const random_images = () => {
                             
                             let random_index = Math.floor(Math.random() * array_images.length)
@@ -80,7 +79,7 @@
 
                         const img = random_images()     
 
-                        const display = `../img/${img}` 
+                        const display = `/img/${img}` 
                           
                     %>
                     
@@ -92,9 +91,11 @@
                         </form>
 
                         <div id="btns-search-results">
-                              <%if (friends.includes(user.id)) { %>
+                            
+                              <% if (friends.includes(user.id)) { %>
                                  
                                     <form action="/friend/delete/<%= user.id %>" method="get">
+                                        <input type="hidden" name="word" value="<%= word %>">
                                         <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
                                     </form>
                                     
