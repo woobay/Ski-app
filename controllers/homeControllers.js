@@ -9,7 +9,63 @@ exports.renderSignup = (req, res) => {
     res.render("signup.ejs")
 }
 
-exports.renderProfil = async (req, res) => {
+exports.renderSearch = async (req, res) => {
+    const TOKEN = req.app.locals.token
+    const word = req.query.word
+    const friends = req.app.locals.friends
+
+
+    const result = await apiController.searchFriend(TOKEN, word)
+    res.render("search", {
+        page_name : 'Search',
+        users: result.users, 
+        word: word, 
+        friends: friends
+    })
+}
+
+exports.renderProfilMyFriends = async (req,res) => {
+    const TOKEN = req.app.locals.token
+    
+    const result = await apiController.getFriends(TOKEN)
+    
+    res.render("profil-user-myfriends", {
+        page_name : 'Myfriends',
+        users: result.friends
+    })
+
+}
+
+exports.renderProfilUser = async (req, res) => {
+    const TOKEN = req.app.locals.token
+    
+    const result = await apiController.getFriends(TOKEN)
+    
+    res.render("profilUser", {
+        page_name : 'ProfilUser',
+        users: result.friends
+    })
+}
+
+exports.renderProfilPerson = async (req, res) => {
+    const TOKEN = req.app.locals.token
+    const friendId = req.params.id
+    const userId = req.params.id
+    const friends = req.app.locals.friends
+     
+    const result = await apiController.infoFriend(friendId, TOKEN)
+    const userInfo = await apiController.getUser(userId, TOKEN)
+    console.log(result)
+
+    res.render("profilPerson", {
+        page_name : 'ProfilPerson',
+        users: result.friends, 
+        userInfo: userInfo.user, 
+        friends: friends
+    })
+}
+
+exports.renderFeed = async (req, res) => {
     const TOKEN = req.app.locals.token
     
    const result = await axios.get(`https://ski-api.herokuapp.com/ski-spot?limit=5&page=1`, {
@@ -18,9 +74,35 @@ exports.renderProfil = async (req, res) => {
             "Authorization": TOKEN
         }
     })
-    res.render("profil", {spots: result.data.skiSpots})
+    res.render("feed", {
+        page_name : 'Feed',
+        spots: result.data.skiSpots
+    })
+}
+exports.addFriend = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+    const word = req.query.word
+
+    console.log(word)
+    let result = await apiController.addFriend(friendId, TOKEN)
+    let friend = await apiController.searchFriend(TOKEN, word)
+    console.log(result)
+    res.render("search", {
+        page_name : 'Search',
+        word: word, 
+        users: friend.users
+    })
 }
 
+exports.deleteFriend = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+
+    await apiController.deleteFriend(friendId, TOKEN)
+
+    res.redirect(req.get('referer'))  
+}
 
 exports.renderNewUser = async (req, res) => {
     
@@ -32,9 +114,6 @@ exports.renderNewUser = async (req, res) => {
     res.render("login", result)
 }
 
-
-
-
 exports.postAuthentication = async (req, res) => {
     const emailValue = req.body.email
     const passwordValue = req.body.password
@@ -44,10 +123,15 @@ exports.postAuthentication = async (req, res) => {
     res.app.locals.token = info.token;
     res.app.locals.name = info.name;
     res.app.locals.surname = info.name.split(' ')[0];
+    res.app.locals.friends = info.friends;
 
     const spot = await apiController.getSkiSpot(info.token, 5, 1)
 
-    res.render("profil", {info: info, spots: spot.skiSpots})
+    res.render("feed", {
+        page_name : 'Feed',
+        info: info, 
+        spots: spot.skiSpots
+    })
 }
 
 
@@ -59,12 +143,17 @@ exports.renderSpotDescription = async (req, res) => {
    const spot = await apiController.infoSpot(queryId, TOKEN)
    const info = await apiController.infoCreater(created, TOKEN)
  
-    res.render("description", {spot: spot.skiSpot, info: info.user})
+    res.render("description", {
+        page_name : 'description',
+        spot: spot.skiSpot, 
+        info: info.user})
 }
 
 
 exports.newSpots = (req, res) => {
-    res.render("newSpot")
+    res.render("newSpot", {
+        page_name : 'Créer'
+    })
 }
 exports.renderSpots = async (req, res) => {
     const TOKEN = req.app.locals.token
@@ -72,7 +161,11 @@ exports.renderSpots = async (req, res) => {
     
     const result = await apiController.getSkiSpot(TOKEN, 12, page)
 
-    res.render("spots", {spots: result.skiSpots, pages: result.totalPages})
+    res.render("spots", {
+        page_name : 'Explore',
+        spots: result.skiSpots, 
+        pages: result.totalPages
+    })
   
 }
 
@@ -92,12 +185,12 @@ exports.addedSpots = async (req, res) => {
     res.redirect("/spots")
 }
 
-exports.deletePostProfil = async (req, res) => {
+exports.deletePostFeed = async (req, res) => {
     const queryId = req.params.id
     const TOKEN = req.app.locals.token
 
     await apiController.deletePost(queryId, TOKEN)
-    res.redirect("/profil")    
+    res.redirect("/feed")    
 }
 
 exports.deletePostSpots =  async (req, res) => {
@@ -114,7 +207,9 @@ exports.editSpot = async (req, res) => {
     const queryId = req.params.id
 
     const result = await apiController.editSpot(queryId, TOKEN)
-    res.render("edit", {spot: result.skiSpot})
+    res.render("edit", {
+        page_name : 'Edit',
+        spot: result.skiSpot})
     
 }
 

@@ -185,6 +185,14 @@ label {
     grid-column: 7/12;
 }
 
+.col-5c {
+    grid-column: 5/10;
+}
+
+.col-5d{
+    grid-column: 6;
+}
+
 .col-6 {
     grid-column: 2/8;
 }
@@ -221,6 +229,10 @@ label {
     margin-top: 24px;
 }
 
+.margin-top-7 {
+    margin-top: 7px;
+}
+
 .margin-top-28 {
     margin-top: 28px;
 }
@@ -233,9 +245,17 @@ label {
     margin-top : 48px;
 }
 
+.margin-top-58 {
+    margin-top : 58px;
+}
+
 .margin-top-72 {
     margin-top: 72px;
-}    
+}   
+
+.margin-top-88 {
+    margin-top : 88px;
+}
 
 /* --- margin-bottom --- */
 
@@ -277,6 +297,10 @@ label {
 
 .margin-bottom-24 {
     margin-bottom: 24px;
+}
+
+.margin-bottom-16 {
+    margin-bottom: 16px;
 }
 
 .margin-bottom-8 {
@@ -327,43 +351,49 @@ label {
     border: none;
 }
 
-.nav-links-vertical {
+.current {
+    color: #04477C;
+    font-weight: 600;
+}
+
+.nav-links-vertical-main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
-.nav-links-vertical ul {
+.nav-links-vertical-main ul {
     list-style-type: none;
+    display: inline-block; 
 }
 
-.nav-links-vertical ul li {
-    display: inline-block;
-    padding-top: 10px;
-    padding-left: 5px;
+.nav-links-vertical-main ul li {
+    display: flex;
+    align-items: center;
 }
 
-.nav-links-vertical ul li:last-child {
-    padding-right: inherit;
+.nav-links-vertical-main ul li:last-child {
+    margin-top: 0.5em;
 }
 
-.nav-links-vertical a:hover {
+.nav-links-vertical-main ul li:hover, ul li a:hover {
+    color: #0060AD;
+}
+
+.nav-links-vertical-main ul li i {
+    font-size: 1.125em;
+    margin-right: 0.5em;
+}
+
+.nav-links-vertical-main a:hover {
     color: #04477C;
     font-weight: 600;
     border: none;
 }
 
-.nav-links-vertical form {
-    margin-top: 10px;
-    padding-left: 6px;
-    padding-right: 8px;
-}
-
-.nav-links-vertical form:first-child {
-    margin-bottom: 2px;
-}
-
-.btn-settings {
+#btn-settings {
     display: flex;
     background-color: #fff;
     border: none;
@@ -371,22 +401,27 @@ label {
     font-size: 1em;
 }
 
-.btn-settings:hover {
+#btn-settings:hover {
     color: #04477C;
     font-weight: 600;
 }
 
-.btn-settings i {
+#btn-settings i {
     font-size: 17px;
-    padding-right: 8px;
+    padding-right: 0.5em;
 }
 
-.title-logo {
-    margin: 0;
-    font-size: 1.5em;
-    line-height: 2.625em;
-    font-weight: 600;
-    text-transform: uppercase;
+.container-logo-nav {
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+.container-logo-nav img {
+    width: 100%;
 }
 
 .nav-separator {
@@ -419,10 +454,12 @@ label {
 
 .popover__content {
     opacity: 0;
-    visibility: hidden;
+    /* visibility: hidden; */
     position: absolute;
-    left: -48px;
-    top: 25px;
+    /* left: -48px;
+    top: 25px; */
+    left: -59px;
+    top: 30px;
     transform: translate(0, 10px);
     background-color: #ffffff;
     padding: 1rem;
@@ -462,6 +499,84 @@ label {
     height: 1px;
     background-color: rgb(207, 212, 218);
     margin-top: 10px;
+}
+
+/* Search bar feed & search bar header */
+
+.search{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container-searchBar form {
+    display: flex;
+}
+
+.search-feed{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 16px;
+    width: 50%;
+}
+
+.search input, .search-feed input {
+    width: 150px;
+    padding: 10px 12px;
+    border: 1px solid #CFD4DA;
+    border-radius: 4px;
+    transition: all .5s;
+}
+
+.search i,.search-feed i {
+    font-size: 17px;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    color: #CFD4DA;
+
+}
+
+.search input:focus {
+    width: 200px;
+}
+
+#search-bar {
+    font-family: "Montserrat", sans-serif;
+    width: 525px;
+    height: 42px;
+}
+
+.search-feed select {
+    font-family: "Montserrat", sans-serif;
+    width: 200px;
+    height: 42px;
+    background-color: #fff;
+    color: #CFD4DA;
+    border: 1px solid #CFD4DA;
+    border-radius: 4px;
+    padding: 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+.search-feed select > * {
+    color: #000;
+}
+
+.selectIcon::after {
+    content: url("../img/chevron-down-search.svg");
+    width: 18px;
+    top: 15px;
+    right: 14px;
+    position: absolute;
+}
+
+#search-btn {
+    font-size: 1em;
+    height: 42px;  
 }
 
 /* ================== Footer =================== */
@@ -538,10 +653,24 @@ label {
     margin-top: 16px;
 }
 
+.container-logo-footer {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+
+.container-logo-footer img {
+    width: 100%;
+}
+
+
 /* ================== Map & Input ==================== */
 
 .container-hero {
-    margin-top: 10.25em;
+    margin-top: 19.25em;
 }
 
 .icon-header {
@@ -581,6 +710,53 @@ label {
     z-index: -1;
 }
 
+
+.pin-map {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 2px solid #04477C;
+    position: absolute;
+}
+
+#profil-1 {
+    background-image: url(../img/image-friend1@2x.png);
+    top: 257px;
+    left: 1248.5px;
+}
+#profil-2 {
+    background-image: url(../img/image-friend2@2x.png);
+    top: 198px;
+    left: 913.5px;
+}
+
+#profil-3 {
+    background-image: url(../img/image-friend3@2x.png);
+    left: 880.5px;
+    top: 198px;
+}
+#profil-4 {
+    background-image: url(../img/img-localisation-map3.jpg);
+    left: 1090.5px;
+    top: 198px;
+}
+#pin-icon-1{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 1222.5px;
+    top: 257px;
+}
+#pin-icon-2{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 1019.5px;
+    top: 103px;
+}
+#pin-icon-3{
+    background-image: url(../img/pint-geocalisation-mag.svg);
+    left: 105.5px;
+    top: 283px;
+}
+
 .parcours {
     background-image: url('../img/map-fiche-parcours@2.jpg');
 }
@@ -602,8 +778,6 @@ label {
     width: unset;
 }
 
-
-
 .container-content-request {
     display: flex;
 }
@@ -620,47 +794,16 @@ label {
 
 /*=================== Page Profil/Feed =====================*/
 
-.container-features {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.875em 1.125em;
+.container-searchBar {
+    /* display: flex;
+    justify-content: space-around; */
+    padding: 1.75em 1.5em;
     margin-top: 3em;
     background-color: #FFF;
     border-radius: 0.5em;
     box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
 }
 
-.profil-features {
-    display: flex;
-    align-items: center;
-}
-
-.profil-features p {
-    margin-left: 16px;
-}
-
-.profil-features p span {
-    font-weight: 600;
-}
-
-.profil-features i {
-    font-size: 2.063em;
-    color: #0060AD;
-}
-
-.profil-features i:first-child {
-    font-size: 2.5em;
-}
-
-.profil-features i:last-child {
-    font-size: 2.313em;
-}
-
-.features-separator {
-    width: 1px;
-    height: 5em;
-    background-color: #F2F2F2;
-}
 
 /* Main  */
 
@@ -669,6 +812,12 @@ label {
 }
 
 /* Encart Parcours & Créer Un Nouveau Parcours */
+
+.container-newspot {
+    margin-top: 10.25em;
+    
+}
+
 
 .container-spot {
     display: flex;
@@ -787,20 +936,6 @@ label {
     top: -160px;
 }
 
-.nav-links-vertical ul li {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links-vertical ul li:hover {
-    color: #0060AD;
-}
-
-.nav-links-vertical ul li i {
-    font-size: 17px;
-    margin-right: 8px;
-}
-
 .container-image-small img {
     border-radius: 0.25em;
     width: 100%;
@@ -808,8 +943,23 @@ label {
 }
 
 .popover-resume-spot {
-    top: -140px;
-    left: 167px;
+    top: -142px;
+    left: 152px;
+}
+
+#nav-links-vertical {
+    flex-direction: column;
+    padding: initial;
+}
+
+#nav-links-vertical form {
+    margin-top: 10px;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+#nav-links-vertical form:first-child {
+    margin-bottom: 2px;
 }
 
 /* Posts & Alerts */
@@ -831,12 +981,29 @@ label {
     width: 50px;
 }
 
-.alert-news {
+.alert-friend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alert-friend-name {
+    display: flex;
+}
+
+.friend-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 24px;
+}
+
+.alert-news, .search-results {
     display: flex;
     align-items: center;
 }
 
-.alert-news div {
+.alert-news div, .search-results div {
     padding-left: 24px;
     display: flex;
     align-items: center;
@@ -930,6 +1097,7 @@ label {
 
 .container-social div {
     display: flex;
+    align-items: center;
 }
 
 .container-social div p {
@@ -1052,7 +1220,7 @@ label {
 .allParcours a:hover {
     font-weight: 600;
     color: #0060AD;
-    text-decoration-line: underline;
+    text-decoration-line: none;
     text-underline-offset: 8px;
     text-decoration-thickness: 2px;
     cursor: pointer;
@@ -1271,7 +1439,12 @@ label {
     color: #C4C4C4;
 }
 
-/* ----- page newSpot ------ */
+.container-logo {
+    width: 50%;
+    margin-bottom: 1em
+}
+
+/* ================ page newSpot ================= */
 
 label[for="localisation"]+div {
     margin-top: 0.5rem;
@@ -1561,4 +1734,219 @@ textarea {
 .container-photo-profil img{
     width: 6%;
     margin: 20px;
+}
+
+/* ================ page Recherche ================= */
+
+.container-search {
+    margin-top: 10.25em;
+}
+
+#searchBarPage {
+    width: 88%;
+}
+
+#SearchResultFilter {
+    justify-content: initial;
+}
+
+.col-10.allParcours > * {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+#search-results-cursor {
+    cursor: pointer;
+}
+
+.search-result-form {
+    width: 25%;
+}
+
+.search-result-form button {
+     border: none;
+    background-color: #ffff;
+}
+
+.tag-name-result {
+    cursor: pointer;
+}
+
+#btns-search-results {  
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btns-search-results button {
+    margin-right: 16px;
+}
+
+#btn-search-follow {  
+    width: 15%;
+}
+
+.no-user-found{
+    font-size: 16px;
+}
+
+
+/* ================ page Profil & page Profil - My Friends ================= */
+
+
+.hero-profil {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-profil@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.container-hero-profil {
+    display: flex;
+    color: #fff;
+}
+
+.container-hero-profil img {
+    margin-right: 1em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.container-hero-profil-content div:nth-child(2){
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 16px;
+   
+}
+
+.container-hero-profil-content div:nth-child(2) >* {
+   font-weight: 600;
+   margin-right: 16px;
+   font-size: 16px;
+}
+
+.container-hero-profil-content button {
+    width: auto;
+}
+
+.container-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.875em 1.125em;
+    background-color: #FFF;
+    border-radius: 0.5em;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.profil-features {
+    display: flex;
+    align-items: center;
+}
+
+.profil-features p {
+    margin-left: 16px;
+}
+
+.profil-features p span {
+    font-weight: 600;
+}
+
+.profil-features i {
+    font-size: 2.063em;
+    color: #0060AD;
+}
+
+.profil-features i:first-child {
+    font-size: 2.5em;
+}
+
+.profil-features i:last-child {
+    font-size: 2.313em;
+}
+
+.features-separator {
+    width: 1px;
+    height: 5em;
+    background-color: #F2F2F2;
+}
+
+/* potentiel conflit */
+
+.col-10.allParcours {
+    justify-content: center;
+}
+
+.col-10.allParcours >* {
+    margin-right: 28px;
+}
+
+.col-10.allParcours a:last-child {
+    margin-right: unset;
+}
+
+.btn-create.btn-horizontal {
+    width: 100%;
+    height: 138px;
+   background-image: url('../img/background-btn-rectangle.jpg');
+}
+
+.btn-create.btn-horizontal img {
+    margin-bottom: 12px;
+}
+
+.img-post-parcours {
+    width: 142px;
+    /* height: 88px; */
+    border-radius: 4px;
+}
+
+.hero-person {
+    width: 100%;
+    height: 450px;
+    background-image: url('../img/banner-friend@2x.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.fs-24 {
+    font-size: 24px!important;
+}
+
+#icon-dots-friends {
+    font-size: 24px;
+    color: #AEB2B8;
+}
+
+.popover-friend {
+    z-index: 1;
+    top: 13px;
+    left: -62px;
+}
+
+.adroite {
+    margin-right: 16px;
+}
+
+.container-ami {
+    padding: 24px;
+    width: 470px;
+    height:96px;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0px 4px 8px 0px #60617029,0px -3px 2px 0px #28293D0A;
+
+}
+
+.container-ami > .alert-news > button {
+    width: unset!important;
 }

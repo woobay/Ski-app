@@ -109,6 +109,76 @@ const putSpot = async (queryId, TOKEN, name, description,adresse, difficulty, ar
     return result.data
 }
 
+const searchFriend = async (TOKEN, word) => {
+    
+    const result = await axios.get(`http://ski-api.herokuapp.com/users/search/${word}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }
+    })
+    return result.data
+}
+
+const addFriend = async (friendId, TOKEN) => {
+
+    const result = await axios.post(`http://ski-api.herokuapp.com/friend`, {
+        friendId: friendId,
+    }, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }
+    })
+    return result.data
+    
+}
+const getFriends = async (TOKEN) => {
+    const result = await axios.get(`http://ski-api.herokuapp.com/friend`, {
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": TOKEN
+    }
+    }) 
+    console.log(result.data)
+    return result.data
+}
+
+const infoFriend = async (friendId, TOKEN) => {
+
+    const result = await axios.get(`http://ski-api.herokuapp.com/friend/${friendId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }
+        })
+        return result.data
+}
+
+const getUser = async (userId, TOKEN) => {
+    const result = await axios.get(`http://ski-api.herokuapp.com/user/${userId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }
+    })
+    return result.data
+}
+
+const deleteFriend = async(friendId, TOKEN) => {
+    const result = await axios.delete(`http://ski-api.herokuapp.com/friend/${friendId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": TOKEN
+        }}
+    )
+    return result.data
+}
+
+module.exports.infoFriend = infoFriend;
+module.exports.getFriends = getFriends
+module.exports.addFriend = addFriend;
+module.exports.searchFriend = searchFriend;
 module.exports.putSpot = putSpot
 module.exports.editSpot = editSpot;
 module.exports.infoCreater = infoCreater;
@@ -118,3 +188,5 @@ module.exports.authenticationLogin = authenticationLogin;
 module.exports.getSkiSpot = getSkiSpot;
 module.exports.newUser = newUser;
 module.exports.addSpot = addSpot;
+module.exports.getUser = getUser;
+module.exports.deleteFriend = deleteFriend;

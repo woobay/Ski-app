@@ -8,12 +8,11 @@ router.post('/', homeController.postAuthentication);
 router.get('/signup', homeController.renderSignup);
 router.post('/signup', homeController.renderNewUser)
 
-router.get('/profil', homeController.renderProfil);
-router.get("/profil/delete/:id", homeController.deletePostProfil)
+router.get('/feed', homeController.renderFeed);
+router.get("/feed/delete/:id", homeController.deletePostFeed)
 
 router.get("/spots", homeController.renderSpots);
 router.get("/description/:id/:create", homeController.renderSpotDescription)
-
 
 router.get("/spots/new", homeController.newSpots)
 router.post("/spots/new", homeController.addedSpots)
@@ -21,5 +20,16 @@ router.post("/spots/new", homeController.addedSpots)
 router.get("/spots/delete/:id", homeController.deletePostSpots)
 router.get("/spots/edit/:id", homeController.editSpot)
 router.post("/spots/edit/:id", homeController.updateSpot)
+
+router.get('/search', homeController.renderSearch);
+router.get("/search/:id", homeController.addFriend);
+router.get("/friend/delete/:id", homeController.deleteFriend);
+
+
+router.get('/profil/myfriends', homeController.renderProfilMyFriends);
+
+router.get("/profil", homeController.renderProfilUser);
+
+router.get("/search/friend/:id", homeController.renderProfilPerson);
 
 module.exports = router

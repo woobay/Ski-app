@@ -5,12 +5,12 @@
 <%- include ('partials/header'); %>
 
 <main class="margin-bottom-120">
-    <section class="grid container-hero">
+    <section class="grid container-search">
         <div class="col-6">
   
             <h1 class="margin-bottom-32">Tous les parcours (4707)</h1>
             <form action="" method="" class="margin-bottom-48">
-                <input class="search-bar margin-bottom-32" id="search-bar" type="text" placeholder="Rechercher un parcours ...">
+                <input class="search-bar margin-bottom-32" type="text" placeholder="Rechercher un parcours ...">
                 <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Rechercher un parcours">
             </form>
             <div class="allParcours">
@@ -66,13 +66,13 @@
                             <div class="popover__wrapper">
                                 <i class="bi bi-three-dots icon"></i>
                                 <div class="popover__content popover-resume-spot">
-                                    <div class="nav-links-vertical">
+                                    <div id="nav-links-vertical">
                                          <form action="/spots/edit/<%= spot._id %>" method="get">
-                                             <button type="submit" class="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                             <button type="submit" id="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
                                         </form>
     
                                         <form action="/spots/delete/<%= spot._id %>" method="get">
-                                             <button type="submit" class="btn-settings"><i class="bi bi-trash"></i>Delete</button>
+                                             <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
                                         </form>
                                     </div>         
                                 </div>
@@ -115,7 +115,7 @@
                             <form action="/spots">
              
                                 <input type="hidden" name="page" value="<%= i %> "/>
-                                    <button class="test"><%= i %></button>   
+                                    <button><%= i %></button>   
                             </form>
                         </li>
                     </ul>

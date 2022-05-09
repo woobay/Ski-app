@@ -84,5 +84,3 @@ passwordIcon.addEventListener('click', function () {
     }
 })
 const log = document.querySelector("#log");
-
-

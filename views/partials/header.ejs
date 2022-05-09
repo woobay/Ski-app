@@ -1,18 +1,28 @@
 <body>
     <header class="main-header">
         <div class="main-header-content">
-            <a class="title-logo" href="/">Logo</a>
+            <div class="container-logo-nav ">
+                <a href="/"><img class="margin-top-7" src="/img/logo3.svg" alt="logo de Skidom"></a>
+           </div>
             <nav class="nav-links">
-                    <ul>
-                        <li><a href="/profil">Feed</a></li>
-                        <li><a href="/spots">Explore</a></li>
-                        <li><a href="/spots/new">Créer</a></li>
-                        <li><a href="">Guide</a></li>
-                        <li><a href="">Évènements</a></li>
-                        <li><a href="">Discussions</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="/feed" <% if (page_name === 'Feed') { %>class="current" <% } %> >Feed</a></li>
+                    <li><a href="/spots" <% if (page_name === 'Explore') { %>class="current" <% } %> >Explore</a></li>
+                    <li><a href="/spots/new" <% if (page_name === 'Créer') { %>class="current" <% } %> > Créer</a></li>
+                    <li><a href="">Guide</a></li>
+                    <li><a href="">Évènements</a></li>
+                    <li><a href="">Discussions</a></li>
+                </ul>
             </nav>
             <div class="nav-right">
+                <div class="search">
+                    <form action="/search" method="get">
+                        <input name="word" type="search" placeholder="Rechercher">
+                        <i class="bi bi-search"></i>
+                    </form>
+                </div>
+                
+                <div class="nav-separator"></div>
                 <i class="bi bi-bell"></i>
                 <div class="nav-separator"></div>
                 
@@ -21,10 +31,17 @@
                         <img class="image-profil-user" src="/img/image-user@2x.png" alt="">                               
                     </a>
                 <div class="popover__content">
-                    <nav class="nav-links-vertical">
+                    <nav class="nav-links-vertical-main">
                         <ul>
-                            <li><i class="bi bi-person"></i>
-                                <a href="">Profil</a></li>
+                            <li class="margin-bottom-16"><i class="bi bi-person"></i>
+                                <a href="/profil">Profil</a>
+                            </li>
+                            <li class="margin-bottom-16"><i class="bi bi-star"></i>
+                                <a href="">Mes favoris</a>
+                            </li>
+                            <li class="margin-bottom-16"><i class="bi bi-gear"></i>
+                                <a href="">Paramètres</a>
+                            </li> 
                             <div class="nav-separator-horizontal"></div>
                             <li><a id="clearData" href="/">Déconnexion</a></li>
                         </ul>
