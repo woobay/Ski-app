@@ -144,7 +144,7 @@ const getFriends = async (TOKEN) => {
     return result.data
 }
 
-const infoFriend = async (friendId, TOKEN) => {
+const getUserFriends = async (friendId, TOKEN) => {
 
     const result = await axios.get(`http://ski-api.herokuapp.com/friend/${friendId}`, {
         headers: {
@@ -175,7 +175,7 @@ const deleteFriend = async(friendId, TOKEN) => {
     return result.data
 }
 
-module.exports.infoFriend = infoFriend;
+module.exports.getUserFriends = getUserFriends;
 module.exports.getFriends = getFriends
 module.exports.addFriend = addFriend;
 module.exports.searchFriend = searchFriend;
