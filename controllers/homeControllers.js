@@ -55,17 +55,18 @@ exports.renderProfilPerson = async (req, res) => {
     const friendId = req.params.id
     const userId = req.params.id
     
+    const userFriends = await apiController.getUserFriends(friendId, TOKEN)
+
+    const userInfo = await apiController.getUser(userId, TOKEN)
     const infoFriends = await apiController.getFriends(TOKEN)
     let friends = infoFriends.friends.map(friend => friend.id)
-
-    const result = await apiController.infoFriend(friendId, TOKEN)
-    const userInfo = await apiController.getUser(userId, TOKEN)
     
 
     res.render("profilPerson", {
         page_name : 'ProfilPerson',
-        users: result.friends, 
-        userInfo: userInfo.user, 
+        userFriends: userFriends.friends,
+        userName: userInfo.user.name,
+        userId: userInfo.user.id,
         friends: friends
     })
 }
@@ -105,6 +106,29 @@ exports.addFriend = async (req, res) => {
     })
 }
 
+exports.addFriendProfil = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+    const userId = req.params.id
+    
+    let result = await apiController.addFriend(friendId, TOKEN)
+    const userFriends = await apiController.getUserFriends(friendId, TOKEN)
+
+    const userInfo = await apiController.getUser(userId, TOKEN)
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+
+    
+    
+    res.render("profilPerson", {
+        page_name : 'ProfilPerson',
+        userFriends: userFriends.friends,
+        userName: userInfo.user.name,
+        userId: userInfo.user.id,
+        friends: friends
+    })
+}
+
 exports.deleteFriend = async (req, res) => {
     const friendId = req.params.id
     const TOKEN = req.app.locals.token
@@ -123,6 +147,28 @@ exports.deleteFriend = async (req, res) => {
         friends: friends
     })  
 }
+
+exports.deleteFriendProfil = async (req, res) => {
+    const friendId = req.params.id
+    const TOKEN = req.app.locals.token
+    const userId = req.params.id
+    
+    const del = await apiController.deleteFriend(friendId, TOKEN)
+    const userFriends = await apiController.getUserFriends(friendId, TOKEN)
+
+    const userInfo = await apiController.getUser(userId, TOKEN)
+    const infoFriends = await apiController.getFriends(TOKEN)
+    let friends = infoFriends.friends.map(friend => friend.id)
+    
+    res.render("profilPerson", {
+        page_name : 'ProfilPerson',
+        userFriends: userFriends.friends,
+        userName: userInfo.user.name,
+        userId: userInfo.user.id,
+        friends: friends
+    })
+}
+
 exports.deleteFriendAmi = async (req, res) => {
     const friendId = req.params.id
     const TOKEN = req.app.locals.token

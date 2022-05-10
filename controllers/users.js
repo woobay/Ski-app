@@ -31,7 +31,10 @@ router.get("/profil/delete/:id", homeController.deleteFriendAmi);
 router.get("/profil/deleted/:id", homeController.deleteFriendAmis);
 
 router.get("/profil", homeController.renderProfilUser);
+router.get("/profil/addFriendProfil/:id", homeController.addFriendProfil)
+router.get("/profil/deleteFriendProfil/:id", homeController.deleteFriendProfil);
 
 router.get("/search/friend/:id", homeController.renderProfilPerson);
+router.get("/search/friend/addFriend/:id", homeController.addFriend);
 
 module.exports = router
