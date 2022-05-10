@@ -117,7 +117,7 @@
                 </header>
                 <p class="margin-bottom-24">J’ai découvert un nouveau terrain !<span class="primary"> @parcours 404 !</span></p>
                 <div class="container-image-medium margin-bottom-24"> 
-                    <img src="/img/img-profil-parcours1.jpg" alt="">
+                    <img src="/img/image-profilUser-parcours1@2x.jpg" alt="">
                 </div>
                 <div class="container-social margin-bottom-24">
                     <div>
@@ -164,9 +164,9 @@
                         <i class="bi bi-three-dots"></i>
                     </div>
                 </header>
-                <p class="margin-bottom-24">Mon nouveau parcours <span class="primary">! @parcours84 ! #vue_parnoramique</span></p>
+                <p class="margin-bottom-24">Mon nouveau parcours <span class="primary">! @parcours84 ! #vue_panoramique</span></p>
                 <div class="container-image-medium margin-bottom-24"> 
-                    <img src="/img/img-profil-parcours2.jpg" alt="">
+                    <img src="/img/image-profiluser-parcours2@2x.jpg" alt="">
                 </div>
                 <div class="container-social margin-bottom-24">
                     <div>
@@ -422,15 +422,17 @@
                         
                         <%= display %>" id="random_img" alt="">
                         <div class="friend-name">
-                            <span class="tag-name"><%= user.name %></span>
-                            <p>En ligne</p>
+                            <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form tag-friend-form">
+                                <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                                <p>En ligne</p>
+                            </form>
                         </div>
                     </div>
                 
                     <div>
                         <form action="/profil/deleted/<%= user.id %>" method="get">
-                            <button type="submit" id="btn-settings"><i class="bi bi-trash"></i></button>
-                    </form>
+                            <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
+                        </form>
                     </div>
                 </div>
 
@@ -445,22 +447,11 @@
                     </div>
                 </div>
               
-
-                <div class="popover__wrapper">
-                    <i class="bi bi-three-dots adroite" id="icon-dots-friends"></i>
-                    <div class="popover__content popover-friend">
-                        <div id="nav-links-vertical">
-                            <form action="" method="get" id="fuck">
-                                <button type="submit" id="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
-                            </form>
-    
-                            <form action="" method="get">
-                                <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
-                            </form>
-                        </div>         
-                    </div> 
+                <div>
+                    <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
                 </div>
             </div>
+               
 
             <div class="alert-friend margin-top-28 contact-friend-offline">
                 <div class="alert-friend-name">
@@ -471,22 +462,12 @@
                 </div>
               
 
-                <div class="popover__wrapper">
-                    <i class="bi bi-three-dots adroite" id="icon-dots-friends"></i>
-                    <div class="popover__content popover-friend">
-                        <div id="nav-links-vertical">
-                            <form action="" method="get" id="fuck">
-                                <button type="submit" id="btn-settings"><i class="bi bi-chat-dots"></i>Discussion</button>
-                            </form>
-    
-                            <form action="" method="get">
-                                <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
-                            </form>
-                        </div>         
-                    </div> 
+                <div>
+                    <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
                 </div>
             </div>
         </article>
+
 
          <!--Colonne droite - Social - Qui me suit -->
          <div class="section-title margin-bottom-24">

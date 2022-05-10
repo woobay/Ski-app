@@ -122,10 +122,11 @@
                     %>
                     
                     <%= display %>" id="random_img" alt="">
-                    <div>
-                        <p><span class="tag-name"><%= user.name %> </span><br>
-                            Québec City, Québec
-                        </p>
+                    <div class="friend-name padding-left-reset">
+                        <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form tag-friend-form">
+                            <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                            <p>Québec City, Québec</p>
+                        </form>
                     </div>
                     <form action="/profil/delete/<%= user.id %>" method="get">
                         <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>

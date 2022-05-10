@@ -714,45 +714,51 @@ label {
 .pin-map {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    background-size: cover;
-    border: 2px solid #04477C;
     position: absolute;
+    background-color: #04477C;
+    border-radius: 50%;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+}
+
+.pin-map img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #04477C;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
 }
 
 #profil-1 {
-    background-image: url(..//img/image-friend1@2x.png);
     top: 257px;
     left: 1248.5px;
 }
+
 #profil-2 {
-    background-image: url(..//img/image-friend2@2x.png);
-    top: 198px;
-    left: 913.5px;
+    top: 168px;
+    right: 568px;
 }
 
 #profil-3 {
-    background-image: url(..//img/image-friend3@2x.png);
-    left: 880.5px;
-    top: 198px;
+    right: 600px;
+    top: 168px;
 }
+
 #profil-4 {
-    background-image: url(..//img/img-localisation-map3.jpg);
     left: 1090.5px;
     top: 198px;
 }
+
 #pin-icon-1{
-    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 1222.5px;
     top: 257px;
 }
+
 #pin-icon-2{
-    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 1019.5px;
     top: 103px;
 }
+
 #pin-icon-3{
-    background-image: url(..//img/pint-geocalisation-mag.svg);
     left: 105.5px;
     top: 283px;
 }
@@ -979,6 +985,8 @@ label {
 
 .image-profil-friend {
     width: 50px;
+    border-radius: 50%;
+    box-shadow: 0px -3px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
 }
 
 .alert-friend {
@@ -996,6 +1004,10 @@ label {
     justify-content: center;
     flex-direction: column;
     margin-left: 24px;
+}
+
+.padding-left-reset {
+    padding-left : 0 !important;
 }
 
 .alert-news, .search-results {
@@ -1767,8 +1779,15 @@ textarea {
 }
 
 .search-result-form button {
-     border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
     background-color: #ffff;
+}
+
+.search-result-form button:hover {
+    color: #04477C;
 }
 
 .tag-name-result {
@@ -1792,6 +1811,9 @@ textarea {
     font-size: 16px;
 }
 
+.flex-start {
+    justify-content: flex-start!important;
+}
 
 /* ================ page Profil & page Profil - My Friends ================= */
 
@@ -1877,6 +1899,16 @@ textarea {
     background-color: #F2F2F2;
 }
 
+.btn-friend {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.tag-friend-form {
+    font-size: 14px!important;
+    width: 100%!important;
+}
+
 /* potentiel conflit */
 
 .col-10.allParcours {
@@ -1938,7 +1970,7 @@ textarea {
 
 .container-ami {
     padding: 24px;
-    width: 470px;
+    width: 48%;
     height:96px;
     background-color: #FFF;
     border-radius: 8px;
