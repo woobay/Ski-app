@@ -152,7 +152,6 @@ const getUserFriends = async (friendId, TOKEN) => {
             "Authorization": TOKEN
         }
         })
-        console.log(result)
         return result.data
 }
 
