@@ -186,7 +186,7 @@ label {
 }
 
 .col-5c {
-    grid-column: 5/10;
+    grid-column: 5/11;
 }
 
 .col-5d{
@@ -419,7 +419,6 @@ label {
     margin: 10px 0;
 }
 
-
 .container-logo-nav img {
     width: 100%;
 }
@@ -454,10 +453,7 @@ label {
 
 .popover__content {
     opacity: 0;
-    /* visibility: hidden; */
     position: absolute;
-    /* left: -48px;
-    top: 25px; */
     left: -59px;
     top: 30px;
     transform: translate(0, 10px);
@@ -801,8 +797,6 @@ label {
 /*=================== Page Profil/Feed =====================*/
 
 .container-searchBar {
-    /* display: flex;
-    justify-content: space-around; */
     padding: 1.75em 1.5em;
     margin-top: 3em;
     background-color: #FFF;
@@ -821,9 +815,7 @@ label {
 
 .container-newspot {
     margin-top: 10.25em;
-    
 }
-
 
 .container-spot {
     display: flex;
@@ -1638,8 +1630,6 @@ textarea {
     margin-right: 5px;
 }
 
-
-
 .tags-color {
     color: #0060AD;
     background-color: rgb(0, 96, 173, 0.2);
@@ -1909,8 +1899,6 @@ textarea {
     width: 100%!important;
 }
 
-/* potentiel conflit */
-
 .col-10.allParcours {
     justify-content: center;
 }
@@ -1935,7 +1923,6 @@ textarea {
 
 .img-post-parcours {
     width: 142px;
-    /* height: 88px; */
     border-radius: 4px;
 }
 
@@ -1976,9 +1963,12 @@ textarea {
     border-radius: 8px;
     margin-bottom: 32px;
     box-shadow: 0px 4px 8px 0px #60617029,0px -3px 2px 0px #28293D0A;
-
 }
 
 .container-ami > .alert-news > button {
     width: unset!important;
+}
+
+.align-items-start {
+    align-items: flex-start!important;
 }
