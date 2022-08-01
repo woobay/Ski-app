@@ -1,0 +1,396 @@
+<%- include ('partials/head'); %>
+<title>Parcours</title>
+</head>
+
+<%- include ('partials/header'); %>
+<!-- map -->      
+<div class="hero parcours"></div>
+<!-- Welcome & Search bar -->
+<div class="grid container-hero">
+    <div class="col-6">
+        <h1>Parcours 22</h1>
+        <h2 class=" h1 primary"><%= spot.name %></h2>
+        <h3 class="margin-bottom-32">Crée par <span class="primary"><%= info.name %> </span></h3>
+        <span class="oval-box-level oval-box-level-big <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+            <%= spot.difficulty%>
+        </span>
+    </div>
+    <div class="container-icon-header-parcours col-4">
+        <div class="icon-header-parcours">
+            <i class="bi bi-check2"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-bookmark"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-download"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-share"></i>
+        </div>
+        <div class="icon-header-parcours">
+            <i class="bi bi-arrows-fullscreen"></i>
+        </div>
+    </div>
+      <!-- Résumé du profil -->
+      <div class="container-features margin-top-58 col-10">
+        <div class="profil-features">
+            <i class="bi bi-clock"></i>
+            <p>Durée<br><span>1h32</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-flag"></i>
+            <p>Distance<br><span>33km</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <img src="/img/icon-altitude.svg" alt="">
+            <p>Altitude<br><span>1000m</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-trophy"></i>
+            <p>Terminé<br><span>14</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-image"></i>
+            <p>Photos<br><span>48</span></p>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="container-main grid">
+         <!-- Colonne Parcours -->
+        <section class="col-10">           
+            <!-- Description et accès -->
+            <article>
+                <header>
+                    <div class="section-title-start">
+                        <h3>Description et accès</h3>
+                        <span class="medium one-link">Voir moins  
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </div>
+                </header>
+                <div class="title-article margin-top-small"> 
+                   <h4>Le parcours</h4>
+                </div>                   
+                <div class="margin-top-small"> 
+                    <p><%= spot.description %></p> 
+                    <br>
+                    <p>Nisl lectus tristique arcu pellentesque ultrices. Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse. Felis non tellus elit cursus erat dictumst turpis lacus. Lorem urna, adipiscing convallis mi, cursus faucibus ipsum magna. Massa eu nunc turpis cras. Blandit sagittis tellus in amet nunc, amet, posuere id. </p>
+                </div>
+                
+                <div class="container-tag margin-top-small">
+                        <span class="oval-box-tags tags-color">Snowboard</span>
+                        <span class="oval-box-tags tags-color">Neige</span>
+                        <span class="oval-box-tags tags-color">Ski</span>
+                        <span class="oval-box-tags tags-color">Accessibilité</span>
+                        <span class="oval-box-tags tags-color">Montée</span>
+                        <span class="oval-box-tags tags-color">Belle vue</span>
+                        <span class="oval-box-tags tags-color">Nature sauvage</span>
+                        <span class="oval-box-tags tags-color">Sécurisé</span>
+                        <span class="oval-box-tags tags-color">Endurant</span>
+                        <span class="oval-box-tags tags-color">Québec</span>
+                        <span class="oval-box-tags tags-color">Canada</span>
+                </div>
+                <!-- Localisation du parcours -->
+                
+                <div class="title-article margin-top-48"> 
+
+                    <h3>Localisation du parcours</h3>
+                </div>    
+                <div class="margin-top-small">
+                    <p>Nisl lectus tristique arcu pellentesque ultrices. Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse. Felis non tellus elit cursus erat dictumst turpis lacus. </p>
+                    <br>
+                    <p>Début du parcours :  <%= spot.coordinates[0] %></p>
+                    <p>Fin du parcours :   <%= spot.coordinates[1] %></p>
+                </div>
+            </article>
+        </section>
+            <!-- Condition métérologiques -->
+        <section class="col-10"> 
+            <article class="margin-top-72">
+                <header>
+                    <div class="section-title-start margin-bottom-24">
+                        <h3>Conditions métérologiques</h3>
+                        <span class="medium one-link">Voir moins  
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </div>
+                </header>
+
+                <div class="container-meteo">
+
+                    <div class="container-meteo-features">
+                        <i class="bi bi-brightness-high"></i>
+                        <p><span>-30ºC</span><br>Dimanche</p>
+                    </div>
+
+                    <div class="separator-meteo"></div>
+                    
+                    <div class="container-meteo-features">
+                        <i class="bi bi-brightness-high"></i>
+                        <p><span>-30ºC</span><br>Lundi</p>
+                    </div>
+
+                    <div class="separator-meteo"></div>
+
+                    <div class="container-meteo-features">
+                        <i class="bi bi-cloud-sun-fill"></i>
+                        <p><span>-32ºC</span><br>Mardi</p>
+                     </div>  
+
+                    <div class="separator-meteo"></div>
+
+                    <div class="container-meteo-features">
+                        <i class="bi bi-cloud-sleet"></i>
+                        <p><span>-32ºC</span><br>Mercredi</p>
+                     </div>  
+
+                    <div class="separator-meteo"></div>
+
+                     <div class="container-meteo-features">
+                        <i class="bi bi-cloud-sleet"></i>
+                        <p><span>-34ºC</span><br>Jeudi<br></p>
+                     </div>  
+
+                     <div class="separator-meteo"></div>
+
+                     <div class="container-meteo-features">
+                        <i class="bi bi-brightness-high"></i>
+                        <p><span>-34ºC</span><br>Vendredi<br></p>
+                     </div> 
+                     
+                     <div class="separator-meteo"></div>
+
+                     <div class="container-meteo-features">
+                        <i class="bi bi-brightness-high"></i>
+                        <p><span>-32ºC</span><br>Samedi<br></p>
+                     </div>
+
+                </div>
+         
+                <div class="article-separator-meteo"></div>
+
+                <div class="container-meteo-small">
+                    <div class="container-meteo-features-small">
+                        <i class="bi bi-sunrise"></i>
+                        <p>Lever<br><span>5h30</span></p>
+                    </div>
+                    <div class="container-meteo-features-small">
+                        <i class="bi bi-sunset"></i>
+                        <p>Coucher<br><span>17h02</span></p>
+                    </div>
+                    <p>Ac iaculis nunc enim auctor vitae auctor hendrerit felis, mi. Consectetur facilisis ipsum, adipiscing urna, interdum. A sit amet tellugnissim. </p>
+                </div>
+             
+            </article>
+        </section>
+            <!-- Conditions obligatoires -->
+        <section class="col-10"> 
+            <article class="margin-top-72">
+                <header>
+                    <div class="section-title-start">
+                        <h3>Conditions obligatoires : matériel, équipement et sécurité</h3>
+                        <span class="medium one-link">Voir moins  
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </div>
+                </header>
+                <div class="margin-top-small">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas eget ornare massa mi, cum egestas. Platea semper tellus condimentum hac. Eget id mauris urna lectus purus, ultricies blandit ullamcorper nunc.</p>
+                    <br>
+                    <ul class="list-normal">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
+                        <li>Fermentum fames integer non urna, scelerisque. Purus turpis eget in massa quam duis. Commodo amet a pellentesque cras ridiculus faucibus congue suspendisse.</li>
+                        <li>Lorem urna, adipiscing convallis mi, cursus faucibus ipsum magna.</li>
+                        <li>Nisl lectus tristique arcu pellentesque ultrices. </li>
+                    </ul>
+                    <br>
+                    <p class="margin-top-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas eget ornare massa mi, cum egestas. Platea semper tellus condimentum hac. Eget id mauris urna lectus purus, ultricies blandit ullamcorper nunc.</p>
+                </div>                
+            </article>
+        </section>
+        <!-- Galerie -->
+        <section class="col-10"> 
+            <article class="margin-bottom-72 margin-top-72">
+                <header class="margin-bottom-24">
+                    <div class="section-title">
+                        <h3>Galerie photos <span class="primary">(48 photos)</span></h3>
+                        <span class="medium one-link">Voir plus 
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+                    </div>
+                </header>
+                    <div class="container-image-parcours margin-bottom-32">
+                        <div><img src="/img/carrousel-photo-image1.jpg" alt=""></div>
+                        <div><img src="/img/carrousel-photo-image2.jpg" alt=""></div>
+                        <div><img src="/img/carrousel-photo-image3.jpg" alt=""></div>
+                        <i class="bi bi-chevron-right"></i>
+                    </div> 
+                    <div class="btn-center margin-bottom-48">
+                        <a href="#" class="btn-secondary-light width-unset">
+                            Ajouter une photo
+                        </a>
+                    </div>
+            </article>
+        </section>
+        <!-- Commentaires -->
+        <section class="col-10">
+            <article class="margin-bottom-24">
+                <header>
+                    <div class="section-title">
+                        <h3>Commentaires <span class="primary">(8 avis)</span></h3>
+                        <span class="medium one-link">Voir plus 
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+                    </div>
+                </header>
+            </article> 
+            <article class="container-post margin-bottom-24 ">
+                <header class="title-article margin-bottom-24">
+                    <img class="image-profil-friend" src="/img/image-friend2@2x.png" alt="">
+                    <div class="title-article-header" >
+                        <p class="body1">Guy Hawkins<br>
+                            <span>Québec City, Québec</span>
+                        </p>
+                        <div class="icon-star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </header>
+                <p class="margin-bottom-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et risus arcu proin in vitae praesent at nulla aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et risus arcu proin in et vitae praesent nulla aliquam !</p>
+            </article>
+            <article class="container-post margin-bottom-32 ">
+                <header class="title-article margin-bottom-24">
+                    <img class="image-profil-friend" src="/img/image-friend14@2.png" alt="">
+                    <div class="title-article-header" >
+                        <p class="body1">Esther Howard<br>
+                            <span>Montréal, Québec</span>
+                        </p>
+                        <div class="icon-star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </header>
+                <p class="margin-bottom-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et risus arcu proin in vitae praesent at nulla aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et risus arcu proin in et vitae praesent nulla aliquam !</p>
+            </article>
+            <div class="btn-center margin-bottom-48">
+                <a href="#" class="btn-secondary-light width-unset">
+                    Écrire un commentaire
+                </a>
+            </div>
+        </section>
+        <!-- Activités -->
+        <section class="col-10"> 
+            <article class="margin-bottom-32">
+                <header class="margin-bottom-24">
+                    <div class="section-title">
+                        <h3>Activités <span class="primary">(7 données)</span></h3>
+                        <span class="medium one-link">Voir plus 
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+                    </div>
+                </header>
+                <div class="container-activity">
+                    <div class="container-info-activity">
+                        <img src="/img/carrousel-activity-image1.jpg" alt="">
+                        <div class="info-activity">
+                            <img src="/img/image-friend15@2.png" alt="">
+                            <div class="info-activity-features margin-right-16">
+                                <i class="bi bi-clock"></i>
+                                <p>1h10</p>
+                            </div>
+                            <div class="info-activity-features">
+                                <i class="bi bi-flag"></i>
+                                <p>30 km</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="container-info-activity">
+                        <img src="/img/carrousel-activity-image2.jpg" alt="">
+                        <div class="info-activity">
+                            <img src="/img/image-friend14@2.png" alt="">
+                            <div class="info-activity-features margin-right-16">
+                                <i class="bi bi-clock"></i>
+                                <p>1h40</p>
+                            </div>
+                            <div class="info-activity-features">
+                                <i class="bi bi-flag"></i>
+                                <p>39 km</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-info-activity">
+                        <img src="/img/carrousel-activity-image3.jpg" alt="">
+                        <div class="info-activity">
+                            <img src="/img/image-friend19@2.png" alt="">
+                            <div class="info-activity-features margin-right-16">
+                                <i class="bi bi-clock"></i>
+                                <p>1h34</p>
+                            </div>
+                            <div class="info-activity-features">
+                                <i class="bi bi-flag"></i>
+                                <p>34 km</p>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>                                                                  
+                </div>
+            </article>                
+                <div class="btn-center margin-bottom-48">
+                    <a href="#" class="btn-secondary-light width-unset">
+                        Ajouter une activité
+                    </a>
+                </div>
+        </section>
+        <!-- Parcours -->
+        <section class="col-10"> 
+            <article class="margin-bottom-24">
+                <header class="margin-bottom-24">
+                    <div class="section-title">
+                        <h3>Parcours terminé <span class="primary">(15 personnes)</span></h3>
+                        <span class="medium one-link">Voir plus 
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+                    </div>
+                </header>
+                <div class="container-photo-profil">
+                    <img src="/img/image-friend14@2.png" alt="">
+                    <img src="/img/image-friend11@2x.png" alt="">
+                    <img src="/img/image-friend15@2.png" alt="">
+                    <img src="/img/image-friend3@2x.png" alt="">
+                    <img src="/img/image-friend8@2x.png" alt="">
+                    <img src="/img/image-friend18@2.png" alt="">
+                    <img src="/img/image-friend17@2.png" alt="">
+                    <img src="/img/image-friend16@2.png" alt="">
+                    <img src="/img/image-friend12b@2.png" alt="">
+                    <img src="/img/image-friend7@2x.png" alt="">
+                    <img src="/img/image-friend2@2x.png" alt="">
+                    <img src="/img/image-friend19@2.png" alt="">
+                    <img src="/img/image-friend10@2x.png" alt="">
+                    <img src="/img/image-friend6@2x.png" alt="">
+                    <img src="/img/image-friend9@2x.png" alt="">
+                   
+                </div> 
+            </article>
+            <div class="btn-center margin-bottom-95">
+                <a href="#" class="btn-primary width-unset">
+                    Ajouter aux parcours terminés
+                </a>
+            </div>
+            
+        </section>
+    </div>
+</main>
+<%- include ('partials/footer'); %>
+</body>
+</html>

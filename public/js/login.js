@@ -1,13 +1,11 @@
 // Query selectors
 
-let loginForm = document.querySelector('#log');
+let loginForm = document.querySelector('#validateNewUser');
 
-let emailDiv = document.querySelector('#emailDiv');
 let email = document.querySelector('#email');
 let emailIcon = document.querySelector('#emailIcon')
 let errorEmail = document.querySelector('#errorEmail');
 
-let passwordDiv = document.querySelector('#passwordDiv');
 let password = document.querySelector('#password');
 let passwordIcon = document.querySelector('#passwordIcon');
 let errorPassword = document.querySelector('#errorPassword');
@@ -78,13 +76,11 @@ function validate(e) {
 
 passwordIcon.addEventListener('click', function () {
     if (password.type === "password") {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye');
         password.type = "text";
     } else {
-        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash icon');
+        passwordIcon.setAttribute('class', 'fa-regular fa-eye-slash');
         password.type = "password";
     }
 })
 const log = document.querySelector("#log");
-
-

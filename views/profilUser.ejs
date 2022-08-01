@@ -1,0 +1,536 @@
+<%- include ('partials/head'); %>
+<title>Profil user</title>
+</head>
+
+<%- include ('partials/header'); %>
+<main class="margin-bottom-120">
+    <!-- map -->      
+    <div class="hero-profil"></div>
+    <div class="grid container-search">
+    
+        <div class="col-5c">
+            <div class="container-hero-profil">
+                <img src="/img/img-profil-hero2.jpg" alt="...">
+                <div class="container-hero-profil-content">
+                    <div>
+                        <h1><%= name %></h1>
+                        <h3>Québec City, Québec</h3>
+                    </div>
+                    <div>
+                        <p class="medium">44 posts</p>
+                        <p class="medium">33 Followers</p>
+                        <p class="medium">18 ami.e.s</p>
+                    </div>
+                    <button class="btn-primary">Editer</button>
+                </div>
+            </div>
+        </div>
+    
+         <!-- Résumé du profil -->
+        <div class="container-features margin-top-88 col-10">
+        <div class="profil-features">
+            <i class="bi bi-people"></i>
+            <p>Followers<br><span>14</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-speedometer"></i>
+            <p>Parcourus<br><span>20 Km</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-calendar4-event"></i>
+            <p>Sorties<br><span>17</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-send"></i>
+            <p>Posts<br><span>44</span></p>
+        </div><div class="features-separator"></div>
+        <div class="profil-features">
+            <i class="bi bi-award"></i>
+            <p>Badges<br><span>7</span></p>
+        </div>
+        </div>
+    </div>
+
+    <div class="container-main grid">
+        <!--Encars Parcours-->
+        <nav class="col-10 margin-bottom-60 allParcours">
+            <a class="link-click-on">Post</a>
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Parcours créés</a> 
+            <div class="nav-separator"></div>      
+            <a class="link-click-off">Parcours terminés</a>   
+            <div class="nav-separator"></div>   
+            <a class="link-click-off">Badge</a>   
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Favoris</a>  
+            <div class="nav-separator"></div>
+            <a href="/profil/myfriends" class="link-click-off">Ami.e.s</a>               
+        </nav>
+            
+                
+              
+
+
+         <!-- Colonne gauche - Post & Alert -->
+        <section class="col-6">
+            <h4 class="margin-bottom-24">Posts</h4>
+            <!--News Alert 1-->
+            <article class="container-post margin-bottom-32">
+                
+                    <div class="container-comment margin-bottom-24">
+                        <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                        <div class="input-icons">
+                            <input class="input-comment" type="text" placeholder="Commencer une nouvelle publication">
+                        </div>
+                    </div>
+                    <div class="container-social margin-bottom-28">
+                        <div>
+                            <i class="bi bi-image"></i>
+                            <p>Photos/Vidéos</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-emoji-smile"></i>
+                            <p>Réactions</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <p>Géolocalisation</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-three-dots fs-24"></i>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Publier</button>
+                
+              
+            </article>
+            <!-- Card Post 1 -->
+            <article class="container-post margin-bottom-32 ">
+                <header class="title-article margin-bottom-24">
+                    <img class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="title-article-header" >
+                        <p class="body1"><%= name %><br>
+                            <span>Québec City, Québec</span>
+                        </p>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </header>
+                <p class="margin-bottom-24">J’ai découvert un nouveau terrain !<span class="primary"> @parcours 404 !</span></p>
+                <div class="container-image-medium margin-bottom-24"> 
+                    <img src="/img/image-profilUser-parcours1@2x.jpg" alt="">
+                </div>
+                <div class="container-social margin-bottom-24">
+                    <div>
+                        <i class="bi bi-heart"></i>
+                        <p>22,5K J'aime</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-chat"></i>
+                        <p>33 Commentaires</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-share"></i>
+                        <p>Partager</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-star"></i>
+                        <p>Favoris</p>
+                    </div>
+                </div>
+                <!-- Description et commentaire -->
+                <div class="margin-bottom-24">
+                    <div class="article-separator "></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi orci tempor tellus quam donec sed quisque condimentum sed. Amet, turpis sapien sapien hendrerit lacus aliquam ullamcorper !</p>
+                </div>
+                <div class="container-comment">
+                    <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="input-icons">
+                        <input class="input-comment" type="text" placeholder="Écrire un commentaire">
+                        <div class="icons">
+                         <i class="bi bi-paperclip "></i>
+                         <i class="bi bi-emoji-smile"></i>
+                         <i class="bi bi-image"></i>
+                        </div>
+                </div>
+            </article>
+            <!-- Card Post 2 -->
+            <article class="container-post margin-bottom-32 ">
+                <header class="title-article margin-bottom-24">
+                    <img class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="title-article-header" >
+                        <p class="body1"><%= name %><br>
+                            <span>Québec City, Québec</span>
+                        </p>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </header>
+                <p class="margin-bottom-24">Mon nouveau parcours <span class="primary">! @parcours84 ! #vue_panoramique</span></p>
+                <div class="container-image-medium margin-bottom-24"> 
+                    <img src="/img/image-profiluser-parcours2@2x.jpg" alt="">
+                </div>
+                <div class="container-social margin-bottom-24">
+                    <div>
+                        <i class="bi bi-heart"></i>
+                        <p>22,5K J'aime</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-chat"></i>
+                        <p>33 Commentaires</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-share"></i>
+                        <p>Partager</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-star"></i>
+                        <p>Favoris</p>
+                    </div>
+                </div>
+                <!-- Description et commentaire -->
+                <div class="margin-bottom-24">
+                    <div class="article-separator "></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi orci tempor tellus quam donec sed quisque condimentum sed. Amet, turpis sapien sapien hendrerit lacus aliquam ullamcorper !</p>
+                </div>
+                <div class="container-comment">
+                    <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="input-icons">
+                        <input class="input-comment" type="text" placeholder="Écrire un commentaire">
+                        <div class="icons">
+                         <i class="bi bi-paperclip "></i>
+                         <i class="bi bi-emoji-smile"></i>
+                         <i class="bi bi-image"></i>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Card Post 3 -->
+            <article class="container-post margin-bottom-32">
+                <header class="title-article margin-bottom-24">
+                    <img class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="title-article-header">
+                        <p class="body1"><%= name %><br>
+                            <span>Québec City, Québec</span>
+                        </p>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </header>
+                <p class="margin-bottom-24">Jolie vue sur le mont Nicol-Abert ! <span class="primary">@parcours 90 !</span></p>
+                <div class="container-image-medium-divided margin-bottom-24"> 
+                    <div class="container-image-left">
+                        <img src="/img/image-post2-left.jpg" alt="">
+                    </div>
+                    <div class="container-image-right"> 
+                        <img src="/img/image-post2-right-top.jpg" alt="">
+                        <img src="/img/image-post2-right-bottom.jpg" alt="">
+                    </div>
+                   
+                </div>
+                <div class="container-social margin-bottom-24">
+                    <div>
+                        <i class="bi bi-heart"></i>
+                        <p>72,2K J'aime</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-chat"></i>
+                        <p>149 Commentaires</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-share"></i>
+                        <p>Partager</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-star"></i>
+                        <p>Favoris</p>
+                    </div> 
+                </div>
+                <!-- Description et commentaire -->
+                <div class="margin-bottom-24">
+                    <div class="article-separator"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in suscipit lorem, viverra ultricies eros. Pellentesque volutpat ipsum eu tellus fermentum porttitor. Aenean ut augue orci. Phasellus eleifend nunc ut posuere tincidunt. Vestibulum sed facilisis magna. Pellentesque molestie dui eu tempor efficitur. Integer congue sollicitudin lacus sed laoreet. Sed bibendum ante et lectus aliquam dapibus. Phasellus diam ligula, vehicula sed justo vel, ultrices sagittis quam. Donec rhoncus mattis !</p>
+                </div>
+                <div class="container-comment">
+                    <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                    <div class="input-icons">
+                        <input class="input-comment" type="text" placeholder="Écrire un commentaire">
+                        <div class="icons">
+                         <i class="bi bi-paperclip "></i>
+                         <i class="bi bi-emoji-smile"></i>
+                         <i class="bi bi-image"></i>
+                        </div>
+                    </div>
+                </div>
+            </article>             
+        </section>
+        
+
+         <!-- Colonne droite - Social - Requêtes -->
+        <section class="col-4">
+            <div class="section-title margin-bottom-24">
+                <h4>Requêtes <span class="primary">(3)</span></h4>
+                <span class="medium one-link">Voir plus 
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+            </div>
+
+            <!-- article Request 1 -->
+            <article class="container-post margin-bottom-32">
+                <div class="container-content-request">
+                    <div>
+                        <img class="image-profil-friend" src="/img/image-friend4@2x.png" alt="">
+                    </div>
+                    
+                    <div class="aide">
+
+                        <p><span class="tag-name">Floyd Miles</span> veut vous<br>
+                            ajouter en ami.
+                        </p>
+
+                        <div class="request-btn">
+                            <a class="btn-primary">Ajouter</a>
+                            <a class="btn-secondary-light">Décliner</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- article Request 2 -->
+            <article class="container-post margin-bottom-32">
+                <div class="container-content-request">
+                    <div>
+                        <img class="image-profil-friend" src="/img/image-friend5@2x.png" alt="">
+                    </div>
+                    
+                    <div class="aide">
+
+                        <p><span class="tag-name">Darrel Steward</span> veut vous<br>
+                            ajouter en ami.
+                        </p>
+
+                        <div class="request-btn">
+                            <a class="btn-primary">Ajouter</a>
+                            <a class="btn-secondary-light">Décliner</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+        <!--Colonne droite - Social - Mes parcours crées -->
+            <div class="section-title margin-bottom-24">
+                <h4 >Mes parcours crées <span class="primary">(07)</span></h4>
+                <span class="medium one-link">Voir plus 
+                     <i class="bi bi-arrow-right"></i>
+                </span>
+            </div> 
+
+            <a href="/spots/new" class="btn-create btn-horizontal body1 medium margin-bottom-24">
+                <img src="/img/icon-add-circle.svg" alt="icône ajouter">
+                <br>Créer un parcours
+            </a>
+
+        <!-- article 3-->
+        <article class="container-post margin-bottom-32 ">
+            <div class="alert-news margin-bottom-1em">
+                <img class="img-post-parcours" src="/img/image-profiluser-parcours1.jpg" alt="">
+                <div>
+                     <p><span class="tag-name">Parcours 404</span><br>Québec City, Québec</p>
+                 </div>
+            </div>
+            <div class="article-separator margin-bottom-1em"></div>
+            <div class="alert-news margin-bottom-1em">
+                <img class="img-post-parcours" src="/img/image-profiluser-parcours2.jpg" alt="">
+                <div>
+                     <p><span class="tag-name">Parcours 84</span><br>Québec City, Québec</p>
+                 </div>
+            </div>
+            <div class="article-separator margin-bottom-1em"></div>
+            <div class="alert-news margin-bottom-1em">
+                <img class="img-post-parcours" src="/img/img-profil-parcours3.jpg" alt="">
+                <div>
+                     <p><span class="tag-name">Parcours 202</span><br>Québec City, Québec</p>
+                 </div>
+            </div>
+            <div class="article-separator margin-bottom-1em"></div>
+            <div class="alert-news">
+                <img class="img-post-parcours" src="/img/img-profil-parcours4.jpg" alt="">
+                <div>
+                     <p><span class="tag-name">Parcours 220</span><br>Québec City, Québec</p>
+                 </div>
+            </div>
+        </article>
+
+
+        <!--Colonne droite - Social - Contacts -->
+        <div class="section-title margin-bottom-24">
+            <h4 >Ami.e.s <span class="primary">(18)</span></h4>
+            <span class="medium one-link">Voir plus 
+                 <i class="bi bi-arrow-right"></i>
+            </span>
+        </div> 
+
+        <!-- article 3-->
+        <article class="container-post margin-bottom-32 ">
+            <% users.forEach(user => { %>
+
+                <div class="alert-friend margin-bottom-28 ">
+                    <div class="alert-friend-name">
+                        <img class="image-profil-friend" src="<% 
+                        const array_images = [
+                            "img-profil-follower1.png",
+                            "img-profil-follower2.png",
+                            "img-profil-follower3.png",
+                            "img-profil-follower4.png",
+                            "img-profil-follower5.png",
+                            "img-profil-follower6.png",
+                            "img-profil-follower7.png",
+                            "img-profil-follower8.png",
+                            "image-friend1@2x.png",
+                            "image-friend2@2x.png",
+                            "image-friend3@2x.png",
+                            "image-friend4@2x.png",
+                            "image-friend5@2x.png",
+                            "image-friend6@2x.png",
+                            "image-friend7@2x.png",
+                            "image-friend8@2x.png",
+                            "image-friend9@2x.png",
+                            "image-friend10@2x.png",
+                            "image-friend11@2x.png",
+                            "image-friend12@2x.png",
+                            "image-friend13@2x.png",
+                            "image-friend14@2.png",
+                            "image-friend15@2.png",
+                            "image-friend16@2.png",
+                            "image-friend17@2.png",
+                            "image-friend18@2.png",
+                            "image-friend19@2.png"
+                                ]
+    
+                            const random_images = () => {
+                                
+                                let random_index = Math.floor(Math.random() * array_images.length)
+                                
+                                let image_selected = array_images[random_index];
+                                
+                                return image_selected;
+                            }
+    
+                            const img = random_images()     
+    
+                            const display = `/img/${img}` 
+                              
+                        %>
+                        
+                        <%= display %>" id="random_img" alt="">
+                        <div class="friend-name">
+                            <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form tag-friend-form">
+                                <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                                <p>En ligne</p>
+                            </form>
+                        </div>
+                    </div>
+                
+                    <div>
+                        <form action="/profil/deleted/<%= user.id %>" method="get">
+                            <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
+                        </form>
+                    </div>
+                </div>
+
+                <% }) %> 
+
+
+            <div class="alert-friend contact-friend-offline">
+                <div class="alert-friend-name">
+                    <img class="image-profil-friend"src="/img/image-friend12@2x.png" alt="">
+                    <div class="friend-name">
+                        <p><span class="tag-name">Eleanor Pena</span><br>Hors ligne</p>
+                    </div>
+                </div>
+              
+                <div>
+                    <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
+                </div>
+            </div>
+               
+
+            <div class="alert-friend margin-top-28 contact-friend-offline">
+                <div class="alert-friend-name">
+                    <img class="image-profil-friend"src="/img/image-friend13@2x.png" alt="">
+                    <div class="friend-name">
+                        <p><span class="tag-name">Ronald Richards</span><br>Hors ligne</p>
+                    </div>
+                </div>
+              
+
+                <div>
+                    <button class="btn-secondary-light btn-friend" type="submit">Ami.e</button>
+                </div>
+            </div>
+        </article>
+
+
+         <!--Colonne droite - Social - Qui me suit -->
+         <div class="section-title margin-bottom-24">
+            <h4 >Qui me suit <span class="primary">(33)</span></h4>
+            <span class="medium one-link">Voir plus 
+                 <i class="bi bi-arrow-right"></i>
+            </span>
+        </div> 
+
+        <!-- article 3-->
+        <article class="container-post margin-bottom-32 ">
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/img-profil-follower1.png" alt="">
+                <div>
+                     <p><span class="tag-name">Brooklyn Sims</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/img-profil-follower2.png" alt="">
+                <div>
+                     <p><span class="tag-name">Jenny Wilson</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/img-profil-follower3.png" alt="">
+                <div>
+                     <p><span class="tag-name">Darlene Robert</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/img-profil-follower4.png" alt="">
+                <div>
+                     <p><span class="tag-name">Albert Flores</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/image-friend11@2x.png" alt="">
+                <div>
+                     <p><span class="tag-name">Theresa webb</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news margin-bottom-28">
+                <img class="image-profil-friend" src="/img/img-profil-follower5.png" alt="">
+                <div>
+                     <p><span class="tag-name">Cody Fisher</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+            <div class="alert-news">
+                <img class="image-profil-friend" src="/img/img-profil-follower6.png" alt="">
+                <div>
+                     <p><span class="tag-name">Bessie Cooper</span><br>En ligne</p>
+                     <p><i class="bi bi-three-dots"></i></p>
+                </div>
+            </div>
+        </article>
+
+        </section>
+    </div>
+<%- include ('partials/footer'); %>   
+</main>

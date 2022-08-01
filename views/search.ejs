@@ -1,0 +1,134 @@
+<%- include ('partials/head'); %>
+<title>Search</title>
+</head>
+
+<%- include ('partials/header'); %>
+
+<main class="margin-bottom-120">
+    <section class="grid container-search">
+        <div class="col-7">
+            <h1 class="margin-bottom-32">Résultats : <span class="primary"><%= word %> </span></h1>
+            <form action="/search" method="get" class="margin-bottom-48">
+                <input class="search-bar margin-bottom-32" name="word" id="searchBarPage" type="text" placeholder="Écrivez votre recherche" value="<%= word %>">
+                <input class="btn-primary body1 width-unset" type="submit"  id="btn-search" value="Lancer la recherche">
+            </form>
+        </div>
+
+        <div class="col-10 allParcours flex-start">
+            <a class="link-click-off">Tous les résultats (08)</a>
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Parcours (01)</a>  
+            <div class="nav-separator"></div>
+            <a class="link-click-on">Personnes (07)</a>    
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Guides</a>     
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Événements</a>                                      
+        </div>
+    </section>
+
+    <section class="container-main grid">
+
+
+        <div class="col-10"> 
+            <% if (users.length === 0) { %>
+                <p class="no-user-found">Oh ! Nous sommes désolés mais il semblerait que cet utilisateur n’existe pas… :(</p>
+                <% } else { %> 
+            <% users.forEach(user => { %>
+             
+            <div class="container-post margin-bottom-24">
+                <div class="search-results">
+                    <img class="image-profil-friend" src="<% 
+                    const array_images = [
+                        "img-profil-follower1.png",
+                        "img-profil-follower2.png",
+                        "img-profil-follower3.png",
+                        "img-profil-follower4.png",
+                        "img-profil-follower5.png",
+                        "img-profil-follower6.png",
+                        "img-profil-follower7.png",
+                        "img-profil-follower8.png",
+                        "image-friend1@2x.png",
+                        "image-friend2@2x.png",
+                        "image-friend3@2x.png",
+                        "image-friend4@2x.png",
+                        "image-friend5@2x.png",
+                        "image-friend6@2x.png",
+                        "image-friend7@2x.png",
+                        "image-friend8@2x.png",
+                        "image-friend9@2x.png",
+                        "image-friend10@2x.png",
+                        "image-friend11@2x.png",
+                        "image-friend12@2x.png",
+                        "image-friend13@2x.png",
+                        "image-friend14@2.png",
+                        "image-friend15@2.png",
+                        "image-friend16@2.png",
+                        "image-friend17@2.png",
+                        "image-friend18@2.png",
+                        "image-friend19@2.png"
+                            ]
+                        const random_images = () => {
+                            
+                            let random_index = Math.floor(Math.random() * array_images.length)
+                            
+                            let image_selected = array_images[random_index];
+                            
+                            return image_selected;
+                        }
+
+                        const img = random_images()     
+
+                        const display = `/img/${img}` 
+                          
+                    %>
+                    
+                    <%= display %>" id="random_img" alt="">
+                    <div id="search-results-cursor">
+                        <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form">
+                            <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                            <p>Québec City, Québec</p>
+                        </form>
+
+                        <div id="btns-search-results">
+                            
+                              <% if (friends.includes(user.id)) { %>
+                                 
+                                    <form action="/friend/delete/<%= user.id %>" method="get">
+                                        <input type="hidden" name="word" value="<%= word %>">
+                                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                                    </form>
+                                    
+                                    <% } else { %>  
+                                    <form action="/search/<%= user.id %>" method="get">
+                                        <input type="hidden" name="word" value="<%= word %>">
+                                        <button type="submit" class="btn-primary width-unset">Ajouter en ami.e</button>
+                                    </form>
+                                <% }%> 
+                             <button class="btn-secondary-light width-unset" id="btn-search-follow">Suivre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
+            <% })} %> 
+            
+    </section>
+
+        <section class="col-4 ">
+
+            <ul class="pagination">
+                <li>
+                    <form action="">
+     
+                        <input type="hidden" name="page" value=""/>
+                            <button></button>   
+                    </form>
+                </li>
+            </ul>
+            
+        </section>
+  
+<%- include ('partials/footer'); %>
+</body>
+</html>

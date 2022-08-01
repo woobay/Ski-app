@@ -1,14 +1,296 @@
-<form action="/spots/edit/<%= spot._id%>"_method="put" method="post">
-    <br>
-    <input type="text" value="<%= spot.name %>" name="name" class="form-control">
-    <br>
-    <input type="text" value="<%= spot.description %>" name="description" class="form-control">
-    <br>
-    <input type="text" value="<%= spot.address %>" name="address" class="form-control">phone" class="form-control">
-   <br>
-   <input type="text" value="<%= spot.difficulty %>" name="difficulty" class="form-control">
-   <br>
-   <input type="text" value="<%= spot.coordinates %>" name="coordinates" class="form-control">
-   <br>
-    <button type="submit" class="btn btn-info btn-block mt-3">Update User</button>
-</form>
+<%- include ('partials/head'); %>
+<title>Créer un parcours</title>
+</head>
+
+<%- include ('partials/header'); %>
+    <main>
+        <form action="/spots/edit/<%= spot._id%>"_method="put" method="post">
+            <div class="container-newspot grid">
+                <!-- Nom du parcours -->
+                <div class="col-10 margin-bottom-28">
+                    <h1 class="margin-bottom-48">Modifier le parcours</h1>
+                    <h3 class="margin-bottom-32">Nom et coordonnées géographiques</h3>
+                    <p class="margin-bottom-1em">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <label for="nom-parcours">Nom du parcours (obligatoire)</label>
+                    <div class="input-field">
+                        <input class="input-newspot" id="" type="" value="<%= spot.name %>" name="name" placeholder="Écrire le nom du parcours">
+                    </div>
+                </div>
+                <!-- Localisation du parcours -->
+                <div class="col-5">
+                    <h3 class="margin-bottom-1em">Localisation du parcours</h3>
+                    <p class="margin-bottom-1em">Indiquer la localisation de l'itinéraire en entrant les informations
+                        ci-dessous.</p>
+                    <label for="localisation">Localisation (obligatoire)</label>
+                    <div class="input-field margin-bottom-32">
+                        <input id="" type="" name="address" value="<%= spot.address %>" placeholder="Écrire la localisation">
+                        <i class="bi bi-geo-alt" id="">
+                        </i>
+                    </div>
+                    <!-- Localisation section gauche: mini-grille -->
+                    <div class="mini-grid margin-bottom-64">
+                        <h4 class="margin-bottom-8 col-12">Montée</h4>
+                        <div class="mini-col-5a">
+                            <label for="latitude">Latitude (obligatoire)</label>
+                            <div class="input-field margin-bottom-32">
+                                <input class="input-newspot" id="" type="" value="<%= spot.coordinates[0] %>" name="left" placeholder="Écrire la latitude">
+                            </div>
+                        </div>
+                        <div class="mini-col-5b">
+                            <label for="latitude">Longitude (obligatoire)</label>
+                            <div class="input-field">
+                                <input class="input-newspot" value="<%= spot.coordinates[1] %>" id="" type="" name="right"
+                                    placeholder="Écrire la longitude">
+                            </div>
+                        </div>
+                        <h4 class="margin-bottom-8 col-12">Descente</h4>
+                        <div class="mini-col-5a">
+                            <label for="latitude">Latitude</label>
+                            <div class="input-field">
+                                <input class="input-newspot" id="" type="" name="" placeholder="Écrire la localisation">
+                            </div>
+                        </div>
+                        <div class="mini-col-5b">
+                            <label for="latitude">Longitude</label>
+                            <div class="input-field">
+                                <input class="input-newspot" id="" type="" name="" placeholder="Écrire la longitude">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Localisation section droite: itinéraire -->
+                <div class="col-5b">
+                    <!-- <div class="itineraire"></div> -->
+                    <img class="img-map-form" src="/img/form-map@2.jpg">
+                    <p>Dessinez votre itinéraire sur la carte</p>
+                </div>
+                <!-- infos générales -->
+                <div class="col-10 margin-bottom-32">
+                    <h3>Informations générales</h3>
+                </div>
+                <div class="col-5 margin-bottom-1em">
+                    <div class="input-control-2">
+                        <label for="difficulte">Difficulté technique (obligatoire)</label>
+                        <div class="input-field">
+                            <select class="input-newspot" id="" type="" name="difficulty">
+                                <option value="" disabled selected>Sélectionnez le niveau de difficulté</option>
+                                <option value="facile">Facile</option>
+                                <option value="intermédiaire">Intermédiaire</option>
+                                <option value="difficile">Difficile</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-control-2">
+                        <label for="duree">Estimation de la durée</label>
+                        <div class="input-field">
+                            <input class="input-newspot" id="" type="" name="" placeholder="ex: 1h45">
+                        </div>
+                    </div>
+                    <div class="input-control-2">
+                        <label for="distance">Distance</label>
+                        <div class="input-field">
+                            <input class="input-newspot" id="" type="" name="" placeholder="Entrez la distance en km">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5b">
+                    <div class="input-control-2">
+                        <label for="denivele">Dénivelé</label>
+                        <div class="input-field">
+                            <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
+                        </div>
+                    </div>
+                    <div class="input-control-2">
+                        <label for="duree">Altitude maximale</label>
+                        <div class="input-field">
+                            <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
+                        </div>
+                    </div>
+                    <div class="input-control-2">
+                        <label for="distance">Altitude minimale</label>
+                        <div class="input-field">
+                            <input class="input-newspot" id="" type="" name="" placeholder="ex: 1000m">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 margin-bottom-64">
+                    <div class="input-control-2">
+                        <label for="description">Description et accès de parcours (obligatoire)</label>
+                        <div class="input-field">
+                            <textarea class="input-newspot" id="" type="" name="description"
+                                placeholder="Écrire la description du parcours et son accès"><%= spot.description %></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Caractéristiques du parcours -->
+                <div class="col-10">
+                    <h3 class="margin-bottom-32">Caractéristiques du parcours</h3>
+                </div>
+                <div class="col-10">
+                    <h4 class="margin-bottom-32">Spécificités</h4>
+                    <p class="margin-bottom-32">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+                        officia, fuga iure
+                        distinctio quod quaerat corrupti quis.</p>
+                    <div class="btn-container margin-bottom-28">
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Fermée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Végétation dense</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Vue panoramique</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Yéti</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Cascade</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Nature</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Rocheux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Propriété privée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Sécurisé</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Lac</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Boueux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Grottes</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Marmotte</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Montée</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Dénivelé</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Stalactique</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Arbres tombés</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Chalet</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Venteux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Venteux</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Pont inutilisable</span>
+                            </label>
+                        </div> <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Température extrême</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Rivière</span>
+                            </label>
+                        </div>
+                        <div class="cb-button">
+                            <label>
+                                <input type="checkbox"><span>Risque d'avalanche</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit ?</p>
+                </div>
+                <div class="col-7 margin-bottom-32">
+                        <div class=" input-field">
+                    <input class="input-newspot" id="newtag" type="" name="" placeholder="ex: neige abondante, ours, etc">
+                </div>
+            </div>
+            <div class="col-3b">
+                <button id="" type="" class="btn-tertiary input-newspot">Ajouter un nouveau tag</button>
+            </div>
+            <!-- Conditions obligatoires -->
+            <div class="col-10">
+                <h4 class="margin-bottom-1em">Conditions obligatoires : matériel, équipement et sécurité</h4>
+                <div class="margin-bottom-64">
+                    <label for="description">Description</label>
+                    <div class="input-field ">
+                        <textarea class="input-newspot" id="" type="" name=""
+                            placeholder="Écrire les conditions nécessaires à l'expédition"></textarea>
+                    </div>
+                </div>
+                <!-- Ajout photo et tracking -->
+                <h3 class="margin-bottom-32">Ajouter des photos ou des vidéos</h3>
+                <div class="margin-bottom-64">
+                    <img class="img-map-form" src="/img/image-drag-and-drop-photo.svg">
+
+                </div>
+                <h3 class="margin-bottom-32">Charger des données de tracking</h3>
+                <div class="margin-bottom-95">
+                    <img class="img-map-form" src="/img/image-drag-and-drop-activity.svg">
+                </div>
+                <div class="btn-container margin-bottom-95">
+                    <button id="" type="reset" class="btn-secondary">Annuler</button>
+                    <button id="" type="submit" class="btn-tertiary">Éditer le parcours</button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </main>
+    
+<%- include ('partials/footer'); %>
+</body>
+</html>

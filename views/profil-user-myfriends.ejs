@@ -1,0 +1,165 @@
+<%- include ('partials/head'); %>
+<title>Profil - My Friends</title>
+</head>
+
+<%- include ('partials/header'); %>
+<main class="margin-bottom-120">
+    <!-- map -->      
+    <div class="hero-profil"></div> 
+    <!--mettre ce container chez blandine-->
+    <div class="grid container-search"> 
+    
+        <div class="col-5c">
+            <div class="container-hero-profil">
+                <img src="/img/img-profil-hero2.jpg" alt="...">
+                <div class="container-hero-profil-content">
+                    <div>
+                        <h1><%= name %> </h1>
+                        <h3>Québec City, Québec</h3>
+                    </div>
+                    <div>
+                        <p class="medium">44 posts</p>
+                        <p class="medium">33 Followers</p>
+                        <p class="medium">18 ami.e.s</p>
+                    </div>
+                    <button class="btn-primary">Editer</button>
+                </div>
+            </div>
+        </div>
+    
+         <!-- Résumé du profil -->
+        <div class="container-features margin-top-88 col-10">
+            <div class="profil-features">
+                <i class="bi bi-people"></i>
+                <p>Followers<br><span>14</span></p>
+            </div><div class="features-separator"></div>
+            <div class="profil-features">
+                <i class="bi bi-speedometer"></i>
+                <p>Parcourus<br><span>20 Km</span></p>
+            </div><div class="features-separator"></div>
+            <div class="profil-features">
+                <i class="bi bi-calendar4-event"></i>
+                <p>Sorties<br><span>17</span></p>
+            </div><div class="features-separator"></div>
+            <div class="profil-features">
+                <i class="bi bi-send"></i>
+                <p>Posts<br><span>44</span></p>
+            </div><div class="features-separator"></div>
+            <div class="profil-features">
+                <i class="bi bi-award"></i>
+                <p>Badges<br><span>7</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-main grid">
+        <!--Encars Parcours-->
+        <nav class="col-10 margin-bottom-60 allParcours">
+            <a href="/profil" class="link-click-off">Post</a>
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Parcours créés</a> 
+            <div class="nav-separator"></div>      
+            <a class="link-click-off">Parcours terminés</a>   
+            <div class="nav-separator"></div>   
+            <a class="link-click-off">Badge</a>   
+            <div class="nav-separator"></div>
+            <a class="link-click-off">Favoris</a>  
+            <div class="nav-separator"></div>
+            <a class="link-click-on">Ami.e.s</a>               
+        </nav>
+
+
+        <div class="col-10">
+            <div class="container-spot">
+                <% users.forEach(user => { %>
+
+                <section class="container-ami">
+                    <div class="alert-news">
+                    <img class="image-profil-friend" src="<% 
+                    const array_images = [
+                        "img-profil-follower1.png",
+                        "img-profil-follower2.png",
+                        "img-profil-follower3.png",
+                        "img-profil-follower4.png",
+                        "img-profil-follower5.png",
+                        "img-profil-follower6.png",
+                        "img-profil-follower7.png",
+                        "img-profil-follower8.png",
+                        "image-friend1@2x.png",
+                        "image-friend2@2x.png",
+                        "image-friend3@2x.png",
+                        "image-friend4@2x.png",
+                        "image-friend5@2x.png",
+                        "image-friend6@2x.png",
+                        "image-friend7@2x.png",
+                        "image-friend8@2x.png",
+                        "image-friend9@2x.png",
+                        "image-friend10@2x.png",
+                        "image-friend11@2x.png",
+                        "image-friend12@2x.png",
+                        "image-friend13@2x.png",
+                        "image-friend14@2.png",
+                        "image-friend15@2.png",
+                        "image-friend16@2.png",
+                        "image-friend17@2.png",
+                        "image-friend18@2.png",
+                        "image-friend19@2.png"
+                            ]
+
+                        const random_images = () => {
+                            
+                            let random_index = Math.floor(Math.random() * array_images.length)
+                            
+                            let image_selected = array_images[random_index];
+                            
+                            return image_selected;
+                        }
+
+                        const img = random_images()     
+
+                        const display = `/img/${img}` 
+                          
+                    %>
+                    
+                    <%= display %>" id="random_img" alt="">
+                    <div class="friend-name padding-left-reset">
+                        <form action="/search/friend/<%= user.id%>" method="get" class="search-result-form tag-friend-form">
+                            <button type="submit" class="tag-name tag-name-result"><%=user.name %></button>
+                            <p>Québec City, Québec</p>
+                        </form>
+                    </div>
+                    <form action="/profil/delete/<%= user.id %>" method="get">
+                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                    </form>
+            
+                </section>
+                
+                <% }) %> 
+                <section class="container-ami">
+                    <div class="alert-news">
+                    <img class="image-profil-friend" src="/img/image-friend12b@2.png" alt="">
+                    <div class="friend-name padding-left-reset align-items-start ">
+                        <span class="tag-name">Eleanor Pena</span>
+                        <p>Montréal, Québec</p>
+                    </div>
+                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                </section>
+                
+                <section class="container-ami">
+                    <div class="alert-news">
+                    <img class="image-profil-friend" src="/img/image-friend20@2.png" alt="">
+                    <div class="friend-name padding-left-reset align-items-start ">
+                        <span class="tag-name">Ronald Richards</span>
+                        <p>Québec City, Québec</p>
+                    </div>
+                        <button type="submit" class="btn-secondary-light width-unset">Ami.e</button>
+                </section>
+            </div>
+            </div>
+            
+        </div>
+    </div>    
+  
+<%- include ('partials/footer'); %>
+</body>
+</html>

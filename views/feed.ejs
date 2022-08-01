@@ -1,0 +1,533 @@
+<%- include ('partials/head'); %>
+<title>Feed</title>
+</head>
+
+<%- include ('partials/header'); %>
+<main class="margin-bottom-120">
+
+    <!-- map -->      
+    <div class="hero"></div>
+    <!-- Welcome & Search bar -->
+    <div class="pin-map" id="profil-1">
+        <img src="img/img-friend-map4.jpg" alt="">
+    </div>
+    <div class="pin-map" id="profil-2">
+        <img src="img/img-friend-map2.jpg" alt="">
+    </div>
+    <div class="pin-map" id="profil-3">
+        <img src="img/img-friend-map3.jpg" alt="">
+    </div>
+    <div class="pin-map" id="profil-4">
+        <img src="img/img-friend-map1.jpg" alt="">
+    </div>
+    <div class="pin-map" id="pin-icon-1">
+        <img src="/img/pint-geocalisation-mag.svg" alt="">
+    </div>
+    <div class="pin-map" id="pin-icon-2">
+        <img src="/img/pint-geocalisation-mag.svg" alt="">
+    </div>
+    <div class="pin-map" id="pin-icon-3">
+        <img src="/img/pint-geocalisation-mag.svg" alt="">
+    </div>
+    
+    
+     <div class="grid container-hero">
+
+    
+        <div class="col-6">
+            <div class="icon-header margin-bottom-24">
+                <i class="bi bi-cloud-snow"></i>
+                <p>-13°</p>
+            </div>
+            <h1>Bonjour <span class="primary" id="surname"><%= surname %> !</span></h1>
+            <h3 class="margin-bottom-28 welcome ">Que veux-tu faire aujourd'hui ?</h3>
+        </div>
+
+        <div class="col-4">
+            <div class="icon-header" id="icon-expand-map">
+                <i class="bi bi-arrows-fullscreen"></i>
+            </div>
+        </div>
+         <!-- Recherche principale -->
+         <div class="container-searchBar col-10">
+
+             <form action="/search" method="get">
+             <div class="search-feed">
+                <input type="text" name="word" id="search-bar" placeholder="Rechercher">
+                <i class="bi bi-search"></i>
+            </div>
+            <div class="search-feed selectIcon">
+                <select>
+                    <option>Tous</option>
+                    <option>Parcours</option>
+                    <option>Personne</option>
+                    <option>Guides</option>
+                    <option>Événements</option>
+                </select>
+            </div>
+                <button class="btn-primary" type="submit">Recherche</button>
+            </form>
+        </div>
+    </div>
+
+
+        <div class="container-main grid">
+            <!--Encars Parcours-->
+            <section class="col-10 margin-bottom-60">
+                <h4 class="margin-bottom-24 ">Derniers parcours publiés</h4>
+                <div class="container-spot">
+                    <a href="/spots/new" class="btn-create body1 medium">
+                        <img  class="margin-bottom-1em" src="/img/icon-add-circle.svg" alt="icône ajouter">
+                        Créer<br>un parcours
+                    </a>
+                    
+                    <% spots.forEach(spot => { %>
+
+                    <a href="/description/<%= spot._id %>/<%= spot.created_by %>">
+                        <article class="container-resume-spot">
+                            <div class="container-image-small" >
+                                <img src="<% 
+                                const array_images = [
+                                    "image-parcours1.jpg",
+                                    "image-parcours2.jpg",
+                                    "image-parcours3.jpg",
+                                    "image-parcours4.jpg",
+                                    "image-parcours5.jpg",
+                                    "image-parcours6.jpg",
+                                    "image-parcours7.jpg",
+                                    "image-parcours8.jpg",
+                                    "image-parcours9.jpg",
+                                    "image-parcours10.jpg",
+                                    "image-parcours12.jpg",
+                                        ]
+
+                                    const random_images = () => {
+                                        
+                                        let random_index = Math.floor(Math.random() * array_images.length)
+                                        
+                                        
+                                        let image_selected = array_images[random_index];
+                                        
+                                        return image_selected;
+                                    }
+
+                                    const img = random_images()     
+
+                                    const display = `/img/${img}` 
+                                      
+                                %>
+                                
+                                <%= display %>" id="random_img" alt="">
+                                <div class="popover__wrapper">
+                                    <i class="bi bi-three-dots icon"></i>
+                                    <div class="popover__content popover-resume-spot">
+                                        <div id="nav-links-vertical">
+         
+                                             <form action="/spots/edit/<%= spot._id %>" method="get">
+                                                 <button type="submit" id="btn-settings"><i class="bi bi-pencil-square"></i>Editer</button>
+                                             </form>
+        
+                                             <form action="/feed/delete/<%= spot._id %>" method="get">
+                                                 <button type="submit" id="btn-settings"><i class="bi bi-trash"></i>Supprimer</button>
+                                             </form>
+        
+                                        </div>         
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="title-article full-width">
+                            <div class="title-resume-spot">
+                                <p class="body1">Parcours 201</p>
+                                <p class="resume-spot-content-ellipsis"><%= spot.name %> </p>
+                            </div>
+                            <span class="oval-box-level <%= spot.difficulty == "facile" ? 'level-easy' : spot.difficulty == "intermédiaire" ? 'level-middle' : 'level-difficult' %>">
+                                <%= spot.difficulty%>
+                            </span>
+                        </div>
+                        <div class="quick-features-spot full-width ">
+                            <div class="quick-features-spot">
+                                <i class="bi bi-clock"></i>
+                                <p>1h32</p>
+                            </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-flag"></i>
+                                <p>33 km</p>
+                            </div>
+                            <div class="quick-features-spot">
+                                <i class="bi bi-heart"></i>
+                                <p>9,2K J'aime</p>
+                            </div>
+                        </div>
+                    </article>
+                    </a>
+
+                    <% }) %> 
+                    
+                <div class="btn-center margin-bottom-32">
+                    <a href="/spots" class="btn-secondary-light width-unset">
+                        Voir tous les parcours
+                    </a>
+                </div>
+            </section>
+
+
+             <!-- Colonne gauche - Post & Alert -->
+            <section class="col-6">
+                <h4 class="margin-bottom-24">Flux d'actualités</h4>
+                <!--News Alert 1-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend1@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Simon Hebert</span> a créé un nouveau parcours :<br>
+                                <span class="primary">@parcours 122 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card Post 1 -->
+                <article class="container-post margin-bottom-32 ">
+                    <header class="title-article margin-bottom-24">
+                        <img class="image-profil-friend" src="/img/image-friend3@2x.png" alt="">
+                        <div class="title-article-header" >
+                            <p class="body1">Jane Cooper<br>
+                                <span>Montréal, Québec</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </header>
+                    <p class="margin-bottom-24"><span class="tag-name">Jane Cooper</span> a ajouté une photo au <span class="primary">@parcours 47 !</span></p>
+                    <div class="container-image-medium margin-bottom-24"> 
+                        <img src="/img/image-post1.jpg" alt="">
+                    </div>
+                    <div class="container-social margin-bottom-24">
+                        <div>
+                            <i class="bi bi-heart"></i>
+                            <p>22,5K J'aime</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-chat"></i>
+                            <p>33 Commentaires</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-share"></i>
+                            <p>Partager</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                            <p>Favoris</p>
+                        </div>
+                    </div>
+                    <!-- Description et commentaire -->
+                    <div class="margin-bottom-24">
+                        <div class="article-separator "></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi orci tempor tellus quam donec sed quisque condimentum sed. Amet, turpis sapien sapien hendrerit lacus aliquam ullamcorper !</p>
+                    </div>
+                    <div class="container-comment">
+                        <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                        <div class="input-icons">
+                            <input class="input-comment" type="text" placeholder="Écrire un commentaire">
+                            <div class="icons">
+                             <i class="bi bi-paperclip "></i>
+                             <i class="bi bi-emoji-smile"></i>
+                             <i class="bi bi-image"></i>
+                            </div>
+                    </div>
+                </article>
+                <!--News Alert 2-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend2@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Guy Hawkins</span> a terminé le <span class="primary">@parcours 124 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </article>
+                <!--News Alert 3-->
+                <article class="container-post margin-bottom-28">
+                    <div class="alert-news margin-bottom-24">
+                        <img class="image-profil-friend" src="/img/image-friend2@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Guy Hawkins</span> a collecté le <span class="primary">Badge Yéti</span> en<br> terminant le défi 4 parcours difficiles terminés !
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
+                        <div>
+                            <i class="bi bi-heart"></i>
+                            <p>92,5K J'aime</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-chat"></i>
+                            <p>54 Commentaires</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-share"></i>
+                            <p>Partager</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                            <p>Favoris</p>
+                        </div> 
+                    </div>
+                </article>
+                <!-- Card Post 2 -->
+                <article class="container-post margin-bottom-32">
+                    <header class="title-article margin-bottom-24">
+                        <img class="image-profil-friend" src="/img/image-friend1@2x.png" alt="">
+                        <div class="title-article-header">
+                            <p class="body1">Simon Hebert<br>
+                                <span>Québec City, Québec</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </header>
+                    <p class="margin-bottom-24"><span class="tag-name">Simon Hebert</span> a ajouté des photos au <span class="primary">@parcours 90 !</span></p>
+                    <div class="container-image-medium-divided margin-bottom-24"> 
+                        <div class="container-image-left">
+                            <img src="/img/image-post2-left.jpg" alt="">
+                        </div>
+                        <div class="container-image-right"> 
+                            <img src="/img/image-post2-right-top.jpg" alt="">
+                            <img src="/img/image-post2-right-bottom.jpg" alt="">
+                        </div>
+                       
+                    </div>
+                    <div class="container-social margin-bottom-24">
+                        <div>
+                            <i class="bi bi-heart"></i>
+                            <p>72,2K J'aime</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-chat"></i>
+                            <p>149 Commentaires</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-share"></i>
+                            <p>Partager</p>
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                            <p>Favoris</p>
+                        </div> 
+                    </div>
+                    <!-- Description et commentaire -->
+                    <div class="margin-bottom-24">
+                        <div class="article-separator"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in suscipit lorem, viverra ultricies eros. Pellentesque volutpat ipsum eu tellus fermentum porttitor. Aenean ut augue orci. Phasellus eleifend nunc ut posuere tincidunt. Vestibulum sed facilisis magna. Pellentesque molestie dui eu tempor efficitur. Integer congue sollicitudin lacus sed laoreet. Sed bibendum ante et lectus aliquam dapibus. Phasellus diam ligula, vehicula sed justo vel, ultrices sagittis quam. Donec rhoncus mattis !</p>
+                    </div>
+                    <div class="container-comment">
+                        <img  class="image-profil-friend" src="/img/image-user2@2x.png" alt="">
+                        <div class="input-icons">
+                            <input class="input-comment" type="text" placeholder="Écrire un commentaire">
+                            <div class="icons">
+                             <i class="bi bi-paperclip "></i>
+                             <i class="bi bi-emoji-smile"></i>
+                             <i class="bi bi-image"></i>
+                            </div>
+                    </div>
+                </article>
+                <!--News Alert 4-->
+                <article class="container-post">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend11@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Theresa Web</span> a créé un guide <span class="primary">@bonnes-<br>
+                                pratiques-de-sécurité-en-montagne-2022 !</span>
+                            </p>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                </article>                
+            </section>
+            
+
+             <!-- Colonne droite - Social - Requêtes -->
+            <section class="col-4">
+                <div class="section-title margin-bottom-24">
+                    <h4>Requêtes <span class="primary">(3)</span></h4>
+                    <span class="medium one-link">Voir plus 
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+
+                <!-- article Request 1 -->
+                <article class="container-post margin-bottom-32">
+                    <div class="container-content-request">
+                        <div>
+                            <img class="image-profil-friend" src="/img/image-friend4@2x.png" alt="">
+                        </div>
+                        
+                        <div class="aide">
+
+                            <p><span class="tag-name">Floyd Miles</span> veut vous<br>
+                                ajouter en ami.
+                            </p>
+
+                            <div class="request-btn">
+                                <a class="btn-primary">Ajouter</a>
+                                <a class="btn-secondary-light">Décliner</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- article Request 2 -->
+                <article class="container-post margin-bottom-32">
+                    <div class="container-content-request">
+                        <div>
+                            <img class="image-profil-friend" src="/img/image-friend5@2x.png" alt="">
+                        </div>
+                        
+                        <div class="aide">
+
+                            <p><span class="tag-name">Darrel Steward</span> veut vous<br>
+                                ajouter en ami.
+                            </p>
+
+                            <div class="request-btn">
+                                <a class="btn-primary">Ajouter</a>
+                                <a class="btn-secondary-light">Décliner</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+            <!--Colonne droite - Social - Suivre-->
+                <div class="section-title margin-bottom-24">
+                    <h4 >Qui suivre</h4>
+                    <span class="medium one-link">Voir plus 
+                         <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div> 
+
+            <!-- article 3-->
+                <article class="container-post margin-bottom-32">
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend8@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Jacob Jones</span><br>
+                                @JacobJones
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
+                        </div>
+                    </div>
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
+                    </div>
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend6@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Kristin Watson</span><br>
+                                @KristinWatson
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
+                        </div>
+                    </div>
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
+                    </div>
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend7@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Devon Lane</span><br>
+                                @DevonLane
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
+                        </div>
+                    </div>
+                    <div class="margin-top-28">
+                        <div class="article-separator"></div>
+                        <div class="container-social margin-top-small">
+                    </div>
+                    <div class="alert-news">
+                        <img class="image-profil-friend" src="/img/image-friend9@2x.png" alt="">
+                        <div>
+                            <p><span class="tag-name">Esther Howard</span><br>
+                                @EstherHoward
+                            </p>
+                            <a class="btn-primary width-unset">Suivre</a>
+                        </div>
+                    </div>
+
+                </article>
+ 
+
+            <!--Colonne droite - Social - Contacts -->
+            <div class="section-title margin-bottom-24">
+                <h4 >Contacts</h4>
+                <span class="medium one-link">Voir plus 
+                     <i class="bi bi-arrow-right"></i>
+                </span>
+            </div> 
+
+            <!-- article 3-->
+            <article class="container-post margin-bottom-32 ">
+                <div class="alert-news">
+                    <img class="image-profil-friend" src="/img/image-friend10@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Leslie Alexander</span><br>En ligne</p>
+                    </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="/img/image-friend3@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Jane Cooper</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="/img/image-friend2@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Guy Hawkins</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="/img/image-friend1@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Simon Hebert</span><br>En ligne</p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28">
+                    <img class="image-profil-friend" src="/img/image-friend11@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Theresa Web</span><br>En ligne
+                         </p>
+                     </div>
+                </div>
+
+                <div class="alert-news margin-top-28 contact-friend-offline">
+                    <img class="image-profil-friend" src="/img/image-friend12@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Eleanor Pena</span><br>Hors ligne</p>
+                         <p>18mn</p>
+                    </div>
+                </div>
+
+                <div class="alert-news margin-top-28 contact-friend-offline">
+                    <img class="image-profil-friend" src="/img/image-friend13@2x.png" alt="">
+                    <div>
+                         <p><span class="tag-name">Ronald Richards</span><br>Hors ligne</p>
+                         <p>2h</p>
+                    </div>
+                </div>
+            </article>
+            </section>
+        </div>
+
+<%- include ('partials/footer'); %>
+</body>
+</html>
